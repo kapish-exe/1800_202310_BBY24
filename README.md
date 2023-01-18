@@ -7,7 +7,7 @@ Our add is about helping people save their important identified information when
 List team members and/or short bio's here... 
 * My name is Emily Lin.
 * My name is Kapish Singla.
-*
+* My name is Gurpinder kaur
 *
  
 	
