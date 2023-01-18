@@ -1,14 +1,14 @@
 # Project Title
 
 ## 1. Project Description
-State your app in a nutshell, or one-sentence pitch. Give some elaboration on what the core features are.  
-This browser based web application to ... 
+Our add is about helping people save their important identified information when people ar durning the disarster of extreme weather. 
 
 ## 2. Names of Contributors
 List team members and/or short bio's here... 
-* ...
-* ...
-* ...
+* My name is Emily Lin.
+* 
+*
+*
 	
 ## 3. Technologies and Resources Used
 List technologies (with version numbers), API's, icons, fonts, images, media or data sources, and other resources that were used.
