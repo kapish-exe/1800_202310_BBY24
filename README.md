@@ -1,30 +1,15 @@
 # Project Title
 
 ## 1. Project Description
-<<<<<<< HEAD
-<<<<<<< HEAD
 Our add is about helping people save their important identified information when people ar durning the disarster of extreme weather. 
 
 ## 2. Names of Contributors
 List team members and/or short bio's here... 
 * My name is Emily Lin.
-* 
+* My name is Kapish Singla.
 *
 *
-=======
-Our project for extreme weather conditions was to create an app that stores your document and have it in time of need.
-=======
-
-State your app in a nutshell, or one-sentence pitch. Give some elaboration on what the core features are.  
-This browser based web application to ... 
->>>>>>> 229d12d2e1576b2f9719f9b9ad379ff883075fd6
-
-## 2. Names of Contributors
  
-* Gurpinder kaur
-* ...
-* ...
->>>>>>> e7d8c63e1dbc629d779f476d4c5466a9df5390fa
 	
 ## 3. Technologies and Resources Used
 List technologies (with version numbers), API's, icons, fonts, images, media or data sources, and other resources that were used.
