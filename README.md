@@ -1,6 +1,7 @@
 # Project Title
 
 ## 1. Project Description
+<<<<<<< HEAD
 Our add is about helping people save their important identified information when people ar durning the disarster of extreme weather. 
 
 ## 2. Names of Contributors
@@ -9,6 +10,15 @@ List team members and/or short bio's here...
 * 
 *
 *
+=======
+Our project for extreme weather conditions was to create an app that stores your document and have it in time of need.
+
+## 2. Names of Contributors
+It's a an app to store your docs. 
+* Kapish Singla
+* ...
+* ...
+>>>>>>> e7d8c63e1dbc629d779f476d4c5466a9df5390fa
 	
 ## 3. Technologies and Resources Used
 List technologies (with version numbers), API's, icons, fonts, images, media or data sources, and other resources that were used.
