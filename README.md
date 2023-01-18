@@ -1,11 +1,13 @@
 # Project Title
 
 ## 1. Project Description
-Our project for extreme weather conditions was to create an app that stores your document and have it in time of need.
+
+State your app in a nutshell, or one-sentence pitch. Give some elaboration on what the core features are.  
+This browser based web application to ... 
 
 ## 2. Names of Contributors
-It's a an app to store your docs. 
-* Kapish Singla
+ 
+* Gurpinder kaur
 * ...
 * ...
 	
