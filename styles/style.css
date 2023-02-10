@@ -1,1 +1,29 @@
 
+.nav-item{
+    padding-right: 90px;
+    padding-left: 20px;
+}
+nav{
+    background-color: #D80000;
+    
+
+}
+a{
+    color: white;
+    font-size: 18px;
+}
+.nav-link{
+    color: white;
+
+}
+.navbar-brand{
+    padding-right: 60px;
+    font-weight: bold;
+    font-size: 20px;
+    padding-left: 20px;
+}
+a:hover{
+    background-color: yellow;
+    color: blue;
+    font-weight: bold;
+}
