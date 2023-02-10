@@ -8,7 +8,7 @@ List team members and/or short bio's here...
 * My name is Emily Lin.
 * My name is Kapish Singla.
 * My name is Gurpinder kaur
-*
+* My name is Jake Robbins
  
 	
 ## 3. Technologies and Resources Used
