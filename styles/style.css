@@ -9,10 +9,10 @@ nav {
 
 }
 
-a {
+/**a {
     color: white;
     font-size: 18px;
-}
+}*/
 
 .nav-link {
     color: white;
@@ -26,11 +26,11 @@ a {
     padding-left: 20px;
 }
 
-a:hover {
+/**a:hover {
     background-color: yellow;
     color: blue;
     font-weight: bold;
-}
+}*/
 
 .py-3 {
     color: white;
