@@ -8,11 +8,11 @@ nav {
 
 
 }
-
-/**a {
+a {
     color: white;
     font-size: 18px;
-}*/
+    text-align: center;
+}
 
 .nav-link {
     color: white;
@@ -56,7 +56,6 @@ figcaption{
     font-size: 36px;
 }
 
-
 /* style for setting goes from here  */
 
 .item-setting{
@@ -66,4 +65,24 @@ figcaption{
     font-size: 20px;
     text-transform: capitalize;
 
+}
+
+
+
+
+/*Emergency Kit */
+/* #navbarSupportedContent h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+
+/* botton line */
+.divider:after,
+.divider:before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eee;
 }
