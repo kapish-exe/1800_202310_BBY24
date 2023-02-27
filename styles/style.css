@@ -8,11 +8,11 @@ nav {
 
 
 }
-
-/**a {
+a {
     color: white;
     font-size: 18px;
-}*/
+    text-align: center;
+}
 
 .nav-link {
     color: white;
@@ -57,6 +57,8 @@ figcaption{
 }
 
 
+
+
 /* style for setting goes from here  */
 
 .item-setting{
@@ -67,3 +69,4 @@ figcaption{
     text-transform: capitalize;
 
 }
+
