@@ -70,3 +70,23 @@ figcaption{
 
 }
 
+
+#document-grid{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    flex-direction: row;
+    max-height: 100vh;
+    
+}
+
+
+img{
+    width: 200px;
+    height: 200px;
+    box-shadow: 3px 3px 8px 0px rgba(0,0,0,0.3);
+    max-width: 23vw;
+    margin: 10px;
+    object-fit: cover;
+}
+
