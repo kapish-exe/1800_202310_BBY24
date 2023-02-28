@@ -8,6 +8,7 @@ nav {
 
 
 }
+
 a {
     color: white;
     font-size: 18px;
@@ -46,7 +47,7 @@ button {
     margin-top: 1em;
 }
 
-figcaption{
+figcaption {
     position: relative;
     bottom: 0;
     top: -35vh;
@@ -61,8 +62,8 @@ figcaption{
 
 /* style for setting goes from here  */
 
-.item-setting{
-    display:block;
+.item-setting {
+    display: block;
     background-color: lightgrey;
     height: 50px;
     font-size: 20px;
@@ -70,3 +71,90 @@ figcaption{
 
 }
 
+
+#document-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    flex-direction: row;
+    max-height: 100vh;
+    justify-content: center;
+    overflow: scroll;
+    height: 440px;
+}
+
+
+img {
+    width: 200px;
+    height: 200px;
+    box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.3);
+    max-width: 23vw;
+    margin: 10px;
+    object-fit: cover;
+}
+
+#document-headline {
+    font-weight: bolder;
+    font-size: 15pt;
+    display: inline-block;
+    padding-top: 1em;
+}
+
+#upload-button {
+    padding: 4em;
+}
+
+.button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #EB4949;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 23px;
+    padding: 10px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button:hover span {
+    padding-right: 25px;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#center-button-container{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 87vh;
+}
