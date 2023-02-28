@@ -1,0 +1,105 @@
+/* css for setting.html goes here */
+#heading-setting{
+    font-size: 30px;
+    text-align: left;
+    margin-bottom: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    
+}
+
+#settingbody{
+    margin-left: 20px;
+}
+
+.setting-option{
+    padding: 20px;
+    font-size: 20px;
+    color: black;
+    
+}
+.setting-option:hover{
+    border: 2px groove lightblue;
+
+}
+
+.a-forsetting:link{
+    text-decoration: none;
+    
+}
+/* css for the profile.html */
+.ui-w-80 {
+    width: 80px !important;
+    height: auto;
+}
+.btn-default {
+    border-color: rgba(24,28,33,0.1);
+    background: rgba(0,0,0,0);
+    color: #4E5155;
+}
+
+label.btn {
+    margin-bottom: 0;
+}
+
+.btn-outline-primary {
+    border-color: #26B4FF;
+    background: transparent;
+    color: #26B4FF;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.account-settings-fileinput {
+    position: absolute;
+    visibility: hidden;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+
+/* css for security.html goes here */
+ #security-body{
+    margin: 20px;
+ }
+
+/* css for notification.html goes here */
+
+#notification-body{
+    margin: 20px;
+}
+/* css for problem.html goes here */
+
+#problem-body{
+    margin: 20px;
+}
+
+#appname{
+    font-size: 35px;
+    font-weight: bold;
+   
+}
+
+
+
+#problem-img{
+    
+    height: 300px;
+    width: 300px;
+    margin-left: 0px;
+}
+#contactus{
+    
+    font-size: 20px;
+    
+}
+
+#reportproblem{
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
