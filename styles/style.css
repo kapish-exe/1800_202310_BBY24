@@ -152,9 +152,9 @@ img {
     height: 100%;
 }
 
-#center-button-container{
+#center-button-container {
     display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 87vh;
+    justify-content: center;
+    align-items: center;
+    height: 87vh;
 }
