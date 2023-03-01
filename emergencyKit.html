@@ -31,7 +31,7 @@
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 </head>
 
-<body>
+<body id="page3">
   <!------------------------------>
   <!-- Your HTML Layout go here -->
   <!------------------------------>
@@ -53,8 +53,8 @@
         </svg>
       </a>
     </div>
-    <div class="d-flex justify-content-center " id="pagename">
-      <h3 class="pagename">Emergency Kit</h3>
+    <div class="d-flex justify-content-center ">
+      <h3 class="mainname">Emergency Kit</h3>
       <small class="text-muted"> 72 hr</small>
     </div>
     <div class="d-flex justify-content-end">
@@ -75,20 +75,10 @@
           <div class="card rounded-3">
             <div class="card-body p-4">
 
-              <lable>
-                <h5 class="question">How many people? </h5>
-              </lable>
-              <select class="form-select" aria-label="Default select example">
-                <option selected>Select number of people</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-                <option value="1">Four</option>
-                <option value="2">Five</option>
-                <option value="3">Six</option>
-              </select>
+              <h3 class="mention">Class kit for two people</h3>
 
               <div class="divider d-flex align-items-center my-4"></div>
+
               <p class="mb-2"><span class="h3 me-2">Food & WATER</span> <span class="badge bg-success">Saved</span>
               </p>
               <p class="text-muted pb-2">At least 14 servings (3600 Calorie)</p>
@@ -252,7 +242,7 @@
                 </svg>
                 Reset
               </button>
-              <button type="button" class="btn btn-outline-danger">Submit</button>
+              <button type="button" class="btn btn-outline-danger">Save</button>
               <a href="#" class="btn btn-warning" role="button" data-bs-toggle="button">Go buy</a>
               <br><br><br><br><br><br><br>
 

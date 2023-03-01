@@ -8,6 +8,7 @@ nav {
 
 
 }
+
 a {
     color: white;
     font-size: 18px;
@@ -46,7 +47,7 @@ button {
     margin-top: 1em;
 }
 
-figcaption{
+figcaption {
     position: relative;
     bottom: 0;
     top: -35vh;
@@ -58,8 +59,8 @@ figcaption{
 
 /* style for setting goes from here  */
 
-.item-setting{
-    display:block;
+.item-setting {
+    display: block;
     background-color: lightgrey;
     height: 50px;
     font-size: 20px;
@@ -67,26 +68,58 @@ figcaption{
 
 }
 
+body#page1 {
+    background-color: white;
+}
 
-
-
-
-body {
+body#page2 {
+    background-color: rgb(223, 245, 245);
+}
+body#page3 {
     background-color: rgb(223, 245, 245);
 }
 
-.pagename {
+#blockbutton1 {
+    color:rgb(106, 59, 39);
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 50px;
+    font-size: 50px;
+    border-radius: 70px;
+    font-weight: bold;
+    border: 6px solid rgb(207, 56, 26);
     text-shadow: 3px 3px 5px rgb(153, 154, 149);
 }
+
+#blockbutton2 {
+    color:rgb(57, 57, 110);
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 30px;
+    font-size: 40px;
+    border-radius: 70px;
+    font-weight: bold;
+    border: 6px solid rgb(154, 216, 237);
+    text-shadow: 3px 3px 5px rgb(153, 154, 149);
+}
+
+
+.mainname {
+    text-shadow: 3px 3px 5px rgb(153, 154, 149);
+}
+
 .question {
-    text-shadow: 3px 3px 5px rgb(107, 122, 22);
+    text-shadow: 3px 3px 5px rgb(126, 128, 120);
+}
+.mention {
+    text-shadow: 3px 3px 5px rgb(126, 128, 120);
 }
 
 /* share line */
 .divider:after,
 .divider:before {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: #eee;
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #eee;
 }
