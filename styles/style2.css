@@ -1,4 +1,4 @@
-/* css for setting.html goes here */
+/* css for setting.html goes here  and nav bar */
 #heading-setting{
     font-size: 30px;
     text-align: left;
@@ -8,9 +8,40 @@
     
 }
 
-#settingbody{
-    margin-left: 20px;
+
+.navbar-brand {
+    padding-right: 60px;
+    font-weight: bold;
+    font-size: 20px;
+    padding-left: 20px;
+    color: white;
+    
 }
+
+.navbar-brand:hover{
+    color: white;
+}
+
+
+nav {
+    background-color: #D80000;
+    margin-left: 0px !important;
+
+}
+
+.py-3{
+    color: white;
+}
+.footertags{
+    color: white;
+}
+
+
+
+
+/* #settingbody{
+    margin-left: 20px;
+} */
 
 .setting-option{
     padding: 20px;
@@ -19,7 +50,7 @@
     
 }
 .setting-option:hover{
-    border: 2px groove lightblue;
+    border: 6px groove lightblue;
 
 }
 
@@ -27,6 +58,8 @@
     text-decoration: none;
     
 }
+
+
 /* css for the profile.html */
 .ui-w-80 {
     width: 80px !important;
