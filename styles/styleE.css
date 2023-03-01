@@ -70,15 +70,19 @@ figcaption{
 
 
 
-/*Emergency Kit */
-/* #navbarSupportedContent h3 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
 
+body {
+    background-color: rgb(223, 245, 245);
+}
 
-/* botton line */
+.pagename {
+    text-shadow: 3px 3px 5px rgb(153, 154, 149);
+}
+.question {
+    text-shadow: 3px 3px 5px rgb(107, 122, 22);
+}
+
+/* share line */
 .divider:after,
 .divider:before {
   content: "";

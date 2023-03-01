@@ -40,73 +40,222 @@
   <!-- nav bar -->
   <nav class="navbar navbar-expand">
     <a class="navbar-brand" href="#">App name!</a>
-    <a id="settings-link"  href="setting.html"><span class="material-symbols-outlined">settings</span></a>
+    <a id="settings-link" href="setting.html"><span class="material-symbols-outlined">settings</span></a>
   </nav>
 
   <!-- title bar -->
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-caret-left" viewBox="0 0 16 16">
-      <path d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"/>
-    </svg>
-    <h3> Emergency Kit <small class="text-muted"> -- 72 hr</small></h3>
+  <div class="navbar navbar-expand-md navbar-dark">
+    <div class="d-flex justify-content-start">
+      <a href="index.html" class="text-danger m-3">
+        <svg width="50" height="40" fill="currentColor" class="bi bi-caret-left" viewBox="0 0 16 16">
+          <path
+            d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z" />
+        </svg>
+      </a>
+    </div>
+    <div class="d-flex justify-content-center " id="pagename">
+      <h3 class="pagename">Emergency Kit</h3>
+      <small class="text-muted"> 72 hr</small>
+    </div>
+    <div class="d-flex justify-content-end">
+      <a href="#" class="text-success m-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="currentColor" class="bi bi-share"
+          viewBox="0 0 16 16">
+          <path
+            d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z" />
+        </svg>
+      </a>
+    </div>
   </div>
-  
 
-    <select class="form-select" aria-label="Default select example">
-        <option selected>Open this select menu</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-    </select>
-    
-  <section class="vh-100" style="background-color: #97c4d3;">
+  <section class="vh-100">
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col col-lg-8 col-xl-6">
+        <div>
           <div class="card rounded-3">
             <div class="card-body p-4">
-  
-              <p class="mb-2"><span class="h2 me-2">Team Meeting</span> <span
-                  class="badge bg-danger">checklist</span></p>
-              <p class="text-muted pb-2">04/01/2020 • ML - 1321</p>
-  
+
+              <lable>
+                <h5 class="question">How many people? </h5>
+              </lable>
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Select number of people</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+                <option value="1">Four</option>
+                <option value="2">Five</option>
+                <option value="3">Six</option>
+              </select>
+
+              <div class="divider d-flex align-items-center my-4"></div>
+              <p class="mb-2"><span class="h3 me-2">Food & WATER</span> <span class="badge bg-success">Saved</span>
+              </p>
+              <p class="text-muted pb-2">At least 14 servings (3600 Calorie)</p>
               <ul class="list-group rounded-0">
                 <li class="list-group-item border-0 d-flex align-items-center ps-0">
                   <input class="form-check-input me-3" type="checkbox" value="" aria-label="..." checked />
-                  <s>Task list and assignments</s>
+                  <s>Four gallon of water</s>
+                </li>
+                <li class="list-group-item border-0 d-flex align-items-center ps-0">
+                  <input class="form-check-input me-3" type="checkbox" value="" aria-label="..." checked />
+                  <s>Water Purification Tablets</s>
                 </li>
                 <li class="list-group-item border-0 d-flex align-items-center ps-0">
                   <input class="form-check-input me-3" type="checkbox" value="" aria-label="..." />
-                  Set due date and assignments
+                  Cereals
                 </li>
                 <li class="list-group-item border-0 d-flex align-items-center ps-0">
                   <input class="form-check-input me-3" type="checkbox" value="" aria-label="..." />
-                  Remove duplicate tasks and stories
+                  Canned foods, specifically canned fruits and vegetables
                 </li>
                 <li class="list-group-item border-0 d-flex align-items-center ps-0">
                   <input class="form-check-input me-3" type="checkbox" value="" aria-label="..." />
-                  Update the userflow and stories
+                  Protein bars; these include granola bars
                 </li>
                 <li class="list-group-item border-0 d-flex align-items-center ps-0">
                   <input class="form-check-input me-3" type="checkbox" value="" aria-label="..." />
-                  Adjust the components
+                  Juice
+                </li>
+                <li class="list-group-item border-0 d-flex align-items-center ps-0">
+                  <input class="form-check-input me-3" type="checkbox" value="" aria-label="..." />
+                  Freeze-dried food
+                </li>
+                <li class="list-group-item border-0 d-flex align-items-center ps-0">
+                  <input class="form-check-input me-3" type="checkbox" value="" aria-label="..." />
+                  Non-perishable food
+                </li>
+              </ul><br>
+
+              <p class="mb-2"><span class="h3 me-2">FIRST AID</span><span class="badge bg-danger">Unsave</span>
+              </p>
+              <p class="text-muted pb-2"> First Aid Guide </p>
+              <ul class="list-group rounded-0">
+                <li class="list-group-item border-0 d-flex align-items-center ps-0">
+                  <input class="form-check-input me-3" type="checkbox" value="" aria-label="..." />
+                  Vinyl Glove
+                </li>
+                <li class="list-group-item border-0 d-flex align-items-center ps-0">
+                  <input class="form-check-input me-3" type="checkbox" value="" aria-label="..." />
+                  Band-Aids (3/4"X3") * 36
+                </li>
+                <li class="list-group-item border-0 d-flex align-items-center ps-0">
+                  <input class="form-check-input me-3" type="checkbox" value="" aria-label="..." />
+                  Gauze Pads (3/8" x 1 1/2") * 30, (4"x4") * 2, (3"x3") * 2
+                </li>
+                <li class="list-group-item border-0 d-flex align-items-center ps-0">
+                  <input class="form-check-input me-3" type="checkbox" value="" aria-label="..." />
+                  2" Rolled Gauze
+                </li>
+                <li class="list-group-item border-0 d-flex align-items-center ps-0">
+                  <input class="form-check-input me-3" type="checkbox" value="" aria-label="..." />
+                  Alcohol Pads * 15
+                </li>
+                <li class="list-group-item border-0 d-flex align-items-center ps-0">
+                  <input class="form-check-input me-3" type="checkbox" value="" aria-label="..." />
+                  Adhesive Tape Roll
+                </li>
+                <li class="list-group-item border-0 d-flex align-items-center ps-0">
+                  <input class="form-check-input me-3" type="checkbox" value="" aria-label="..." />
+                  Tweezer
+                </li>
+                <li class="list-group-item border-0 d-flex align-items-center ps-0">
+                  <input class="form-check-input me-3" type="checkbox" value="" aria-label="..." />
+                  Cold Pack(5"x6") * 15
+                </li>
+                <li class="list-group-item border-0 d-flex align-items-center ps-0">
+                  <input class="form-check-input me-3" type="checkbox" value="" aria-label="..." />
+                  Plastic Carry Case (7" x 5 1/2" x 2 1/2")
+                </li>
+              </ul><br>
+
+              <p class="mb-2"><span class="h3 me-2">Tools</span><span class="badge bg-success">Saved</span>
+              </p>
+              <p class="text-muted pb-2">For lightinh, comunication, search, rescue and sanitation.</p>
+              <ul class="list-group rounded-0">
+                <li class="list-group-item border-0 d-flex align-items-center ps-0">
+                  <input class="form-check-input me-3" type="checkbox" value="" aria-label="..." />
+                  Clear Reclosable Bags (10" x 13") * 2
+                </li>
+                <li class="list-group-item border-0 d-flex align-items-center ps-0">
+                  <input class="form-check-input me-3" type="checkbox" value="" aria-label="..." />
+                  Tissue Pack
+                </li>
+                <li class="list-group-item border-0 d-flex align-items-center ps-0">
+                  <input class="form-check-input me-3" type="checkbox" value="" aria-label="..." />
+                  Waterproof Matches
+                </li>
+                <li class="list-group-item border-0 d-flex align-items-center ps-0">
+                  <input class="form-check-input me-3" type="checkbox" value="" aria-label="..." />
+                  Emergency Candles * 3
+                </li>
+                <li class="list-group-item border-0 d-flex align-items-center ps-0">
+                  <input class="form-check-input me-3" type="checkbox" value="" aria-label="..." />
+                  Hand-Crank Powered Ligh & AM/FM Radio and USB Device Charger
+                </li>
+                <li class="list-group-item border-0 d-flex align-items-center ps-0">
+                  <input class="form-check-input me-3" type="checkbox" value="" aria-label="..." />
+                  Hand-Crank Powered Light, AM/FM Radio and USB Device Charger</s>
+                </li>
+                <li class="list-group-item border-0 d-flex align-items-center ps-0">
+                  <input class="form-check-input me-3" type="checkbox" value="" aria-label="..." />
+                  50ft Nylon Utility Cord
+                </li>
+                <li class="list-group-item border-0 d-flex align-items-center ps-0">
+                  <input class="form-check-input me-3" type="checkbox" value="" aria-label="..." />
+                  Multi-Function Army Knife
+                </li>
+                <li class="list-group-item border-0 d-flex align-items-center ps-0">
+                  <input class="form-check-input me-3" type="checkbox" value="" aria-label="..." />
+                  Leather Palm Work Gloves
+                </li>
+                <li class="list-group-item border-0 d-flex align-items-center ps-0">
+                  <input class="form-check-input me-3" type="checkbox" value="" aria-label="..." />
+                  Dust Masks
+                </li>
+                <li class="list-group-item border-0 d-flex align-items-center ps-0">
+                  <input class="form-check-input me-3" type="checkbox" value="" aria-label="..." />
+                  Aluminum Alloy Emergency Whistle
+                </li>
+              </ul><br>
+
+              <p class="mb-2"><span class="h3 me-2">SHELTER</span><span class="badge bg-danger">Unsave</span>
+              </p>
+              <p class="text-muted pb-2">Lightweight and warm</p>
+              <ul class="list-group rounded-0">
+                <li class="list-group-item border-0 d-flex align-items-center ps-0">
+                  <input class="form-check-input me-3" type="checkbox" value="" aria-label="..." />
+                  Aluminized Sleeping Bag
+                </li>
+                <li class="list-group-item border-0 d-flex align-items-center ps-0">
+                  <input class="form-check-input me-3" type="checkbox" value="" aria-label="..." />
+                  Hooded Rain Poncho
+                </li>
+                <li class="list-group-item border-0 d-flex align-items-center ps-0">
+                  <input class="form-check-input me-3" type="checkbox" value="" aria-label="..." />
+                  Tube Tent
+                </li>
+                <li class="list-group-item border-0 d-flex align-items-center ps-0">
+                  <input class="form-check-input me-3" type="checkbox" value="" aria-label="..." />
+                  Roll Duct Tape
                 </li>
               </ul>
-  
-              <div class="divider d-flex align-items-center my-4">
-                <p class="text-center mx-3 mb-0" style="color: #a2aab7;">Shared with</p>
-              </div>
-  
+
+              <div class="divider d-flex align-items-center my-4"></div>
+
               <button type="button" class="btn btn-outline-danger">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
-                <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />
+                  <path
+                    d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z" />
                 </svg>
                 Reset
               </button>
               <button type="button" class="btn btn-outline-danger">Submit</button>
-              <a href="#" class="btn btn-primary" role="button" data-bs-toggle="button">Toggle link</a>
-  
+              <a href="#" class="btn btn-warning" role="button" data-bs-toggle="button">Go buy</a>
+              <br><br><br><br><br><br><br>
+
             </div>
           </div>
         </div>
@@ -115,92 +264,12 @@
   </section>
 
 
-  <!-- <div class="px-4 py-5 my-5 text-center">
-      <img class="d-block mx-auto mb-4" src="images/carl-jorgensen-OD7xwEvXoTI-unsplash.jpg" alt="extreme weather" height="258vh" width="auto">
-      <h1 class="display-5 fw-bold">Welcome</h1>
-      <div class="col-lg-6 mx-auto">
-        <p class="lead mb-4"></p>
-        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-          <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Primary button</button>
-          <button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button>
-        </div>
-      </div>
-    </div> -->
-
-  <!--Sign Up Form-->
-  <!--
-  <section class="vh-100 bg-image">
-    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
-      <div class="container h-100">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-          <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-            <div class="card" style="border-radius: 15px">
-              <div class="card-body p-5">
-                <h2 class="text-uppercase text-center mb-5">
-                  Create an account
-                </h2>
-
-                <form>
-                  <div class="form-outline mb-4">
-                    <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
-                    <label class="form-label" for="form3Example1cg">Your Name</label>
-                  </div>
-
-                  <div class="form-outline mb-4">
-                    <input type="email" id="form3Example3cg" class="form-control form-control-lg" />
-                    <label class="form-label" for="form3Example3cg">Your Email</label>
-                  </div>
-
-                  <div class="form-outline mb-4">
-                    <input type="password" id="form3Example4cg" class="form-control form-control-lg" />
-                    <label class="form-label" for="form3Example4cg">Password</label>
-                  </div>
-
-                  <div class="form-outline mb-4">
-                    <input type="password" id="form3Example4cdg" class="form-control form-control-lg" />
-                    <label class="form-label" for="form3Example4cdg">Repeat your password</label>
-                  </div>
-
-                  <div class="form-check d-flex justify-content-center mb-5">
-                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
-                    <label class="form-check-label" for="form2Example3g">
-                      I agree all statements in
-                      <a href="#!" class="text-body"><u>Terms of service</u></a>
-                    </label>
-                  </div>
-
-                  <div class="d-flex justify-content-center">
-                    <button type="button" class="btn btn-danger btn-block btn-lg">
-                      Register
-                    </button>
-                  </div>
-
-                  <p class="text-center text-muted mt-5 mb-0">
-                    Have already an account?
-                    <a href="#!" class="fw-bold text-body">
-                      <u>Login here</u>
-                    </a>
-                  </p>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
--->
   <!--Footers-->
-  <footer id="copyright" class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-    <p class="col-md-4 mb-0 text-muted">
-      &copy; 2023 BCIT COMP1800 GROUP BBY-24
-    </p>
-  </footer>
   <footer class="navbar justify-content-evenly bg-danger fixed-bottom">
     <div class="container py-3">
-      <a href="documents.html"><span class="material-symbols-outlined">perm_media</span><br/>Docs</a>
-      <a href="plan.html"><span class="material-symbols-outlined">task_alt</span> <br/>Emergency Plan</a>
-      <a href="emergencyKit.html"><span class="material-symbols-outlined">medical_services</span> <br/>E-kit</a>
+      <a href="documents.html"><span class="material-symbols-outlined">perm_media</span><br />Docs</a>
+      <a href="plan.html"><span class="material-symbols-outlined">task_alt</span> <br />Emergency Plan</a>
+      <a href="emergencyKit.html"><span class="material-symbols-outlined">medical_services</span> <br />E-kit</a>
     </div>
   </footer>
 
@@ -211,7 +280,7 @@
   <!-- Link to scripts of your own -->
   <script src="./scripts/firebaseAPI.js"></script>
   <script src="./scripts/authentication.js"></script>
- <!-- <script src="./scripts/main.js"></script> -->
+  <!-- <script src="./scripts/main.js"></script> -->
 
 </body>
 
