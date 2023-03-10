@@ -69,7 +69,7 @@
               <lable>
                 <h5 class="question">How many people? </h5>
               </lable>
-              <select class="form-select" aria-label="Default select example">
+              <select id="selectPeoNum" class="form-select" aria-label="Default select example">
                 <option selected>Select number of people</option>
                 <option value="1">One</option>
                 <option value="2">Two</option>
@@ -83,7 +83,7 @@
               <lable>
                 <h5 class="question">How long does it take? </h5>
               </lable>
-              <select class="form-select" aria-label="Default select example">
+              <select id="selectHr" class="form-select" aria-label="Default select example">
                 <option selected>Select</option>
                 <option value="1">24 hr</option>
                 <option value="2">48 hr</option>
@@ -97,33 +97,33 @@
                 <h5 class="question">Type of the emergency kit </h5>
               </lable>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                <label class="form-check-label" for="flexRadioDefault1">
+                <input class="form-check-input" type="radio" name="selectType" id="flexRadioDefault1">
+                <label class="form-check-label" for="selectType">
                   Basic
                 </label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                <label class="form-check-label" for="flexRadioDefault1">
+                <input class="form-check-input" type="radio" name="selectType" id="flexRadioDefault1">
+                <label class="form-check-label" for="selectType">
                   All purpose
                 </label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                <label class="form-check-label" for="flexRadioDefault1">
+                <input class="form-check-input" type="radio" name="selectType" id="flexRadioDefault1">
+                <label class="form-check-label" for="selectType">
                   First Aid
                 </label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                <label class="form-check-label" for="flexRadioDefault2">
+                <input class="form-check-input" type="radio" name="selectType" id="flexRadioDefault1" checked>
+                <label class="form-check-label" for="selectType">
                   Extremely cold weather
                 </label>
               </div>
 
               <div class="divider d-flex align-items-center my-4"></div>
 
-              <button type="button" class="btn btn-outline-danger">
+              <button type="button" class="btn btn-outline-danger" onclick="resetCustomize()">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                   class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
                   <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />
@@ -132,7 +132,7 @@
                 </svg>
                 Reset
               </button>
-              <a href="emergencyKit.html" type="button" class="btn btn-outline-danger">Submit</a>
+              <a href="emergencyKit.html" type="button" class="btn btn-outline-danger" onclick="submitCustomize()">Submit</a>
               <br><br><br><br><br><br><br>
 
             </div>
