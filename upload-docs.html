@@ -27,6 +27,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 </head>
 
@@ -45,8 +46,12 @@
     <!-- Page Content -->
     <div id="center-button-container">
         <div class="button-container">
-            <button class="button" style="vertical-align:middle"><span>Take a Photo </span></button>
-            <button class="button" style="vertical-align:middle"><span>Upload </span></button>
+            <button class="button" style="vertical-align:middle" onclick="startCamera()"><span>Take a Photo </span></button>
+            <!-- <video id="video" width="640" height="480" autoplay></video> -->
+            <form>
+                <input type="file" id="file-upload" style="display:none; " accept="image/*">
+                <button class="button" id="upload-choose-file" style="vertical-align:middle" type="button" onclick="document.getElementById('file-upload').click(), uploadPic()"><span>Upload </span></button>
+            </form>
         </div>
     </div>
 
@@ -74,7 +79,7 @@
     <!-- Link to scripts of your own -->
     <script src="./scripts/firebaseAPI.js"></script>
     <script src="./scripts/authentication.js"></script>
-    <!-- <script src="./scripts/main.js"></script> -->
+    <script src="./scripts/main.js"></script>
 
 </body>
 
