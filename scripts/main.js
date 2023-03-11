@@ -39,8 +39,29 @@ function openCamera() {
       });
   }
   
-  //function for the choosing images on upload-docs page
-  var ImageFile;
+ //function for the choosing images on upload-docs page
+// const fileUpload = document.getElementById("file-upload");
+// const uploadChooseFile = document.getElementById("upload-choose-file");
+
+// uploadChooseFile.addEventListener('click', () => {
+//   const file = fileUpload.files[0];
+//   const filename = file.name;
+//   const fileRef = storage.child(filename);
+
+//   fileRef.put(file).then(snapshot => {
+//     console.log('File uploaded successfullt');
+//     const fileURL = snapshot.ref.getDownloadURL();
+//     db.push({
+//       filename: filename,
+//       url: fileURL
+//     })
+//   }).catch(error => {
+//     console.error(error);
+//   })
+// })
+
+
+ var ImageFile;
   function listenFileSelect(){
     var fileInput = document.getElementById("upload-choose-file");
 
