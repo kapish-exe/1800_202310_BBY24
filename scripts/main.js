@@ -7,9 +7,9 @@ function insertNameFromFireStore() {
             currentUser = db.collection("users").doc(user.uid);
               //print the user name in the browser console
             currentUser.get().then(userDoc=>{
-                var userName = userDoc.data().username;
-                console.log(userName);
-                document.getElementById("name-goes-here").innerText = userName; 
+                var userUserName = userDoc.data().username;
+                console.log(userUserName);
+                document.getElementById("name-goes-here").innerText = userUserName; 
             })
 
             //method #1:  insert with html only
@@ -20,7 +20,7 @@ function insertNameFromFireStore() {
         } 
     });
 }
-insertName(); //run the function
+insertNameFromFireStore(); //run the function
 
 //function to start camera when pressed on "take a photo in the upload-docs.html page"
 function openCamera() {
