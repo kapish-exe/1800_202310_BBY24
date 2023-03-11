@@ -7,7 +7,7 @@ function insertNameFromFireStore() {
             currentUser = db.collection("users").doc(user.uid);
               //print the user name in the browser console
             currentUser.get().then(userDoc=>{
-                var userName = userDoc.data().name;
+                var userName = userDoc.data().username;
                 console.log(userName);
                 document.getElementById("name-goes-here").innerText = userName; 
             })
