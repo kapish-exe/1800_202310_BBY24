@@ -68,99 +68,69 @@
           <div class="card rounded-3">
             <div class="card-body p-4">
 
-              <p>In the event of an extreme weather emergency, you and your
-                household might need to be look after yourselves for the first 72 hours.</p>
-                <p> The best way to make sure you're prepared is with an emergency plan.</p>
+              <h1>Your emergency plan..</h1>
+
 
               <div class="divider d-flex align-items-center my-4"></div>
 
               
-
-
-              <p class="mb-2"><span class="h3 me-2">Household members</span><span class="badge bg-danger">Unsave</span>
-              </p>
-
-
-              <form>
-                <div class="form-group">
-                  <label for="formGroupExampleInput">Name</label>
-                  <input type="text "class="form-control" id="householdMemberName" placeholder="name..">
-                </div>
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Phone Number</label>
-                    <input type="text "class="form-control" id="householdMemberName" placeholder="phone..">
-                </div>
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Medical Needs</label>
-                    <textarea class="form-control" id="householdMemberMedical" placeholder="medications"></textarea>
-                </div><br/>
-                <a href="#" class="btn btn-danger" role="button" data-bs-toggle="button">Add person</a>
-                <div class="divider d-flex align-items-center my-4"></div>
                 
 
-              <p class="mb-2"><span class="h3 me-2">Safe Meeting Points</span><span class="badge bg-danger">Unsave</span>
+              <p class="mb-2"><span class="h3 me-2">Safe Meeting Points</span><span class="badge">Saved</span>
               </p>
 
 
-              <form>
-                <div class="form-group">
-                  <label for="formGroupExampleInput">Near your home</label>
-                  <textarea class="form-control" id="nearMeetingPoint" placeholder="Somewhere nearby.."></textarea>
+
+                <div>
+                  <label>Near your home:</label>
+                  <div  id="nearMeetingPoint" ></div>
                 </div>
-                <div class="form-group">
-                  <label for="formGroupExampleInput2">Outside your neighbourhood</label>
-                  <textarea class="form-control" id="farMeetingPoint" rows="2" placeholder = "Somewhere far.."></textarea>
+                <div>
+                  <label>Outside your neighbourhood:</label>
+                  <div id="farMeetingPoint" ></div>
                 </div>
 
                 <div class="divider d-flex align-items-center my-4"></div>
 
 
-              <p class="mb-2"><span class="h3 me-2">Evacuation Route</span><span class="badge bg-danger">Unsave</span>
+              <p class="mb-2"><span class="h3 me-2">Evacuation Route</span><span class="badge"> Saved</span>
               </p>
 
 
-              <form>
+
                 <div class="form-group">
-                  <label for="formGroupExampleInput">Favoured Route</label>
-                  <textarea class="form-control" id="evacRoute" placeholder="evacuation route.."></textarea>
+                  <label>Favoured Route:</label>
+                  <div id="evacRoute"></div>
                 </div>
                 <div class="form-group">
-                  <label for="formGroupExampleInput2">Alternative Route</label>
-                  <textarea class="form-control" id="altEvacRoute" rows="2" placeholder = "secondary route.."></textarea>
+                  <label for="formGroupExampleInput2">Alternative Route:</label>
+                  <div id="altEvacRoute" ></div>
                 </div>
+
+
 
                 <div class="divider d-flex align-items-center my-4"></div>
-
-
-                <p class="mb-2"><span class="h3 me-2">Emergency Kit</span><span class="badge bg-danger">Unsave</span>
+                <p class="mb-2"><span class="h3 me-2">Emergency Kit</span><span class="badge">Saved</span>
                 </p>
   
-  
-                <form>
-                  <div class="form-group">
-                    <label for="formGroupExampleInput">Location</label>
-                    <textarea class="form-control" id="eKitLocation" placeholder="My emergency kit is kept..."></textarea>
+
+                  <div>
+                    <label> Location: </label>
+                    <div id="eKitLocation"></div>
                   </div>
  
 
-                
-              </form>
 
               <br>
 
 
               <div class="divider d-flex align-items-center my-4"></div>
 
-              <button type="button" class="btn btn-outline-danger">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                  class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
-                  <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />
-                  <path
-                    d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z" />
-                </svg>
-                Reset
-              </button>
-              <a href="plansaved.html" class="btn btn-danger" role="button" data-bs-toggle="button" id="planSubmit">Submit</a>
+
+              <a href="#" class="btn btn-danger" role="button" data-bs-toggle="button" id="planEdit">Edit</a>
+
+              <div id="user-plan"></div>
+
               <br><br><br><br><br><br>
 
             </div>
@@ -194,7 +164,7 @@
 
   <!-- Link to scripts of your own -->
   <script src="./scripts/firebaseAPI.js"></script>
-  <script src="./scripts/plan.js"></script>
+  <script src="./scripts/plansaved.js"></script>
  <!-- <script src="./scripts/main.js"></script> -->
 
 </body>
