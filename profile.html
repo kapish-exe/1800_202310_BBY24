@@ -38,14 +38,16 @@
           <div class="tab-pane fade active show" id="account-general">
 
             <div class="card-body media align-items-center">
-              <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="d-block ui-w-80" >
-              <br>
+              <img id="mypic-goes-here" width="100" height="100" >
+              <br><br>
+              
               <div class="media-body ml-4">
                 <label class="btn btn-outline-primary">
                   Upload new photo
-                  <input type="file" class="account-settings-fileinput">
+
+                  <input type="file" id="mypic-input" class="account-settings-fileinput" accept="image/*"/>
                 </label> &nbsp;
-                <button type="button" class="btn btn-primary md-btn-flat">Reset</button>
+                <button type="button" class="btn btn-primary md-btn-flat" onclick="savePost()">Save</button>
 
                 <div class="text-light small mt-1">Allowed JPG, GIF or PNG. Max size of 800K</div>
               </div>
@@ -67,10 +69,10 @@
               <div class="form-group">
                 <label class="form-label">E-mail</label>
                 <input  id= "emailInput" type="text" class="form-control mb-1" placeholder="enter email">
-                <div class="alert alert-warning mt-3">
+                <!-- <div class="alert alert-warning mt-3">
                   Your email is not confirmed. Please check your inbox.<br>
                   <a href="javascript:void(0)">Resend confirmation</a>
-                </div>
+                </div> -->
               </div>
               <div class="form-group">
                 <label class="form-label">Location</label>
@@ -78,8 +80,8 @@
               </div> <br>
             </fieldset>
 
-              <button type="button" class="btn btn-primary" onclick="saveUserInfo()" >Update Profile</button>
-          <button type="reset" class="btn btn-light" onclick="editUserInfo()" >Reset Changes</button>
+              <button type="button" class="btn btn-primary"  onclick="saveUserInfo()"  >Save Profile</button>
+          <button type="button" class="btn btn-light" onclick="editUserInfo()" >Reset </button>
           <div class="form-group">
             <br>
             <label class="d-block text-danger">Delete Account</label>
