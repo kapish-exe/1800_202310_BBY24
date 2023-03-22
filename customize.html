@@ -70,7 +70,7 @@
                 <h5 class="question">How many people? </h5>
               </lable>
               <select id="selectPeoNum" class="form-select" aria-label="Default select example">
-                <option selected>Select number of people</option>
+                <option value="0">Select number of people</option>
                 <option value="1">One</option>
                 <option value="2">Two</option>
                 <option value="3">Three</option>
@@ -84,12 +84,12 @@
                 <h5 class="question">How long does it take? </h5>
               </lable>
               <select id="selectHr" class="form-select" aria-label="Default select example">
-                <option selected>Select</option>
-                <option value="1">24 hr</option>
-                <option value="2">48 hr</option>
-                <option value="3">72 hr</option>
-                <option value="4">Five days</option>
-                <option value="5">One Week</option>
+                <option value="0">Select</option>
+                <option value="24">24 hr</option>
+                <option value="48">48 hr</option>
+                <option value="72">72 hr</option>
+                <option value="5d">Five days</option>
+                <option value="1w">One Week</option>
               </select>
               <br>
 
@@ -97,26 +97,26 @@
                 <h5 class="question">Type of the emergency kit </h5>
               </lable>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="selectType" id="flexRadioDefault1">
-                <label class="form-check-label" for="selectType">
+                <input class="form-check-input" type="radio" name="selectType" id="type1" value="Basic" checked>
+                <label class="form-check-label" for="type1">
                   Basic
                 </label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="selectType" id="flexRadioDefault1">
-                <label class="form-check-label" for="selectType">
+                <input class="form-check-input" type="radio" name="selectType" id="type2" value="All purpose">
+                <label class="form-check-label" for="type2">
                   All purpose
                 </label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="selectType" id="flexRadioDefault1">
-                <label class="form-check-label" for="selectType">
+                <input class="form-check-input" type="radio" name="selectType" id="type3" value="First Aid">
+                <label class="form-check-label" for="type3">
                   First Aid
                 </label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="selectType" id="flexRadioDefault1" checked>
-                <label class="form-check-label" for="selectType">
+                <input class="form-check-input" type="radio" name="selectType" id="type4" value="Extremely cold weather">
+                <label class="form-check-label" for="type4">
                   Extremely cold weather
                 </label>
               </div>
@@ -132,7 +132,8 @@
                 </svg>
                 Reset
               </button>
-              <a href="emergencyKit.html" type="button" class="btn btn-outline-danger" onclick="submitCustomize()">Submit</a>
+              <a href="#" id="submitBtn" type="button" class="btn btn-outline-danger" onclick="submitCustomize()">Submit</a>
+              <!-- <a href="emergencyKit.html" type="button" class="btn btn-outline-danger" id="submitBtn">Submit</a> -->
               <br><br><br><br><br><br><br>
 
             </div>
@@ -158,7 +159,8 @@
 
   <!-- Link to scripts of your own -->
   <script src="./scripts/firebaseAPI.js"></script>
-  <script src="./scripts/authentication.js"></script>
+  <!-- <script src="./scripts/authentication.js"></script> -->
+  <script src="./scripts/customize.js"></script>
   <!-- <script src="./scripts/main.js"></script> -->
 
 </body>
