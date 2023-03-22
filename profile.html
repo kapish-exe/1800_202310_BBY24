@@ -32,13 +32,15 @@
     </svg></a>
     <a class="navbar-brand" href="#">PROFILE INFORMATION</a>
   </nav>
+
+  
     
       <div class="col-md-9">
         <div class="tab-content">
           <div class="tab-pane fade active show" id="account-general">
 
             <div class="card-body media align-items-center">
-              <img id="mypic-goes-here" width="100" height="100" >
+              <img id="mypic-goes-here" src="/images/profile.png" width="100" height="100" >
               <br><br>
               
               <div class="media-body ml-4">
@@ -47,15 +49,16 @@
 
                   <input type="file" id="mypic-input" class="account-settings-fileinput" accept="image/*"/>
                 </label> &nbsp;
-                <button type="button" class="btn btn-primary md-btn-flat" onclick="savePost()">Save</button>
+                
 
                 <div class="text-light small mt-1">Allowed JPG, GIF or PNG. Max size of 800K</div>
               </div>
             </div>
             <hr class="border-light m-0">
+            <fieldset class="mb-3" id="personalInfoFields" disabled>
             <form>
 
-              <fieldset class="mb-3" id="personalInfoFields" disabled>
+              
 
             <div class="card-body">
               <div class="form-group">
@@ -81,7 +84,7 @@
             </fieldset>
 
               <button type="button" class="btn btn-primary"  onclick="saveUserInfo()"  >Save Profile</button>
-          <button type="button" class="btn btn-light" onclick="editUserInfo()" >Reset </button>
+          <button type="button" class="btn btn-light" onclick="editUserInfo()" >Edit profile </button>
           <div class="form-group">
             <br>
             <label class="d-block text-danger">Delete Account</label>
