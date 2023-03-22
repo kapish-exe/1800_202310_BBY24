@@ -22,6 +22,12 @@ function insertNameFromFireStore() {
 }
 insertNameFromFireStore(); //run the function
 
+
+
+//kapish's stuff beloww
+
+
+
 //function to start camera when pressed on "take a photo in the upload-docs.html page"
 function openCamera() {
   const video = document.createElement('video');
@@ -39,7 +45,7 @@ function openCamera() {
     });
 }
 
-//function for the choosing images on upload-docs page
+// function for the choosing images on upload-docs page
 // const fileUpload = document.getElementById("file-upload");
 // const uploadChooseFile = document.getElementById("upload-choose-file");
 
@@ -80,10 +86,12 @@ function savePic() {
     if (user) {
       // User is signed in.
       // Do something for the user here. 
-      var desc = document.getElementById("file-upload").value;
+      // var desc =  userDoc.data().username;
+
+
       db.collection("userDocuments").add({
         owner: user.uid,
-        user: desc,
+        // user: userUserName,
         last_updated: firebase.firestore.FieldValue
           .serverTimestamp() //current system time
       }).then(doc => {
@@ -122,3 +130,8 @@ function uploadPic(postDocID) {
         });
     });
 };
+
+//hiding the image div after the user has clickewd in the upload post
+function hideImageDiv(){
+  imagediv = getElementById("document-grid");
+}
