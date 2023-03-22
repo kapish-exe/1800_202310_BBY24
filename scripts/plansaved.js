@@ -2,7 +2,7 @@ function readPlan(){
     firebase.auth().onAuthStateChanged(user => {
         // Check if user is signed in:
         if (user) {
-            db.collection("plan").doc(user.uid).get()
+            db.collection("plans").doc(user.uid).get()
                 .then( userDoc => {
                     //get the data fields of the user
                     document.getElementById("evacRoute").innerHTML = userDoc.data().evacRoute;

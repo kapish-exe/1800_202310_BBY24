@@ -38,6 +38,9 @@
 
   <!-- nav bar -->
   <nav class="navbar navbar-expand">
+    <a href="main.html"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="white" class="bi bi-chevron-left" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+    </svg></a>
     <a class="navbar-brand" href="#">App name!</a>
     <a id="settings-link" href="setting.html"><span class="material-symbols-outlined">settings</span></a>
   </nav>
@@ -51,7 +54,7 @@
 
 
   <div id="document-grid">
-    <div>
+    <!-- <div>
       <img src="images/documents/doc1.jpg" alt="document placeholder">
     </div>
     <div>
@@ -77,11 +80,20 @@
     </div>
     <div>
       <img src="images/documents/doc9.jpg" alt="document placeholder">
-    </div>
+    </div> -->
   </div>
 
   <div id="upload-button">
-    <button type="button" class="btn btn-primary btn-lg" onclick="window.location.href='./upload-docs.html'">Upload A New Document</button>
+
+    <input type="file" id="file-upload" style="display:none" accept="image/*"/>
+    <button class="button" id="upload-choose-file" style="vertical-align:middle" type="button"
+      onclick="document.getElementById('file-upload').click()"><span>Upload A New Document
+      </span></button>
+    <button class="button" id="upload-choose-file" style="vertical-align:middle" type="button"
+      onclick="savePic()"><span>Save
+      </span></button>
+
+
   </div>
 
 
@@ -110,7 +122,7 @@
   <!-- Link to scripts of your own -->
   <script src="./scripts/firebaseAPI.js"></script>
   <script src="./scripts/authentication.js"></script>
-  <!-- <script src="./scripts/main.js"></script> -->
+  <script src="./scripts/main.js"></script>
 
 </body>
 
