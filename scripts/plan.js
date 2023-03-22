@@ -34,18 +34,18 @@ function createPlan(
 
 var planSubmit = document.getElementById("planSubmit");
 
-var evacRoute = document.getElementById("evacRoute").value;
-var altEvacRoute = document.getElementById("altEvacRoute").value;
-var eKitLocation = document.getElementById("eKitLocation").value;
-var nearMeetingPoint = document.getElementById("nearMeetingPoint").value;
-var farMeetingPoint = document.getElementById("farMeetingPoint").value;
+var evacRoute = document.getElementById("evacRoute");
+var altEvacRoute = document.getElementById("altEvacRoute");
+var eKitLocation = document.getElementById("eKitLocation");
+var nearMeetingPoint = document.getElementById("nearMeetingPoint");
+var farMeetingPoint = document.getElementById("farMeetingPoint");
 
 planSubmit.onclick = function () {
     createPlan(
-        evacRoute,
-        altEvacRoute,
-        eKitLocation,
-        nearMeetingPoint,
-        farMeetingPoint
+        evacRoute.value,
+        altEvacRoute.value,
+        eKitLocation.value,
+        nearMeetingPoint.value,
+        farMeetingPoint.value,
     );
 };
