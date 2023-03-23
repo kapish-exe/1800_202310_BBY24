@@ -13,10 +13,10 @@ function submitCustomize() {
                 selectHr: selectHr,
                 selectType: selectType,
             }).then(() => {
-                console.log("Customized kit created");
+                console.log("customizedkit on DB created");
                 // window.location.href = "emergencyKit.html";
             }).catch((error) => {
-                console.error("Error creating customized kit:", error);
+                console.error("Error creating customizedkit on DB:", error);
             });
         } else {
             console.log("No user is signed in");
