@@ -1,4 +1,16 @@
-//save checkboxes to database
+//scratch checkboxes if checked
+function scratchechboxes() {
+    if (document.querySelectorAll('input[name="selectType"]').checked == true) {
+
+    } else {
+
+    }
+};
+
+scratchechboxes();
+
+
+//savebtn to save checkboxes to database
 function saveCheckboxes() {
     var checkboxC = [];
     for (var i = 1; i <= 31; i++) {
@@ -56,7 +68,7 @@ function saveCheckboxes() {
     });
 };
 
-//clear everything
+//clearbtn to clear everything
 function clearCustomize() {
     for (let i = 1; i <= 31; i++) {
         document.getElementById(`c${i}`).checked = false;

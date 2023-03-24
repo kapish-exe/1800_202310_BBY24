@@ -1,4 +1,4 @@
-//store info to DB
+//submitbtn to store info to DB
 function submitCustomize() {
     var selectPeoNum = document.getElementById('selectPeoNum').value;
     var selectHr = document.getElementById('selectHr').value;
@@ -25,7 +25,7 @@ function submitCustomize() {
 };
 
 
-//reset to default
+//resetbutton to reset default
 function resetCustomize() {
         const selectPeoNum = document.getElementById('selectPeoNum');
         selectPeoNum.selectedIndex = 0;
