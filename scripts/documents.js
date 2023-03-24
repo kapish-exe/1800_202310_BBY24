@@ -2,86 +2,101 @@
 function openCamera() {
     const video = document.createElement('video');
     // video.style.display = 'none';
-  
+
     navigator.mediaDevices.getUserMedia({ video: true })
-      .then(stream => {
-        video.srcObject = stream;
-        video.play();
-  
-        video.style.display = 'block';
-      })
-      .catch(error => {
-        console.error('Error accessing camera:', error);
-      });
-  }
-  
+        .then(stream => {
+            video.srcObject = stream;
+            video.play();
 
-var ImageFile; 
-function listenDocumentSelect(){
-  var fileInput = document.getElementById("file-upload"); // pointer #1
+            video.style.display = 'block';
+        })
+        .catch(error => {
+            console.error('Error accessing camera:', error);
+        });
+}
 
-  fileInput.addEventListener('change', function (e) {
-    ImageFile = e.target.files[0];   //Global variable
-  });
+
+var ImageFile;
+var newdiv =  document.getElementById("activateonsavepost");
+function listenDocumentSelect() {
+    var fileInput = document.getElementById("file-upload"); // pointer #1
+
+
+    fileInput.addEventListener('change', function (e) {
+        ImageFile = e.target.files[0];   //Global variable
+        var blob = URL.createObjectURL(ImageFile);
+        newdiv.sr = blob;
+    });
 } listenDocumentSelect();
 
 function savePic() {
-  firebase.auth().onAuthStateChanged(function (user) {
-    if (user) {
-      // User is signed in.
-      // Do something for the user here. 
-      // var desc =  userDoc.data().username;
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+            // User is signed in.
+            // Do something for the user here. 
+            // var desc =  userDoc.data().username;
 
 
-      db.collection("documentsAll").add({
-        owner: user.uid,
-        // user: userUserName,
-        last_updated: firebase.firestore.FieldValue
-          .serverTimestamp() //current system time
-      }).then(doc => {
-        console.log("Post document added!");
-        console.log(doc.id);
-        uploadPic(doc.id);
-        // var docid = doc.id;
-        db.collection("userDocs").doc(user.uid).update({
-            "userDocuments" : firebase.firestore.FieldValue.arrayUnion(doc.id)
-        })
-      }).catch(function(error){
-        console.log("Error in updating the userDocs table" + error)
-      })
-    } else {
-      // No user is signed in.
-      console.log("Error, no user signed in");
-    }
-  });
+            db.collection("documentsAll").add({
+                owner: user.uid,
+                // user: userUserName,
+                last_updated: firebase.firestore.FieldValue
+                    .serverTimestamp() //current system time
+            }).then(doc => {
+                console.log("Post document added!");
+                console.log(doc.id);
+                uploadPic(doc.id);
+                // var docid = doc.id;
+                db.collection("userDocs").doc(user.uid).update({
+                    "userDocuments": firebase.firestore.FieldValue.arrayUnion(doc.id)
+                })
+            }).catch(function (error) {
+                console.log("Error in updating the userDocs table" + error)
+            })
+        } else {
+            // No user is signed in.
+            console.log("Error, no user signed in");
+        }
+    });
 }
 
 //function for the storing images in fire storage
 function uploadPic(postDocID) {
-  console.log("inside uploadPic " + postDocID);
-  var storageRef = storage.ref("documents/" + postDocID + ".jpg");
+    console.log("inside uploadPic " + postDocID);
+    var storageRef = storage.ref("documents/" + postDocID + ".jpg");
 
-  storageRef.put(ImageFile)   //global variable ImageFile
-    // AFTER .put() is done
-    .then(function () {
-      console.log('Uploaded to Cloud Storage.');
-      storageRef.getDownloadURL()
-        // AFTER .getDownloadURL is done
-        .then(function (url) { 
-          // Get URL of the uploaded file
-          console.log("Got the download URL.");
-          db.collection("documentsAll").doc(postDocID).update({
-            "image": url, // Save the URL into users collection
-          }).then(()=>{
-            console.log("Added the picture to firestore")
-          })
-        }).catch(function (error) {
-          console.log("Error getting download URL. " + error);
-        })
-    });
+    storageRef.put(ImageFile)   //global variable ImageFile
+        // AFTER .put() is done
+        .then(function () {
+            console.log('Uploaded to Cloud Storage.');
+            storageRef.getDownloadURL()
+                // AFTER .getDownloadURL is done
+                .then(function (url) {
+                    // Get URL of the uploaded file
+                    console.log("Got the download URL.");
+                    db.collection("documentsAll").doc(postDocID).update({
+                        "image": url, // Save the URL into users collection
+                    }).then(() => {
+                        console.log("Added the picture to firestore")
+                    })
+                }).catch(function (error) {
+                    console.log("Error getting download URL. " + error);
+                })
+        });
 };
 
 //hiding the image div after the user has clickewd in the upload post
-function hideImageDiv(){
-  imagediv = getElementById("document-grid");
-}
+
+var imagediv = document.getElementById("document-grid");
+var imageheadlline =  document.getElementById("document-headline");
+var button =  document.getElementById("file-upload");
+
+button.addEventListener("click", ()=>{
+    imagediv.style.display = "none";
+    imageheadlline.style.display = "none";
+
+    newdiv.style.display = "flex"
+    console.log("Sum")
+    
+
+})
