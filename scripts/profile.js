@@ -12,7 +12,8 @@ function populateUserInfo() {
                 .then(userDoc => {
                     //get the data fields of the user
                     var userName = userDoc.data().username;
-                    var userEmail = userDoc.data().email
+                    // var userEmail = userDoc.data().email
+                    var description = userDoc.data().bio;
                     var userLocation = userDoc.data().location;
                     let picUrl = userDoc.data().profilePic;
 
@@ -22,8 +23,9 @@ function populateUserInfo() {
                     if (userName != null) {
                         document.getElementById("userNameInput").value = userName;
                     }
-                    if (userEmail != null) {
-                        document.getElementById("emailInput").value = userEmail;
+                    if (description != null) {
+                        // document.getElementById("emailInput").value = userEmail;
+                        document.getElementById("bioInput").value = description;
                     }
                     if (userLocation != null) {
                         document.getElementById("locationInput").value = userLocation;
@@ -116,13 +118,13 @@ function saveUserInfo() {
 
     //a) get user entered values
     userUserName = document.getElementById('userNameInput').value;       //get the value of the field with id="nameInput"
-userEmail = document.getElementById('emailInput').value;     //get the value of the field with id="schoolInput"
-userLocation = document.getElementById('locationInput').value;       //get the value of the field with id="cityInput"
+    description = document.getElementById('bioInput').value;     //get the value of the field with id="schoolInput"
+    userLocation = document.getElementById('locationInput').value;       //get the value of the field with id="cityInput"
 
     //b) update user's document in Firestore
     currentUser.update({
         username: userUserName,
-        email: userEmail,
+        bio: description,
         location: userLocation
     })
     .then(() => {
@@ -132,3 +134,63 @@ userLocation = document.getElementById('locationInput').value;       //get the v
     //c) disable edit 
     document.getElementById('personalInfoFields').disabled = true;
 }
+
+
+
+
+//   // Get a reference to the delete button element
+//   const deleteButton = document.getElementById('delete-button');
+
+//   // Add a click event listener to the delete button
+//   deleteButton.addEventListener('click', () => {
+//     // Display a confirmation message using the built-in "confirm" function
+//     const confirmed = confirm('Are you sure you want to delete this?');
+    
+//     // Check if the user clicked "OK" in the confirmation message
+//     if (confirmed) {
+//       // User confirmed, delete the item here
+//       console.log('Item deleted!');
+//     } else {
+//       // User cancelled, do nothing
+//       console.log('Delete cancelled!');
+//     }
+//   });
+
+
+
+
+
+
+        //-------------------------------------------------
+        // This function asks user to confirm deletion:
+        // 1. remove document from users collection in firestore
+        // 2. THEN, remove auth() user from Firebase auth
+        //-------------------------------------------------
+        function deleteUser() {
+            firebase.auth().onAuthStateChanged(user => {
+
+                    // Double check! Usability Heuristics #5
+                    var result = confirm("WARNING " + user.displayName + 
+                    ": Deleting your User Account!!");
+
+                    // If confirmed, then go ahead
+                    if (result) {
+                        // First, delete from Firestore users collection 
+                        db.collection("users").doc(user.uid).delete()
+                            .then(() => {
+                                console.log("Deleted from Firestore Collection");
+
+                                // Next, delete from Firebase Auth
+                                user.delete().then(() => {
+                                    console.log("Deleted from Firebase Auth.");
+                                    alert("user has been deleted");
+                                    window.location.href = "index.html";
+                                }).catch((error) => {
+                                    console.log("Error deleting from Firebase Auth " + error);
+                                });
+                            }).catch((error) => {
+                                console.error("Error deleting user: ", error);
+                            });
+                    }
+            })
+        }

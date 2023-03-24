@@ -26,12 +26,15 @@
     <div id="problem-body">
     <div id="appname">app name</div>
     <div id="version">@version BBY2023</div>
-    <div ><img src="./images/scan.jpg" id="problem-img"></div>
-    <button id="contactus" class="btn btn-primary md-btn-flat">Contact us </button>
+    
+    <!-- <button id="contactus" class="btn btn-primary md-btn-flat">Contact us </button> -->
     <br><br>
     <div id="reportproblem">Report the problem :</div>
-    <textarea></textarea><br><br>
-    <button id="submit-button" class="btn btn-primary md-btn-flat">SUBMIT</button>
+    <br>
+    <!-- <textarea></textarea> -->
+    <input type="text" placeholder="write your problem" size="100%" >
+    <br><br>
+    <button id="problem-button" class="btn btn-primary md-btn-flat" onclick="reportProblem()">SUBMIT</button>
 </div>
 
 <footer class="navbar justify-content-evenly bg-danger fixed-bottom">
@@ -41,5 +44,8 @@
       <a href="choose.html"  class="footertags"><span class="material-symbols-outlined">medical_services</span> <br/>E-kit</a>
     </div>
   </footer>
+  <script src="./scripts/firebaseAPI.js"></script>
+
+  <script src="problem.js"></script>
 </body>
 </html>
