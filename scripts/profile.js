@@ -111,9 +111,7 @@ function saveUserImage() {
                     })
             })
     })
-}
-
-function saveUserInfo() {
+} function saveUserInfo() {
     //enter code here
 
     //a) get user entered values

@@ -114,6 +114,8 @@ img {
 
 #upload-button {
     padding: 4em;
+    z-index: 50;
+    position: relative;
 }
 
 .button {
@@ -169,4 +171,12 @@ img {
     justify-content: center;
     align-items: center;
     height: 87vh;
+}
+
+#activateonsavepost{
+    display: none;
+    z-index: 50;
+    position: relative; 
+    justify-content: center;
+    margin-top: 3em;
 }
