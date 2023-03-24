@@ -126,3 +126,11 @@ body#page3 {
     background: #eee;
 }
 
+
+
+
+/* form control styling, default hidden */
+
+.expandable-form {
+    display:none;
+}
