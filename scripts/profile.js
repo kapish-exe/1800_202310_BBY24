@@ -14,7 +14,7 @@ function populateUserInfo() {
                     var userName = userDoc.data().username;
                     var userEmail = userDoc.data().email
                     var userLocation = userDoc.data().location;
-                    let picUrl = userDoc.data().profilePic; 
+                    let picUrl = userDoc.data().profilePic;
 
 
 
@@ -28,15 +28,15 @@ function populateUserInfo() {
                     if (userLocation != null) {
                         document.getElementById("locationInput").value = userLocation;
                     }
-                    if (picUrl != null){
+                    if (picUrl != null) {
                         console.log(picUrl);
-                                        // use this line if "mypicdiv" is a "div"
+                        // use this line if "mypicdiv" is a "div"
                         //$("#mypicdiv").append("<img src='" + picUrl + "'>")
                         $("#mypic-goes-here").attr("src", picUrl);
                     } else
-                    console.log("picURL is null");
+                        console.log("picURL is null");
                 })
-                
+
         } else {
             // No user is signed in.
             console.log("No user is signed in");
@@ -51,6 +51,7 @@ populateUserInfo();
 function editUserInfo() {
     //Enable the form fields
     document.getElementById('personalInfoFields').disabled = false;
+
 }
 
 
@@ -59,16 +60,16 @@ function editUserInfo() {
 
 var ImageFile;      //global variable to store the File Object reference
 
-function chooseFileListener(){
+function chooseFileListener() {
     const fileInput = document.getElementById("mypic-input");   // pointer #1
     const image = document.getElementById("mypic-goes-here");   // pointer #2
 
     //attach listener to input file
     //when this file changes, do something
-    fileInput.addEventListener('change', function(e){
+    fileInput.addEventListener('change', function (e) {
 
         //the change event returns a file "e.target.files[0]"
-	      ImageFile = e.target.files[0];
+        ImageFile = e.target.files[0];
         var blob = URL.createObjectURL(ImageFile);
 
         //change the DOM img element source to point to this file
@@ -78,7 +79,8 @@ function chooseFileListener(){
 chooseFileListener();
 
 
-function saveUserInfo() {
+function saveUserImage() {
+    alert("CHANGES ARE SAVED");
     firebase.auth().onAuthStateChanged(function (user) {
         var storageRef = storage.ref("images/" + user.uid + ".jpg");
 
@@ -91,24 +93,42 @@ function saveUserInfo() {
                 storageRef.getDownloadURL()
                     .then(function (url) { // Get "url" of the uploaded file
                         console.log("Got the download URL.");
-												//get values from the from
-                        userUserName = document.getElementById('userNameInput').value;
-                        userEmail = document.getElementById('emailInput').value;
-                        userLocation = document.getElementById('locationInput').value;
+                        //get values from the from
+
 
                         //Asynch call to save the form fields into Firestore.
                         db.collection("users").doc(user.uid).update({
-                                username: userUserName,
-                                email: userEmail,
-                                location: userLocation,
-                                profilePic: url // Save the URL into users collection
-                            })
+
+                            profilePic: url // Save the URL into users collection
+                        })
                             .then(function () {
                                 console.log('Added Profile Pic URL to Firestore.');
                                 console.log('Saved use profile info');
-                                document.getElementById('personalInfoFields').disabled = true;
+
                             })
                     })
             })
     })
+}
+
+function saveUserInfo() {
+    //enter code here
+
+    //a) get user entered values
+    userUserName = document.getElementById('userNameInput').value;       //get the value of the field with id="nameInput"
+userEmail = document.getElementById('emailInput').value;     //get the value of the field with id="schoolInput"
+userLocation = document.getElementById('locationInput').value;       //get the value of the field with id="cityInput"
+
+    //b) update user's document in Firestore
+    currentUser.update({
+        username: userUserName,
+        email: userEmail,
+        location: userLocation
+    })
+    .then(() => {
+        console.log("Document successfully updated!");
+    })
+
+    //c) disable edit 
+    document.getElementById('personalInfoFields').disabled = true;
 }

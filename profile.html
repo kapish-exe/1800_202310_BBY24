@@ -1,69 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
-    <link rel="stylesheet"
+  <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
-     <!-------------------------------------------------------->
-    <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
-    <!-------------------------------------------------------->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+  <!-------------------------------------------------------->
+  <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+  <!-------------------------------------------------------->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
-    <link rel="stylesheet" href="./styles/style2.css" />
-    <title>Document</title>
+  <link rel="stylesheet" href="./styles/style2.css" />
+  <title>Document</title>
 </head>
+
 <body>
 
   <nav class="navbar navbar-expand">
-    <a href="setting.html"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="white" class="bi bi-chevron-left" viewBox="0 0 16 16">
-      <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
-    </svg></a>
+    <a href="setting.html"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="white"
+        class="bi bi-chevron-left" viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+      </svg></a>
     <a class="navbar-brand" href="#">PROFILE INFORMATION</a>
   </nav>
 
-  
-    
-      <div class="col-md-9">
-        <div class="tab-content">
-          <div class="tab-pane fade active show" id="account-general">
 
-            <div class="card-body media align-items-center">
-              <img id="mypic-goes-here" src="/images/profile.png" width="100" height="100" >
-              <br><br>
-              
-              <div class="media-body ml-4">
-                <label class="btn btn-outline-primary">
-                  Upload new photo
 
-                  <input type="file" id="mypic-input" class="account-settings-fileinput" accept="image/*"/>
-                </label> &nbsp;
-                
+  <div class="col-md-9">
+    <div class="tab-content">
+      <div class="tab-pane fade active show" id="account-general">
 
-                <div class="text-light small mt-1">Allowed JPG, GIF or PNG. Max size of 800K</div>
-              </div>
-            </div>
-            <hr class="border-light m-0">
-            <fieldset class="mb-3" id="personalInfoFields" disabled>
-            <form>
+        <div class="card-body media align-items-center">
+          <img id="mypic-goes-here" src="/images/profile.png" width="100" height="100">
+          <br><br>
 
-              
+          <div class="media-body ml-4">
+            <label class="btn btn-outline-primary">
+              Upload new photo
+
+              <input type="file" id="mypic-input" class="account-settings-fileinput" accept="image/*" />
+            </label> &nbsp;
+            <button type="button" class="btn btn-primary" onclick="saveUserImage()">Save </button>
+
+
+
+
+            <div class="text-light small mt-1">Allowed JPG, GIF or PNG. Max size of 800K</div>
+          </div>
+        </div>
+        <hr class="border-light m-0">
+        <fieldset class="mb-3" id="personalInfoFields" disabled>
+          <form>
+
+
 
             <div class="card-body">
               <div class="form-group">
                 <label class="form-label">Username</label>
-                <input id="userNameInput" type="text"   class="form-control mb-1" placeholder="enter username">
+                <input id="userNameInput" type="text" class="form-control mb-1" placeholder="enter username">
               </div>
               <!-- <div class="form-group">
                 <label class="form-label">Name</label>
@@ -71,7 +78,7 @@
               </div> -->
               <div class="form-group">
                 <label class="form-label">E-mail</label>
-                <input  id= "emailInput" type="text" class="form-control mb-1" placeholder="enter email">
+                <input id="emailInput" type="text" class="form-control mb-1" placeholder="enter email">
                 <!-- <div class="alert alert-warning mt-3">
                   Your email is not confirmed. Please check your inbox.<br>
                   <a href="javascript:void(0)">Resend confirmation</a>
@@ -79,39 +86,45 @@
               </div>
               <div class="form-group">
                 <label class="form-label">Location</label>
-                <input  id= "locationInput" type="text" class="form-control" placeholder="enter location">
+                <input id="locationInput" type="text" class="form-control" placeholder="enter location">
               </div> <br>
-            </fieldset>
+        </fieldset>
+       
 
-              <button type="button" class="btn btn-primary"  onclick="saveUserInfo()"  >Save Profile</button>
-          <button type="button" class="btn btn-light" onclick="editUserInfo()" >Edit profile </button>
-          <div class="form-group">
-            <br>
-            <label class="d-block text-danger">Delete Account</label>
-            <p class="text-muted font-size-sm">Once you delete your account, there is no going back. Please be certain.</p>
-          </div>
-          <button class="btn btn-danger" type="button">Delete Account</button> 
-            </div>
+        &nbsp; &nbsp; <button type="button" class="btn btn-primary" onclick="saveUserInfo()">Save Profile</button>&nbsp;
+        <button type="button" class="btn btn-light" onclick="editUserInfo()">Edit profile </button>
+        <div class="form-group" style="margin-left: 20px;">
+          <br> 
+          <label class="d-block text-danger">Delete Account</label>
+          <p class="text-muted font-size-sm">Once you delete your account, there is no going back. Please be certain.
+          </p>
+        </div>
+        <button class="btn btn-danger" type="button" style="margin-left: 20px;">Delete Account</button>
+      </div>
 
-          </div>
-        </form>
+    </div>
+    </form>
 
-          <footer class="navbar justify-content-evenly bg-danger fixed-bottom">
-            <div class="container py-3">
-              <a href="documents.html"  class="footertags"><span class="material-symbols-outlined" >perm_media</span><br/>Docs</a>
-              <a href="plan.html"  class="footertags"><span class="material-symbols-outlined">task_alt</span> <br/>Emergency Plan</a>
-              <a href="choose.html"  class="footertags"><span class="material-symbols-outlined">medical_services</span> <br/>E-kit</a>
-            </div>
-          </footer>
+    <footer class="navbar justify-content-evenly bg-danger fixed-bottom">
+      <div class="container py-3">
+        <a href="documents.html" class="footertags"><span
+            class="material-symbols-outlined">perm_media</span><br />Docs</a>
+        <a href="plan.html" class="footertags"><span class="material-symbols-outlined">task_alt</span> <br />Emergency
+          Plan</a>
+        <a href="choose.html" class="footertags"><span class="material-symbols-outlined">medical_services</span>
+          <br />E-kit</a>
+      </div>
+    </footer>
 
-          <br>
-          <br><br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <script src="./scripts/firebaseAPI.js"></script>
-          <script src="./scripts/profile.js"></script>
+    <br>
+    <br><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <script src="./scripts/firebaseAPI.js"></script>
+    <script src="./scripts/profile.js"></script>
 
 </body>
+
 </html>
