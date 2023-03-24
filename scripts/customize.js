@@ -14,7 +14,7 @@ function submitCustomize() {
                 selectType: selectType,
             }).then(() => {
                 console.log("customizedkit on DB created");
-                // window.location.href = "emergencyKit.html";
+                window.location.href = "emergencyKit.html";
             }).catch((error) => {
                 console.error("Error creating customizedkit on DB:", error);
             });

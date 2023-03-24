@@ -1,13 +1,28 @@
-//scratch checkboxes if checked
-function scratchechboxes() {
-    if (document.querySelectorAll('input[name="selectType"]').checked == true) {
+var currentUser;
 
-    } else {
+function readcustomizeKit() {
+    firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+           var customizeKitDoc =  db.collection("customizeKit").doc(user.uid)
+          
 
-    }
-};
+            customizeKitDoc.get()
+            .then(userDoc => {
+                var peopleNum = userDoc.data().selectPeoNum;
+               
+                document.getElementById("selectPeoNum-goes-here").innerText = peopleNum ;
+              })
+        } else {
+            // No user is signed in.
+            console.log("No user is signed in");
+        }
+    });
+}
 
-scratchechboxes();
+readcustomizeKit();        //calling the function
+
+
+
 
 
 //savebtn to save checkboxes to database
@@ -58,7 +73,7 @@ function saveCheckboxes() {
                 checkboxC31: checkboxC[31],
             }).then(() => {
                 console.log("clasicKitCheckboxes on DB created");
-                // window.location.href = "emergencyKit.html";
+                window.location.href = "emergencyKit.html";
             }).catch((error) => {
                 console.error("Error creating clasicKitCheckboxes on DB:", error);
             });
