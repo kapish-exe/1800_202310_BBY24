@@ -176,5 +176,7 @@ img {
 #activateonsavepost{
     display: none;
     z-index: 50;
-    position: relative;
+    position: relative; 
+    justify-content: center;
+    margin-top: 3em;
 }

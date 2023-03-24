@@ -25,7 +25,7 @@ function listenDocumentSelect() {
     fileInput.addEventListener('change', function (e) {
         ImageFile = e.target.files[0];   //Global variable
         var blob = URL.createObjectURL(ImageFile);
-        newdiv.sr = blob;
+        document.getElementById("doc-goes-here").src = blob;
     });
 } listenDocumentSelect();
 
@@ -90,6 +90,7 @@ function uploadPic(postDocID) {
 var imagediv = document.getElementById("document-grid");
 var imageheadlline =  document.getElementById("document-headline");
 var button =  document.getElementById("file-upload");
+var savebutton = document.getElementById("upload-choose-filee");
 
 button.addEventListener("click", ()=>{
     imagediv.style.display = "none";
@@ -97,6 +98,12 @@ button.addEventListener("click", ()=>{
 
     newdiv.style.display = "flex"
     console.log("Sum")
-    
+})
+
+savebutton.addEventListener("click", () => {
+    imagediv.style.display = "flex";
+    imageheadlline.style.display = "";
+
+    newdiv.style.display = "none";
 
 })
