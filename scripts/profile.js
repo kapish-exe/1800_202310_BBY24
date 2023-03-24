@@ -70,7 +70,7 @@ function chooseFileListener() {
     //when this file changes, do something
     fileInput.addEventListener('change', function (e) {
 
-        //the change event returns a file "e.target.files[0]"
+        //the change event returns a file "e.target.files[0]"=
         ImageFile = e.target.files[0];
         var blob = URL.createObjectURL(ImageFile);
 
@@ -127,9 +127,9 @@ function saveUserInfo() {
         bio: description,
         location: userLocation
     })
-    .then(() => {
-        console.log("Document successfully updated!");
-    })
+        .then(() => {
+            console.log("Document successfully updated!");
+        })
 
     //c) disable edit 
     document.getElementById('personalInfoFields').disabled = true;
@@ -145,7 +145,7 @@ function saveUserInfo() {
 //   deleteButton.addEventListener('click', () => {
 //     // Display a confirmation message using the built-in "confirm" function
 //     const confirmed = confirm('Are you sure you want to delete this?');
-    
+
 //     // Check if the user clicked "OK" in the confirmation message
 //     if (confirmed) {
 //       // User confirmed, delete the item here
@@ -161,36 +161,36 @@ function saveUserInfo() {
 
 
 
-        //-------------------------------------------------
-        // This function asks user to confirm deletion:
-        // 1. remove document from users collection in firestore
-        // 2. THEN, remove auth() user from Firebase auth
-        //-------------------------------------------------
-        function deleteUser() {
-            firebase.auth().onAuthStateChanged(user => {
+//-------------------------------------------------
+// This function asks user to confirm deletion:
+// 1. remove document from users collection in firestore
+// 2. THEN, remove auth() user from Firebase auth
+//-------------------------------------------------
+function deleteUser() {
+    firebase.auth().onAuthStateChanged(user => {
 
-                    // Double check! Usability Heuristics #5
-                    var result = confirm("WARNING " + user.displayName + 
-                    ": Deleting your User Account!!");
+        // Double check! Usability Heuristics #5
+        var result = confirm("WARNING " + user.displayName +
+            ": Deleting your User Account!!");
 
-                    // If confirmed, then go ahead
-                    if (result) {
-                        // First, delete from Firestore users collection 
-                        db.collection("users").doc(user.uid).delete()
-                            .then(() => {
-                                console.log("Deleted from Firestore Collection");
+        // If confirmed, then go ahead
+        if (result) {
+            // First, delete from Firestore users collection 
+            db.collection("users").doc(user.uid).delete()
+                .then(() => {
+                    console.log("Deleted from Firestore Collection");
 
-                                // Next, delete from Firebase Auth
-                                user.delete().then(() => {
-                                    console.log("Deleted from Firebase Auth.");
-                                    alert("user has been deleted");
-                                    window.location.href = "index.html";
-                                }).catch((error) => {
-                                    console.log("Error deleting from Firebase Auth " + error);
-                                });
-                            }).catch((error) => {
-                                console.error("Error deleting user: ", error);
-                            });
-                    }
-            })
+                    // Next, delete from Firebase Auth
+                    user.delete().then(() => {
+                        console.log("Deleted from Firebase Auth.");
+                        alert("user has been deleted");
+                        window.location.href = "index.html";
+                    }).catch((error) => {
+                        console.log("Error deleting from Firebase Auth " + error);
+                    });
+                }).catch((error) => {
+                    console.error("Error deleting user: ", error);
+                });
         }
+    })
+}
