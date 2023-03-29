@@ -77,11 +77,11 @@
               
 
 
-              <p class="mb-2"><span class="h3 me-2">Household members</span><span class="badge bg-danger">Unsave</span>
+              <p class="mb-2"><span class="h3 me-2">Household members</span><button class="badge bg-danger form-expander">+</button>
               </p>
 
 
-              <form>
+              <form class="expandable-form" id ="householdMembersForm">
                 <div class="form-group">
                   <label for="formGroupExampleInput">Name</label>
                   <input type="text "class="form-control" id="householdMemberName" placeholder="name..">
@@ -97,12 +97,15 @@
                 <a href="#" class="btn btn-danger" role="button" data-bs-toggle="button">Add person</a>
                 <div class="divider d-flex align-items-center my-4"></div>
                 
+               </form> 
 
-              <p class="mb-2"><span class="h3 me-2">Safe Meeting Points</span><span class="badge bg-danger">Unsave</span>
+
+
+
+              <p class="mb-2"><span class="h3 me-2">Safe Meeting Points</span><button class="badge bg-danger form-expander">+</button>
               </p>
 
-
-              <form>
+              <form class="expandable-form" id="safeMeetingPointsForm">
                 <div class="form-group">
                   <label for="formGroupExampleInput">Near your home</label>
                   <textarea class="form-control" id="nearMeetingPoint" placeholder="Somewhere nearby.."></textarea>
@@ -111,15 +114,17 @@
                   <label for="formGroupExampleInput2">Outside your neighbourhood</label>
                   <textarea class="form-control" id="farMeetingPoint" rows="2" placeholder = "Somewhere far.."></textarea>
                 </div>
-
                 <div class="divider d-flex align-items-center my-4"></div>
+              </form>
+
+                
 
 
-              <p class="mb-2"><span class="h3 me-2">Evacuation Route</span><span class="badge bg-danger">Unsave</span>
+              <p class="mb-2"><span class="h3 me-2">Evacuation Route</span><button class="badge bg-danger form-expander">+</button>
               </p>
 
 
-              <form>
+              <form class="expandable-form" id="evacRouteForm">
                 <div class="form-group">
                   <label for="formGroupExampleInput">Favoured Route</label>
                   <textarea class="form-control" id="evacRoute" placeholder="evacuation route.."></textarea>
@@ -128,28 +133,27 @@
                   <label for="formGroupExampleInput2">Alternative Route</label>
                   <textarea class="form-control" id="altEvacRoute" rows="2" placeholder = "secondary route.."></textarea>
                 </div>
-
                 <div class="divider d-flex align-items-center my-4"></div>
+              </form>
+                
+              
 
+              <p class="mb-2"><span class="h3 me-2">Emergency Kit</span><button class="badge bg-danger form-expander">+</button></p>
 
-                <p class="mb-2"><span class="h3 me-2">Emergency Kit</span><span class="badge bg-danger">Unsave</span>
-                </p>
-  
-  
-                <form>
+              <form class="expandable-form" id="eKitForm">
                   <div class="form-group">
                     <label for="formGroupExampleInput">Location</label>
                     <textarea class="form-control" id="eKitLocation" placeholder="My emergency kit is kept..."></textarea>
                   </div>
  
 
-                
+                <div class="divider d-flex align-items-center my-4"></div>
               </form>
 
               <br>
 
 
-              <div class="divider d-flex align-items-center my-4"></div>
+              
 
               <button type="button" class="btn btn-outline-danger">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -184,7 +188,7 @@
     <div class="container py-3">
       <a href="documents.html"><span class="material-symbols-outlined">perm_media</span><br/>Docs</a>
       <a href="plan.html"><span class="material-symbols-outlined">task_alt</span> <br/>Emergency Plan</a>
-      <a href="choose.html"><span class="material-symbols-outlined">medical_services</span> <br/>E-kit</a>
+      <a href="emergencyKit.html"><span class="material-symbols-outlined">medical_services</span> <br/>E-kit</a>
     </div>
   </footer>
 
