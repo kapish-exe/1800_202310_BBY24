@@ -17,7 +17,7 @@ function openCamera() {
 
 
 var ImageFile;
-var newdiv =  document.getElementById("activateonsavepost");
+var newdiv = document.getElementById("activateonsavepost");
 function listenDocumentSelect() {
     var fileInput = document.getElementById("file-upload"); // pointer #1
 
@@ -78,6 +78,15 @@ function uploadPic(postDocID) {
                         "image": url, // Save the URL into users collection
                     }).then(() => {
                         console.log("Added the picture to firestore")
+                    }).then(() => {
+                        console.log("reading the image")
+                        var imagecontainer = document.createElement("div");
+                        var image = document.createElement("img");
+                        image.src = url;
+                        imagecontainer.appendChild(image)
+                        imagediv.insertBefore(imagecontainer, imagediv.firstChild)
+                        console.log("done reading it")
+
                     })
                 }).catch(function (error) {
                     console.log("Error getting download URL. " + error);
@@ -88,11 +97,11 @@ function uploadPic(postDocID) {
 //hiding the image div after the user has clickewd in the upload post
 
 var imagediv = document.getElementById("document-grid");
-var imageheadlline =  document.getElementById("document-headline");
-var button =  document.getElementById("file-upload");
+var imageheadlline = document.getElementById("document-headline");
+var button = document.getElementById("file-upload");
 var savebutton = document.getElementById("upload-choose-filee");
 
-button.addEventListener("click", ()=>{
+button.addEventListener("click", () => {
     imagediv.style.display = "none";
     imageheadlline.style.display = "none";
 
@@ -107,3 +116,66 @@ savebutton.addEventListener("click", () => {
     newdiv.style.display = "none";
 
 })
+
+// const database = firebase.database().ref();
+
+function showdocs() {
+    firebase.auth().onAuthStateChanged(user => {
+        console.log("user is: " + user.uid);
+        db.collection("userDocs").doc(user.uid)
+            .get()
+            .then(doc => {
+                myposts = doc.data().userDocuments; //get array of my posts
+                console.log(myposts);
+                // for (let i = 0; i <= myposts.length; i++) {
+                //     var showimage = db.collection("documentsAll")
+                //         .doc(myposts[i]).FieldValue(image).get().then(doc => {
+                //             // console.log(doc);
+                //             console.log(showimage)
+                            // var imagecontainer = document.createElement("div");
+                            // var image = document.createElement("img");
+                            // image.src = showimage;
+                            // imagecontainer.appendChild(image)
+                            // imagediv.insertBefore(imagecontainer, imagediv.firstChild)
+
+                //         })
+
+                // }
+                myposts.forEach(item => {
+                    console.log(item)
+                    db.collection("documentsAll")
+                        .doc(item)
+                        .get()
+                        .then(doc => {
+                            imageurl = doc.data().image;
+                            var imagecontainer = document.createElement("div");
+                            var image = document.createElement("img");
+                            console.log(imageurl)
+                            image.src = imageurl;
+                            imagecontainer.appendChild(image)
+                            imagediv.insertBefore(imagecontainer, imagediv.firstChild)
+
+                            // displayMyPostCard(doc);
+                        })
+                })
+            })
+    })
+}
+showdocs();
+
+
+
+function displayMyPostCard(doc) {
+    var title = doc.data().name; // get value of the "name" key
+    var desc = doc.data().description; //gets the length field
+    var image = doc.data().image; //the field that contains the URL 
+
+    //clone the new card
+    let newcard = document.getElementById("postCardTemplate").content.cloneNode(true);
+    //populate with title, image
+    newcard.querySelector('.card-title').innerHTML = title;
+    newcard.querySelector('.card-image').src = image;
+    newcard.querySelector('.card-description').innerHTML = desc;
+    //append to the posts
+    document.getElementById("myposts-go-here").append(newcard);
+}
