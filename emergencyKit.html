@@ -57,7 +57,7 @@
       <h3 class="mainname">Emergency Kit</h3>
       <small class="text-muted">72 hr</small>
     </div>
-    <div class="d-flex justify-content-end">
+    <!-- <div class="d-flex justify-content-end">
       <a href="#" class="text-success m-3">
         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="currentColor" class="bi bi-share"
           viewBox="0 0 16 16">
@@ -65,7 +65,7 @@
             d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z" />
         </svg>
       </a>
-    </div>
+    </div> -->
   </div>
 
   <section class="vh-100">
@@ -75,11 +75,14 @@
           <div class="card rounded-3">
             <div class="card-body p-4">
 
-              <h3 class="mention"><span id="kitType-goes-here">Class kit</span> for <span id="selectPeoNum-goes-here"></span> people</h3>
+              <h3 class="mention"><span id="kitType-goes-here">Class kit</span> for <span
+                  id="selectPeoNum-goes-here"></span> people</h3>
 
               <div class="divider d-flex align-items-center my-4"></div>
 
-              <p class="mb-2"><span class="h3 me-2">Food & WATER</span> <span class="badge bg-success">Saved</span>
+              <p class="mb-2"><span class="h3 me-2">Food & WATER</span> <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                
+              </button>
               </p>
               <p class="text-muted pb-2">At least 14 servings (3600 Calorie)</p>
               <ul class="list-group rounded-0">
@@ -157,49 +160,50 @@
                   <input id="c17" class="form-check-input me-3" type="checkbox" aria-label="..." />
                   Plastic Carry Case (7" x 5 1/2" x 2 1/2")
                 </li>
+                <input id="">
               </ul><br>
 
-              <p class="mb-2"><span class="h3 me-2">Tools</span><span class="badge bg-success">Saved</span>
+              <p class="mb-2"><span class="h3 me-2">Tools</span><span class="badge bg-success">S</span>
               </p>
               <p class="text-muted pb-2">For lightinh, comunication, search, rescue and sanitation.</p>
               <ul class="list-group rounded-0">
-                <li  class="list-group-item border-0 d-flex align-items-center ps-0">
+                <li class="list-group-item border-0 d-flex align-items-center ps-0">
                   <input id="c18" class="form-check-input me-3" type="checkbox" aria-label="..." />
                   Clear Reclosable Bags (10" x 13") * 2
                 </li>
-                <li  class="list-group-item border-0 d-flex align-items-center ps-0">
+                <li class="list-group-item border-0 d-flex align-items-center ps-0">
                   <input id="c19" class="form-check-input me-3" type="checkbox" aria-label="..." />
                   Tissue Pack
                 </li>
-                <li  class="list-group-item border-0 d-flex align-items-center ps-0">
+                <li class="list-group-item border-0 d-flex align-items-center ps-0">
                   <input id="c20" class="form-check-input me-3" type="checkbox" aria-label="..." />
                   Waterproof Matches
                 </li>
-                <li  class="list-group-item border-0 d-flex align-items-center ps-0">
+                <li class="list-group-item border-0 d-flex align-items-center ps-0">
                   <input id="c21" class="form-check-input me-3" type="checkbox" aria-label="..." />
                   Emergency Candles * 3
                 </li>
-                <li  class="list-group-item border-0 d-flex align-items-center ps-0">
+                <li class="list-group-item border-0 d-flex align-items-center ps-0">
                   <input id="c22" class="form-check-input me-3" type="checkbox" aria-label="..." />
                   Hand-Crank Powered Light, AM/FM Radio and USB Device Charger</s>
                 </li>
-                <li  class="list-group-item border-0 d-flex align-items-center ps-0">
-                  <input  id="c23" class="form-check-input me-3" type="checkbox" aria-label="..." />
+                <li class="list-group-item border-0 d-flex align-items-center ps-0">
+                  <input id="c23" class="form-check-input me-3" type="checkbox" aria-label="..." />
                   50ft Nylon Utility Cord
                 </li>
-                <li  class="list-group-item border-0 d-flex align-items-center ps-0">
+                <li class="list-group-item border-0 d-flex align-items-center ps-0">
                   <input id="c24" class="form-check-input me-3" type="checkbox" aria-label="..." />
                   Multi-Function Army Knife
                 </li>
-                <li  class="list-group-item border-0 d-flex align-items-center ps-0">
+                <li class="list-group-item border-0 d-flex align-items-center ps-0">
                   <input id="c25" class="form-check-input me-3" type="checkbox" aria-label="..." />
                   Leather Palm Work Gloves
                 </li>
-                <li  class="list-group-item border-0 d-flex align-items-center ps-0">
+                <li class="list-group-item border-0 d-flex align-items-center ps-0">
                   <input id="c26" class="form-check-input me-3" type="checkbox" aria-label="..." />
                   Dust Masks
                 </li>
-                <li  class="list-group-item border-0 d-flex align-items-center ps-0">
+                <li class="list-group-item border-0 d-flex align-items-center ps-0">
                   <input id="c27" class="form-check-input me-3" type="checkbox" aria-label="..." />
                   Aluminum Alloy Emergency Whistle
                 </li>
@@ -209,19 +213,19 @@
               </p>
               <p class="text-muted pb-2">Lightweight and warm</p>
               <ul class="list-group rounded-0">
-                <li  class="list-group-item border-0 d-flex align-items-center ps-0">
+                <li class="list-group-item border-0 d-flex align-items-center ps-0">
                   <input id="c28" class="form-check-input me-3" type="checkbox" aria-label="..." />
                   Aluminized Sleeping Bag
                 </li>
-                <li  class="list-group-item border-0 d-flex align-items-center ps-0">
+                <li class="list-group-item border-0 d-flex align-items-center ps-0">
                   <input id="c29" class="form-check-input me-3" type="checkbox" aria-label="..." />
                   Hooded Rain Poncho
                 </li>
-                <li  class="list-group-item border-0 d-flex align-items-center ps-0">
+                <li class="list-group-item border-0 d-flex align-items-center ps-0">
                   <input id="c30" class="form-check-input me-3" type="checkbox" aria-label="..." />
                   Tube Tent
                 </li>
-                <li  class="list-group-item border-0 d-flex align-items-center ps-0">
+                <li class="list-group-item border-0 d-flex align-items-center ps-0">
                   <input id="c31" class="form-check-input me-3" type="checkbox" aria-label="..." />
                   Roll Duct Tape
                 </li>
