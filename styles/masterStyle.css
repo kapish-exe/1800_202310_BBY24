@@ -1,0 +1,23 @@
+#signup-login{
+    width:100%;
+    background-color:  	#F7D65A;
+    height:100vh;
+    padding-top:4vh;
+    padding-left: 4vw;
+    padding-right: 4vw;
+}
+
+
+#splash-logo {
+    height:34vh;
+    margin: auto;
+    display: block;
+    padding-bottom: 4vh;
+
+}
+
+#firebaseui-auth-container > div{
+    border-radius: 14px;
+    max-height:60vh;
+
+}
