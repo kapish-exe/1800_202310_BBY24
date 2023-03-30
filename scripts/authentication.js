@@ -8,14 +8,14 @@ var uiConfig = {
       if (authResult.additionalUserInfo.isNewUser) {         //if new user
         db.collection("users").doc(user.uid).set({         //write to firestore. We are using the UID for the ID in users collection
           username: user.displayName,                    //"users" collection
-          email: user.email, 
-          bio : "Stay safe",                       //with authenticated user's ID (user.uid)
+          email: user.email,
+          bio: "Stay safe",                       //with authenticated user's ID (user.uid)
           location: "Canada",
           //optional default profile info      
 
         }).then(function () {
           console.log("New user added to firestore");
-          // window.location.assign("main.html");       //re-direct to main.html after signup
+          window.location.assign("main.html");       //re-direct to main.html after signup
         }).catch(function (error) {
           console.log("Error adding new user: " + error);
         });
@@ -24,9 +24,53 @@ var uiConfig = {
 
         }).then(function () {
           console.log(" user docs table to firestore");
-          window.location.assign("main.html");       //re-direct to main.html after signup
+          //re-direct to main.html after signup
         }).catch(function (error) {
           console.log("Error adding user docs: " + error);
+        });
+
+        // Create default Emergency Kit for User
+        var emergencyKit = db.collection("emergencyKit").doc(user.uid);
+        var items = emergencyKit.collection("items");
+        items.add({
+          code: "c1",
+          name: "water",
+          quantity: "4 gallon"
+        });
+        items.add({
+          code: "c2",
+          name: "Water Purification Tablets",
+          quantity: "10 tablets"
+        });
+        items.add({
+          code: "c3",
+          name: "Cereals",
+          quantity: "3 servings"
+        });
+        items.add({
+          code: "c4",
+          name: "Canned foods, specifically canned fruits and vegetables",
+          quantity: "10 servings"
+        });
+        items.add({
+          code: "c5",
+          name: "Protein bars",
+          quantity: "3 bars"
+        });
+        items.add({
+          code: "c6",
+          name: "Juice",
+          quantity: "3 servings"
+        });
+        items.add({
+          code: "c7",
+          name: "Freeze-dried food",
+          quantity: "3 servings"
+        });
+        items.add({
+          code: "c8",
+          name: "Non-perishable food",
+          quantity: "3 servings"
         });
 
       } else {
