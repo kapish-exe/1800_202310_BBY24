@@ -93,6 +93,19 @@ function uploadPic(postDocID) {
                         });
                         imagecontainer.appendChild(deleteButton);
 
+                        imagecontainer.className = "image-container";
+                        imagecontainer.style.position = "relative";
+                        image.style.width = "100%";
+                        deleteButton.style.position = "absolute";
+                        deleteButton.style.top = "0";
+                        deleteButton.style.right = "0";
+                        deleteButton.style.backgroundColor = "rgba(255, 0, 0, 0.7)";
+                        deleteButton.style.border = "none";
+                        deleteButton.style.color = "white";
+                        deleteButton.style.padding = "5px";
+                        deleteButton.style.fontSize = "12px";
+                        deleteButton.style.cursor = "pointer";
+
                         // imagediv.insertBefore(imagecontainer, imagediv.firstChild);
 
 
@@ -159,6 +172,20 @@ function showdocs() {
                                 deleteImage(item);
                                 imagecontainer.remove();
                             });
+
+                            imagecontainer.className = "image-container";
+                            imagecontainer.style.position = "relative";
+                            image.style.width = "100%";
+                            deleteButton.style.position = "absolute";
+                            deleteButton.style.top = "0";
+                            deleteButton.style.right = "0";
+                            deleteButton.style.backgroundColor = "rgba(255, 0, 0, 0.7)";
+                            deleteButton.style.border = "none";
+                            deleteButton.style.color = "white";
+                            deleteButton.style.padding = "5px";
+                            deleteButton.style.fontSize = "12px";
+                            deleteButton.style.cursor = "pointer";
+
                             imagecontainer.appendChild(deleteButton);
 
                             imagediv.insertBefore(imagecontainer, imagediv.firstChild);
@@ -187,14 +214,14 @@ function deleteImage(itemId) {
                 })
             deleteuserdoc = db.collection("userDocs").doc(user.uid)
             deleteuserdoc.update({
-                "userDocuments" : firebase.firestore.FieldValue.arrayRemove(itemId)
+                "userDocuments": firebase.firestore.FieldValue.arrayRemove(itemId)
             })
             var storageRef = storage.ref("documents/" + itemId + ".jpg");
-            storageRef.delete().then(() =>{
+            storageRef.delete().then(() => {
                 console.log("deleted from the storage too")
             })
 
-           
+
         }
     })
 } showdocs();
