@@ -132,3 +132,11 @@ body#page3 {
 .expandable-form {
     display:none;
 }
+
+.mainname{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 35px;
+   
+
+}
