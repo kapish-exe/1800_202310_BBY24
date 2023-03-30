@@ -189,10 +189,12 @@ function deleteImage(itemId) {
             deleteuserdoc.update({
                 "userDocuments" : firebase.firestore.FieldValue.arrayRemove(itemId)
             })
-            
-                // .catch(error => {
-                //     console.error("Error removing document: ", error);
-                // });
+            var storageRef = storage.ref("documents/" + itemId + ".jpg");
+            storageRef.delete().then(() =>{
+                console.log("deleted from the storage too")
+            })
+
+           
         }
     })
 } showdocs();
