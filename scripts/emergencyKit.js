@@ -24,6 +24,16 @@ function clearCustomize() {
     console.log("checkboxes all clear");
 }
 
+//expend the categories
+const formExpanders = document.querySelectorAll('.form-expander');
+formExpanders.forEach(expander => {
+  expander.addEventListener('click', () => {
+    const nextFormElement = expander.parentNode.nextElementSibling;
+    nextFormElement.style.display = nextFormElement.style.display === 'block' ? 'none' : 'block';
+    expander.textContent = expander.textContent === '-' ? '+' : '-';
+  });
+});
+
 
 //savebtn to save checkboxes to database
 // function saveCheckboxes() {
