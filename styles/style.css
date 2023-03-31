@@ -93,6 +93,8 @@ figcaption {
     justify-content: center;
     overflow: scroll;
     height: 440px;
+    background-color: #f8f8f8;
+  padding: 20px;
 }
 
 
@@ -179,4 +181,12 @@ img {
     position: relative; 
     justify-content: center;
     margin-top: 3em;
+}
+
+#yourdocuments{
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #333;
 }

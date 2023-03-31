@@ -95,6 +95,7 @@ function uploadPic(postDocID) {
 
                         imagecontainer.className = "image-container";
                         imagecontainer.style.position = "relative";
+                        // imagecontainer.style.
                         image.style.width = "100%";
                         deleteButton.style.position = "absolute";
                         deleteButton.style.top = "0";
@@ -175,6 +176,8 @@ function showdocs() {
 
                             imagecontainer.className = "image-container";
                             imagecontainer.style.position = "relative";
+                            // imagediv.style.border = "none";`
+                            // imagediv.style.boxShadow = "rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px";
                             image.style.width = "100%";
                             deleteButton.style.position = "absolute";
                             deleteButton.style.top = "0";
