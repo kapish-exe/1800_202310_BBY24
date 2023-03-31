@@ -1,0 +1,100 @@
+#signup-login{
+    width:100%;
+    background-color:  	#F7D65A;
+    height:100vh;
+    padding-top:4vh;
+    padding-left: 4vw;
+    padding-right: 4vw;
+}
+
+body{
+    background-color:  	#F7D65A;
+    padding:3vw;
+    font-family: "Slackey", sans-serif;
+}
+
+h1{
+    font-family: "Slackey", sans-serif;
+    color: black;
+}
+
+.container{
+    -webkit-clip-path: polygon(10% 0, 90% 0, 100% 5%, 100% 95%, 90% 100%, 10% 100%, 0 95%, 0 5%);
+    clip-path: polygon(5% 0, 95% 0, 100% 10%, 100% 90%, 95% 100%, 5% 100%, 0 90%, 0 10%);
+    padding: 4vw;
+
+    
+}
+
+.container  * {
+    margin-bottom: 20px;
+}
+
+#bee-anim{
+    height:8vw;
+    width: 8vw;
+}
+
+#splash-logo {
+    height:34vh;
+    margin: auto;
+    display: block;
+    padding-bottom: 4vh;
+}
+
+#setup-logo {
+    padding-top:2vh;
+    height:20vh;
+    margin: auto;
+    display: block;
+    padding-bottom: 2vh;
+}
+
+#firebaseui-auth-container > div{
+    border-radius: 14px;
+    max-height:60vh;
+
+}
+
+
+
+
+/* TO-DO elements must be given id/class names */
+a{
+    margin: auto;
+    color: black;
+    text-decoration: none;
+    display: flex;
+}
+
+a > h5 {
+    padding-left: 2vw;
+    padding-right: 2vw;
+    margin:auto;
+} 
+
+
+a > img {
+
+    margin: auto;
+    padding:0px;
+    -webkit-filter: drop-shadow(2px 2px 4px #444);
+    filter: drop-shadow(1px 1px  2px #999);
+    height: 60px;
+    width: 60px;
+    background-color: inherit;
+    
+}
+
+
+.member-card {
+    background-color: #d2e7e7;
+    border-radius: 10px;
+    min-height: 40px;
+    padding:10px;
+
+}
+
+
+
+

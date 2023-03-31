@@ -15,7 +15,7 @@ var uiConfig = {
 
         }).then(function () {
           console.log("New user added to firestore");
-          window.location.assign("main.html");       //re-direct to main.html after signup
+          window.location.assign("setup.html");       //re-direct to setup.html after signup
         }).catch(function (error) {
           console.log("Error adding new user: " + error);
         });
@@ -24,10 +24,18 @@ var uiConfig = {
 
         }).then(function () {
           console.log(" user docs table to firestore");
-          //re-direct to main.html after signup
+          
         }).catch(function (error) {
           console.log("Error adding user docs: " + error);
         });
+
+        //Create Household initally with one member
+        var household = db.collection("household").doc(user.uid);
+        var member = household.collection("member");
+        member.add({
+          name: user.displayName
+        })
+
 
         // Create default Emergency Kit for User
         var emergencyKit = db.collection("emergencyKit").doc(user.uid);
