@@ -18,12 +18,13 @@
 //expend the categories
 const formExpanders = document.querySelectorAll('.form-expander');
 formExpanders.forEach(expander => {
-  expander.addEventListener('click', () => {
-    const nextFormElement = expander.parentNode.nextElementSibling;
-    nextFormElement.style.display = nextFormElement.style.display === 'block' ? 'none' : 'block';
-    expander.textContent = expander.textContent === '-' ? '+' : '-';
-  });
+    expander.addEventListener('click', () => {
+        const nextFormElement = expander.parentNode.nextElementSibling;
+        nextFormElement.style.display = nextFormElement.style.display === 'block' ? 'none' : 'block';
+        expander.textContent = expander.textContent === '-' ? '+' : '-';
+    });
 });
+
 
 //clearbtn to clear everything
 function clearCustomize() {
@@ -90,18 +91,20 @@ function updateDB() {
             db.collection("emergKit").doc(user.uid)
                 .set({
                     [checkboxName]: {
-                        value: checkboxValue,
+                        name: checkboxValue,
                         checked: isChecked,
                     },
                 }, { merge: true })
                 .then(() => {
-                   console.log("emergKit setting done");
+                    console.log("emergKit setting done");
                 })
         } else {
             console.log("error");
         }
     })
 }
+
+//checked status to DB
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
         db.collection("emergeKit").doc(user.uid).onSnapshot((doc) => {
@@ -118,6 +121,59 @@ firebase.auth().onAuthStateChanged(user => {
         })
     }
 })
+
+//read new item from DB then show on HTML
+firebase.auth().onAuthStateChanged(user => {
+    if (user) {
+        db.collection("emergKit").doc(user.uid).onSnapshot((doc) => {
+            if (doc.exists) {
+                const data = doc.data();
+                const itemList = document.getElementById("itemList");
+                itemList.innerHTML = " "; // clear previous items
+                for (const itemName in data) {
+                    if (itemName !== "emergKitTitle") {
+                        const itemData = data[itemName];
+                        const itemHtml = `
+                <li class="list-group-item border-0 d-flex align-items-center ps-0">
+                  <input id="${itemName}" class="form-check-input me-3" type="checkbox" aria-label="..." ${itemData.checked ? "checked" : ""}>
+                  ${itemData.name}
+                </li>
+              `;
+                        itemList.innerHTML += itemHtml;
+                    }
+                }
+            } else {
+                console.log("error");
+            }
+        })
+    }
+})
+
+
+
+//additem btn to DB
+function addItem() {
+    const itemName = document.getElementById("itemName").value;
+    const itemData = {
+        name: itemName,
+        checked: false
+    };
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+            db.collection("emergKit").doc(user.uid)
+                .set({
+                    [itemName]: itemData
+                }, { merge: true })
+                .then(() => {
+                    console.log(`${itemName} added to emergKit`);
+                })
+        } else {
+            console.log("error");
+        }
+    })
+}
+
+
 
 
 
