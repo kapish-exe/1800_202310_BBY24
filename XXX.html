@@ -83,110 +83,126 @@
               <p class="mb-2"><span class="h3 me-2">Food & WATER</span><button
                   class="badge bg-danger form-expander">+</button></p>
               <form class="expandable-form">
-                <p class="text-muted pb-2">At least 14 servings (3600 Calorie)</p>
-                <ul class="list-group rounded-0">
-                  <li class="list-group-item border-0 d-flex align-items-center ps-0">
-                    <div class="d-flex align-items-center w-100 justify-content-between">
-                      <div>
-                        <input id="checkbox1" name="checkbox1" value="Water" class="form-check-input me-3" type="checkbox" aria-label="..." checked />
-                        <label for="checkbox1">Water</label>
+
+                  <p class="text-muted pb-2">At least 14 servings (3600 Calorie)</p>
+                  <div id="itemList">
+                  <ul class="list-group rounded-0">
+                    <li id="item1" class="list-group-item border-0 d-flex align-items-center ps-0">
+                      <div class="d-flex align-items-center w-100 justify-content-between">
+                        <div>
+                          <input id="checkbox1" name="checkbox1" value="Water" class="form-check-input me-3"
+                            type="checkbox" aria-label="..." checked />
+                          <label for="checkbox1">Water</label>
+                        </div>
+                        <div class="input-group" style="width: 130px;">
+                          <input class="form-control" value="4 gallon">
+                        </div>
+                        <button class="delete-btn">X</button>
                       </div>
-                      <div class="input-group" style="width: 130px;">
-                        <input class="form-control" value="4 gallon">
+                    </li>
+                    <li class="list-group-item border-0 d-flex align-items-center ps-0">
+                      <div class="d-flex align-items-center w-100 justify-content-between">
+                        <div>
+                          <input id="checkbox2" name="checkbox2" value="Water Purification Tablets"
+                            class="form-check-input me-3" type="checkbox" aria-label="..." checked />
+                          <label for="checkbox2">Water Purification Tablets</label>
+                        </div>
+                        <div class="input-group" style="width: 130px;">
+                          <input class="form-control" value="12 Tablets">
+                        </div>
+                        <button class="delete-btn">X</button>
                       </div>
-                      <button class="delete-btn">X</button>
-                    </div>
-                  </li>
-                  <li class="list-group-item border-0 d-flex align-items-center ps-0">
-                    <div class="d-flex align-items-center w-100 justify-content-between">
-                      <div>
-                        <input id="checkbox2" name="checkbox2" value="Water Purification Tablets" class="form-check-input me-3" type="checkbox" aria-label="..." checked />
-                        <label for="checkbox2">Water Purification Tablets</label>
+                    </li>
+                    <li class="list-group-item border-0 d-flex align-items-center ps-0">
+                      <div class="d-flex align-items-center w-100 justify-content-between">
+                        <div>
+                          <input id="checkbox3" name="checkbox3" value="Cereals" class="form-check-input me-3"
+                            type="checkbox" aria-label="..." checked />
+                          <label for="checkbox3">Cereals</label>
+                        </div>
+                        <div class="input-group" style="width: 130px;">
+                          <input class="form-control" value="3 servings">
+                        </div>
+                        <button class="delete-btn">X</button>
                       </div>
-                      <div class="input-group" style="width: 130px;">
-                        <input class="form-control" value="12 Tablets">
+                    </li>
+                    <li class="list-group-item border-0 d-flex align-items-center ps-0">
+                      <div class="d-flex align-items-center w-100 justify-content-between">
+                        <div>
+                          <input id="checkbox4" name="checkbox4"
+                            value="Canned foods, specifically canned fruits and vegetables"
+                            class="form-check-input me-3" type="checkbox" aria-label="..." checked />
+                          <label for="checkbox4">Canned foods, specifically canned fruits and vegetables</label>
+                        </div>
+                        <div class="input-group" style="width: 130px;">
+                          <input class="form-control" value="3 servings">
+                        </div>
+                        <button class="delete-btn">X</button>
                       </div>
-                      <button class="delete-btn">X</button>
-                    </div>
-                  </li>
-                  <li class="list-group-item border-0 d-flex align-items-center ps-0">
-                    <div class="d-flex align-items-center w-100 justify-content-between">
-                      <div>
-                        <input id="checkbox3" name="checkbox3" value="Cereals" class="form-check-input me-3" type="checkbox" aria-label="..." checked />
-                        <label for="checkbox3">Cereals</label>
+                    </li>
+                    <li class="list-group-item border-0 d-flex align-items-center ps-0">
+                      <div class="d-flex align-items-center w-100 justify-content-between">
+                        <div>
+                          <input id="checkbox5" name="checkbox5" value="Protein bars" class="form-check-input me-3"
+                            type="checkbox" aria-label="..." checked />
+                          <label for="checkbox5">Protein bars</label>
+                        </div>
+                        <div class="input-group" style="width: 130px;">
+                          <input class="form-control" value="5 Pack">
+                        </div>
+                        <button class="delete-btn">X</button>
                       </div>
-                      <div class="input-group" style="width: 130px;">
-                        <input class="form-control" value="3 servings">
+                    </li>
+                    <li class="list-group-item border-0 d-flex align-items-center ps-0">
+                      <div class="d-flex align-items-center w-100 justify-content-between">
+                        <div>
+                          <input id="checkbox6" name="checkbox6" value="Juice" class="form-check-input me-3"
+                            type="checkbox" aria-label="..." checked />
+                          <label for="checkbox6">Juice</label>
+                        </div>
+                        <div class="input-group" style="width: 130px;">
+                          <input class="form-control" value="3 pack">
+                        </div>
+                        <button class="delete-btn">X</button>
                       </div>
-                      <button class="delete-btn">X</button>
-                    </div>
-                  </li>
-                  <li class="list-group-item border-0 d-flex align-items-center ps-0">
-                    <div class="d-flex align-items-center w-100 justify-content-between">
-                      <div>
-                        <input id="checkbox4" name="checkbox4" value="Canned foods, specifically canned fruits and vegetables" class="form-check-input me-3" type="checkbox" aria-label="..." checked />
-                        <label for="checkbox4">Canned foods, specifically canned fruits and vegetables</label>
+                    </li>
+                    <li class="list-group-item border-0 d-flex align-items-center ps-0">
+                      <div class="d-flex align-items-center w-100 justify-content-between">
+                        <div>
+                          <input id="checkbox7" name="checkbox7" value="Freeze-dried food" class="form-check-input me-3"
+                            type="checkbox" aria-label="..." checked />
+                          <label for="checkbox7">Freeze-dried food</label>
+                        </div>
+                        <div class="input-group" style="width: 130px;">
+                          <input class="form-control" value="3 servings">
+                        </div>
+                        <button class="delete-btn">X</button>
                       </div>
-                      <div class="input-group" style="width: 130px;">
-                        <input class="form-control" value="3 servings">
+                    </li>
+                    <li class="list-group-item border-0 d-flex align-items-center ps-0">
+                      <div class="d-flex align-items-center w-100 justify-content-between">
+                        <div>
+                          <input id="checkbox8" name="checkbox8" value="Non-perishable food"
+                            class="form-check-input me-3" type="checkbox" aria-label="..." checked />
+                          <label for="checkbox8">Non-perishable food</label>
+                        </div>
+                        <div class="input-group" style="width: 130px;">
+                          <input class="form-control" value="3 servings">
+                        </div>
+                        <button class="delete-btn">X</button>
                       </div>
-                      <button class="delete-btn">X</button>
-                    </div>
-                  </li>
-                  <li class="list-group-item border-0 d-flex align-items-center ps-0">
-                    <div class="d-flex align-items-center w-100 justify-content-between">
-                      <div>
-                        <input id="checkbox5" name="checkbox5" value="Protein bars" class="form-check-input me-3" type="checkbox" aria-label="..." checked />
-                        <label for="checkbox5">Protein bars</label>
-                      </div>
-                      <div class="input-group" style="width: 130px;">
-                        <input class="form-control" value="5 Pack">
-                      </div>
-                      <button class="delete-btn">X</button>
-                    </div>
-                  </li>
-                  <li class="list-group-item border-0 d-flex align-items-center ps-0">
-                    <div class="d-flex align-items-center w-100 justify-content-between">
-                      <div>
-                        <input id="checkbox6" name="checkbox6" value="Juice" class="form-check-input me-3" type="checkbox" aria-label="..." checked />
-                        <label for="checkbox6">Juice</label>
-                      </div>
-                      <div class="input-group" style="width: 130px;">
-                        <input class="form-control" value="3 pack">
-                      </div>
-                      <button class="delete-btn">X</button>
-                    </div>
-                  </li>
-                  <li class="list-group-item border-0 d-flex align-items-center ps-0">
-                    <div class="d-flex align-items-center w-100 justify-content-between">
-                      <div>
-                        <input id="checkbox7" name="checkbox7" value="Freeze-dried food" class="form-check-input me-3" type="checkbox" aria-label="..." checked />
-                        <label for="checkbox7">Freeze-dried food</label>
-                      </div>
-                      <div class="input-group" style="width: 130px;">
-                        <input class="form-control" value="3 servings">
-                      </div>
-                      <button class="delete-btn">X</button>
-                    </div>
-                  </li>
-                  <li class="list-group-item border-0 d-flex align-items-center ps-0">
-                    <div class="d-flex align-items-center w-100 justify-content-between">
-                      <div>
-                        <input id="checkbox8" name="checkbox8" value="Non-perishable food" class="form-check-input me-3" type="checkbox" aria-label="..." checked />
-                        <label for="checkbox8">Non-perishable food</label>
-                      </div>
-                      <div class="input-group" style="width: 130px;">
-                        <input class="form-control" value="3 servings">
-                      </div>
-                      <button class="delete-btn">X</button>
-                    </div>
-                  </li>
-                </ul>
+                    </li>
+                  </ul>
+                </div>
 
                 <div class="divider d-flex align-items-center my-4"></div>
 
                 <div class="form-group">
                   <label for="formGroupExampleInput">Item</label>
+                  <input type="text" class="form-control" id="itemName" placeholder="input..">
+                </div>
+                <div class="form-group">
+                  <label for="formGroupExampleInput">Quantity</label>
                   <input type="text" class="form-control" id="itemName" placeholder="input..">
                 </div>
                 <br />
@@ -198,11 +214,13 @@
 
               <p class="mb-2"><span class="h3 me-2">FIRST AID</span><button
                   class="badge bg-danger form-expander">+</button></p>
-              <form class="expandable-form">
+              <form class="expandable-form" >
+                
                 <p class="text-muted pb-2"> First Aid Guide </p>
-                <ul class="list-group rounded-0" id="itemList">
-                  
-                  <span id="items-goes-here">testitems</span>
+                <div id="itemList">
+                <ul class="list-group rounded-0">
+
+                  <!-- <span id="items-goes-here">testitems</span> -->
                   <li class="list-group-item border-0 d-flex align-items-center ps-0">
                     <input id="checkbox9" class="form-check-input me-3" type="checkbox" aria-label="..." />
                     Vinyl Glove
@@ -240,12 +258,18 @@
                     Plastic Carry Case (7" x 5 1/2" x 2 1/2")
                   </li>
                 </ul>
+              </div>
+
                 <div class="divider d-flex align-items-center my-4"></div>
 
                 <div class="form-group">
                   <label for="formGroupExampleInput">Item</label>
                   <input type="text " class="form-control" id="itemName" placeholder="input..">
                 </div>
+                <!-- <div class="form-group">
+                  <label for="formGroupExampleInput">Quantity</label>
+                  <input type="text" class="form-control" id="itemName" placeholder="input..">
+                </div> -->
                 <br />
                 <a href="#" class="btn btn-danger" role="button" data-bs-toggle="button" onclick="addItem()">Add
                   item</a>
@@ -256,8 +280,9 @@
 
               <p class="mb-2"><span class="h3 me-2">Tools</span><button class="badge bg-danger form-expander">+</button>
               </p>
-              <form class="expandable-form">
+              <form class="expandable-form" >
                 <p class="text-muted pb-2">For lightinh, comunication, search, rescue and sanitation.</p>
+                <div id="itemList">
                 <ul class="list-group rounded-0">
                   <li class="list-group-item border-0 d-flex align-items-center ps-0">
                     <input id="checkbox18" class="form-check-input me-3" type="checkbox" aria-label="..." />
@@ -300,12 +325,17 @@
                     Aluminum Alloy Emergency Whistle
                   </li>
                 </ul>
+              </div>
 
                 <div class="divider d-flex align-items-center my-4"></div>
 
                 <div class="form-group">
                   <label for="formGroupExampleInput">Item</label>
                   <input type="text " class="form-control" id="itemName" placeholder="input..">
+                </div>
+                <div class="form-group">
+                  <label for="formGroupExampleInput">Quantity</label>
+                  <input type="text" class="form-control" id="itemName" placeholder="input..">
                 </div>
                 <br />
                 <a href="#" class="btn btn-danger" role="button" data-bs-toggle="button" onclick="addItem()">Add
@@ -318,6 +348,7 @@
                   class="badge bg-danger form-expander">+</button></p>
               <form class="expandable-form">
                 <p class="text-muted pb-2">Lightweight and warm</p>
+                <div id="itemList">
                 <ul class="list-group rounded-0">
                   <li class="list-group-item border-0 d-flex align-items-center ps-0">
                     <input id="checkbox28" class="form-check-input me-3" type="checkbox" aria-label="..." />
@@ -334,14 +365,20 @@
                   <li class="list-group-item border-0 d-flex align-items-center ps-0">
                     <input id="checkbox31" class="form-check-input me-3" type="checkbox" aria-label="..." />
                     Roll Duct Tape
+                    
                   </li>
                 </ul>
+              </div>
 
                 <div class="divider d-flex align-items-center my-4"></div>
 
                 <div class="form-group">
                   <label for="formGroupExampleInput">Item</label>
                   <input type="text " class="form-control" id="itemName" placeholder="input..">
+                </div>
+                <div class="form-group">
+                  <label for="formGroupExampleInput">Quantity</label>
+                  <input type="text" class="form-control" id="itemName" placeholder="input..">
                 </div>
                 <br />
                 <a href="#" class="btn btn-danger" role="button" data-bs-toggle="button" onclick="addItem()">Add

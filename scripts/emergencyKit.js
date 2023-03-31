@@ -29,7 +29,7 @@ formExpanders.forEach(expander => {
 //clearbtn to clear everything
 function clearCustomize() {
     for (let i = 1; i <= 31; i++) {
-        document.getElementById(`c${i}`).checked = false;
+        document.getElementById(`checkbox${i}`).checked = false;
     };
     console.log("checkboxes all clear");
 }
@@ -75,11 +75,11 @@ readDefaultKit();
 //list version2
 //build default list(c1~c8) in HTML --> collection "emergeKit"
 const checkbox = [];
-for (var i = 1; i <= 8; i++) {
+for (var i = 1; i <= 31; i++) {
     checkbox[i] = document.getElementById(`checkbox${i}`);
     console.log(checkbox[i]);
 }
-for (var i = 1; i <= 8; i++) {
+for (var i = 1; i <= 31; i++) {
     checkbox[i].addEventListener("change", updateDB);
 }
 function updateDB() {
@@ -110,7 +110,7 @@ firebase.auth().onAuthStateChanged(user => {
         db.collection("emergeKit").doc(user.uid).onSnapshot((doc) => {
             if (doc.exists) {
                 const data = doc.data();
-                for (var i = 1; i <= 8; i++) {
+                for (var i = 1; i <= 31; i++) {
                     if (data.checkbox[i]) {
                         checkbox[i].checked = data.checkbox[i].checked;
                     }
@@ -134,14 +134,23 @@ firebase.auth().onAuthStateChanged(user => {
                     if (itemName !== "emergKitTitle") {
                         const itemData = data[itemName];
                         const itemHtml = `
-                <li class="list-group-item border-0 d-flex align-items-center ps-0">
-                  <input id="${itemName}" class="form-check-input me-3" type="checkbox" aria-label="..." ${itemData.checked ? "checked" : ""}>
-                  ${itemData.name}
-                </li>
-              `;
+                            <li id="${itemName}" class="list-group-item border-0 d-flex align-items-center ps-0">
+                                <div class="d-flex align-items-center w-100 justify-content-between">
+                                    <div>
+                                    <input id="${itemName}" name="${itemName}" value="${itemName}" class="form-check-input me-3" type="checkbox" aria-label="..." />
+                                    <label for="${itemName}">${itemName}</label>
+                                    </div>
+                                    <div class="input-group" style="width: 130px;">
+                                    <input class="form-control" value="3 servings">
+                                    </div>
+                                    <button class="delete-btn" onclick="deleteBtn()">X</button>
+                                </div>
+                            </li>
+                        `;
                         itemList.innerHTML += itemHtml;
                     }
                 }
+
             } else {
                 console.log("error");
             }
@@ -149,6 +158,24 @@ firebase.auth().onAuthStateChanged(user => {
     }
 })
 
+
+// Add event listener to delete button
+// const deleteBtn = itemList.querySelector(`#${itemName} .delete-btn`);
+// deleteBtn.addEventListener("click", () => {
+//     // Delete item from database
+//     db.collection("emergKit").doc(user.uid).update({
+//         [itemName]: firebase.firestore.FieldValue.delete()
+//     });
+// });
+
+function deleteBtn() {
+    for (let i = 1; i <= 31; i++) {
+        document.getElementById(`c${i}`).checked = false;
+        db.collection("emergKit").doc(user.uid).update({
+        [itemName]: firebase.firestore.FieldValue.delete()})
+    };
+    console.log("delete successfully");
+}
 
 
 //additem btn to DB
@@ -172,6 +199,11 @@ function addItem() {
         }
     })
 }
+
+
+
+
+
 
 
 
