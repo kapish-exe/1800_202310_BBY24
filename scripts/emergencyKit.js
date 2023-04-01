@@ -137,7 +137,8 @@ firebase.auth().onAuthStateChanged(user => {
                             <li id="${itemName}" class="list-group-item border-0 d-flex align-items-center ps-0">
                                 <div class="d-flex align-items-center w-100 justify-content-between">
                                     <div>
-                                    <input id="${itemName}" name="${itemName}" value="${itemName}" class="form-check-input me-3" type="checkbox" aria-label="..." />
+                                    <input id="${itemName}" name="${itemName}" value="${itemName}" 
+                                        class="form-check-input me-3" type="checkbox" aria-label="..." />
                                     <label for="${itemName}">${itemName}</label>
                                     </div>
                                     <div class="input-group" style="width: 130px;">
@@ -167,6 +168,7 @@ firebase.auth().onAuthStateChanged(user => {
 //         [itemName]: firebase.firestore.FieldValue.delete()
 //     });
 // });
+
 
 function deleteBtn() {
     for (let i = 1; i <= 31; i++) {
