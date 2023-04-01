@@ -75,7 +75,7 @@
           <div class="card rounded-3">
             <div class="card-body p-4">
 
-              <h3 class="mention">Class Kit for <span id="selectPeoNum-goes-here">2</span> people</h3>
+              <h3 class="mention">Class Kit for <span id="peoNum-goes-here">2</span> people</h3>
 
               <div class="divider d-flex align-items-center my-4"></div>
 
@@ -85,7 +85,10 @@
               <form class="expandable-form">
                 <p class="text-muted pb-2">At least 14 servings (3600 Calorie)</p>
                 <ul class="list-group rounded-0">
-                  <li class="list-group-item border-0 d-flex align-items-center ps-0">
+
+                  <span id="foodAndWater-goes-here"></span>
+
+                  <!-- <li class="list-group-item border-0 d-flex align-items-center ps-0">
                     <div class="d-flex align-items-center w-100 justify-content-between">
                       <div>
                         <input id="checkbox1" name="checkbox1" value="Water" class="form-check-input me-3" type="checkbox" aria-label="..." checked />
@@ -180,7 +183,7 @@
                       </div>
                       <button class="delete-btn">X</button>
                     </div>
-                  </li>
+                  </li> -->
                 </ul>
 
                 <div class="divider d-flex align-items-center my-4"></div>
@@ -206,8 +209,9 @@
                 <p class="text-muted pb-2"> First Aid Guide </p>
                 <ul class="list-group rounded-0" id="itemList">
                   
-                  <span id="items-goes-here">testitems</span>
-                  <li class="list-group-item border-0 d-flex align-items-center ps-0">
+                  <span id="firstAid-goes-here"></span>
+                  
+                  <!-- <li class="list-group-item border-0 d-flex align-items-center ps-0">
                     <input id="checkbox9" class="form-check-input me-3" type="checkbox" aria-label="..." />
                     Vinyl Glove
                   </li>
@@ -242,7 +246,7 @@
                   <li class="list-group-item border-0 d-flex align-items-center ps-0">
                     <input id="checkbox17" class="form-check-input me-3" type="checkbox" aria-label="..." />
                     Plastic Carry Case (7" x 5 1/2" x 2 1/2")
-                  </li>
+                  </li> -->
                 </ul>
                 <div class="divider d-flex align-items-center my-4"></div>
 
@@ -263,7 +267,10 @@
               <form class="expandable-form">
                 <p class="text-muted pb-2">For lightinh, comunication, search, rescue and sanitation.</p>
                 <ul class="list-group rounded-0">
-                  <li class="list-group-item border-0 d-flex align-items-center ps-0">
+
+                  <span id="tools-goes-here"></span>
+
+                  <!-- <li class="list-group-item border-0 d-flex align-items-center ps-0">
                     <input id="checkbox18" class="form-check-input me-3" type="checkbox" aria-label="..." />
                     Clear Reclosable Bags (10" x 13") * 2
                   </li>
@@ -302,7 +309,7 @@
                   <li class="list-group-item border-0 d-flex align-items-center ps-0">
                     <input id="checkbox27" class="form-check-input me-3" type="checkbox" aria-label="..." />
                     Aluminum Alloy Emergency Whistle
-                  </li>
+                  </li> -->
                 </ul>
 
                 <div class="divider d-flex align-items-center my-4"></div>
@@ -323,7 +330,10 @@
               <form class="expandable-form">
                 <p class="text-muted pb-2">Lightweight and warm</p>
                 <ul class="list-group rounded-0">
-                  <li class="list-group-item border-0 d-flex align-items-center ps-0">
+
+                  <span id="shelter-goes-here"></span>
+
+                  <!-- <li class="list-group-item border-0 d-flex align-items-center ps-0">
                     <input id="checkbox28" class="form-check-input me-3" type="checkbox" aria-label="..." />
                     Aluminized Sleeping Bag
                   </li>
@@ -338,7 +348,7 @@
                   <li class="list-group-item border-0 d-flex align-items-center ps-0">
                     <input id="checkbox31" class="form-check-input me-3" type="checkbox" aria-label="..." />
                     Roll Duct Tape
-                  </li>
+                  </li> -->
                 </ul>
 
                 <div class="divider d-flex align-items-center my-4"></div>
@@ -356,7 +366,7 @@
 
               <div class="divider d-flex align-items-center my-4"></div>
 
-              <button type="button" class="btn btn-outline-danger" onclick="clearCustomize()">
+              <button type="button" class="btn btn-outline-danger" onclick="clearAllCheckboxes()">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                   class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
                   <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />
