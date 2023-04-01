@@ -188,18 +188,21 @@
 
                 <div class="divider d-flex align-items-center my-4"></div>
 
-                <div class="form-group">
-                  <label for="formGroupExampleInput">Item</label>
-                  <input type="text" class="form-control" id="itemName" placeholder="input..">
-                </div>
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Quantity</label>
-                    <input type="text" class="form-control" id="itemName" placeholder="input..">
+                <form class="expandable-form" id="householdMembersForm" style="display: none;">
+                  <div class="form-group">
+                    <label for="formGroupExampleInput">Item Name</label>
+                    <input type="text " class="form-control" id="foodAndWater-itemName" placeholder="enter">
                   </div>
-                <br />
-                <a href="#" class="btn btn-danger" role="button" data-bs-toggle="button" onclick="addItem()">Add
-                  item</a>
-                <div class="divider d-flex align-items-center my-4"></div>
+                  <div class="form-group">
+                    <label for="formGroupExampleInput">Quantity</label>
+                    <input type="text " class="form-control" id="foodAndWater-quantity" placeholder="enter">
+                  </div>
+                  <br>
+                  <a id="addItemOfFoodAndWater" class="btn btn-warning" role="button" data-bs-toggle="button"
+                    onclick="addItem()">Add item</a>
+                </form>
+
+
               </form>
               <br>
 
@@ -208,9 +211,9 @@
               <form class="expandable-form">
                 <p class="text-muted pb-2"> First Aid Guide </p>
                 <ul class="list-group rounded-0" id="itemList">
-                  
+
                   <span id="firstAid-goes-here"></span>
-                  
+
                   <!-- <li class="list-group-item border-0 d-flex align-items-center ps-0">
                     <input id="checkbox9" class="form-check-input me-3" type="checkbox" aria-label="..." />
                     Vinyl Glove
@@ -250,14 +253,21 @@
                 </ul>
                 <div class="divider d-flex align-items-center my-4"></div>
 
-                <div class="form-group">
-                  <label for="formGroupExampleInput">Item</label>
-                  <input type="text " class="form-control" id="itemName" placeholder="input..">
-                </div>
-                <br />
-                <a href="#" class="btn btn-danger" role="button" data-bs-toggle="button" onclick="addItem()">Add
-                  item</a>
-                <div class="divider d-flex align-items-center my-4"></div>
+                <form class="expandable-form" id="householdMembersForm" style="display: none;">
+                  <div class="form-group">
+                    <label for="formGroupExampleInput">Item Name</label>
+                    <input type="text " class="form-control" id="firstAid-itemName" placeholder="enter">
+                  </div>
+                  <div class="form-group">
+                    <label for="formGroupExampleInput">Quantity</label>
+                    <input type="text " class="form-control" id="firstAid-quantity" placeholder="enter">
+                  </div>
+                  <br>
+                  <a id="addItemOfFirstAid" class="btn btn-warning" role="button" data-bs-toggle="button"
+                    onclick="addItem()">Add item</a>
+                </form>
+
+
               </form>
 
               <br>
@@ -314,14 +324,22 @@
 
                 <div class="divider d-flex align-items-center my-4"></div>
 
-                <div class="form-group">
-                  <label for="formGroupExampleInput">Item</label>
-                  <input type="text " class="form-control" id="itemName" placeholder="input..">
-                </div>
-                <br />
-                <a href="#" class="btn btn-danger" role="button" data-bs-toggle="button" onclick="addItem()">Add
-                  item</a>
-                <div class="divider d-flex align-items-center my-4"></div>
+                <form class="expandable-form" id="householdMembersForm" style="display: none;">
+                  <div class="form-group">
+                    <label for="formGroupExampleInput">Item Name</label>
+                    <input type="text " class="form-control" id="tools-itemName" placeholder="enter">
+                  </div>
+                  <div class="form-group">
+                    <label for="formGroupExampleInput">Quantity</label>
+                    <input type="text " class="form-control" id="tools-quantity" placeholder="enter">
+                  </div>
+                  <br>
+                  <a id="addItemOfTools" class="btn btn-warning" role="button" data-bs-toggle="button"
+                    onclick="addItem()">Add item</a>
+                </form>
+
+
+
               </form>
               <br>
 
@@ -353,15 +371,21 @@
 
                 <div class="divider d-flex align-items-center my-4"></div>
 
-                <div class="form-group">
-                  <label for="formGroupExampleInput">Item</label>
-                  <input type="text " class="form-control" id="itemName" placeholder="input..">
-                </div>
-                <br />
-                <a href="#" class="btn btn-danger" role="button" data-bs-toggle="button" onclick="addItem()">Add
-                  item</a>
+                <form class="expandable-form" id="householdMembersForm" style="display: none;">
+                  <div class="form-group">
+                    <label for="formGroupExampleInput">Item Name</label>
+                    <input type="text " class="form-control" id="shelter-itemName" placeholder="enter">
+                  </div>
+                  <div class="form-group">
+                    <label for="formGroupExampleInput">Quantity</label>
+                    <input type="text " class="form-control" id="shelter-quantity" placeholder="enter">
+                  </div>
+                  <br>
+                  <a id="addItemOfShelter" class="btn btn-warning" role="button" data-bs-toggle="button"
+                    onclick="addItem()">Add item</a>
+                </form>
 
-                <div class="divider d-flex align-items-center my-4"></div>
+
               </form>
 
               <div class="divider d-flex align-items-center my-4"></div>

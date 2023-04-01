@@ -40,16 +40,7 @@ function saveCheckboxes() {
     alert("Changes saved");
 }
 
-// Add event listener to delete button
-// const deleteBtn = itemList.querySelector(`#${itemName} .delete-btn`);
-// deleteBtn.addEventListener("click", () => {
-//     // Delete item from database
-//     db.collection("emergKit").doc(user.uid).update({
-//         [itemName]: firebase.firestore.FieldValue.delete()
-//     });
-// });
-
-
+//each delete button
 function deleteBtn() {
     for (let i = 1; i <= 31; i++) {
         document.getElementById(`c${i}`).ischecked = false;
@@ -59,31 +50,87 @@ function deleteBtn() {
     };
     console.log("delete successfully");
 }
+// const deleteBtns = document.querySelectorAll('.delete-btn');
+// deleteBtns.forEach((deleteBtn) => {
+//   deleteBtn.addEventListener("click", () => {
+//     firebase.auth().onAuthStateChanged(user => {
+//       if (user) {
+//         const emergencyKit = db.collection("emergencyKit").doc(user.uid);
+//         const categories = ["foodAndWater", "firstAid", "tools", "shelter"];
+//         categories.forEach(category => {
+//           const itemsDoc = emergencyKit.collection(category);
+//           itemsDoc.get().then(doc => {
+//             doc.forEach(userdoc => {
+//               if (userdoc.data().itemName === deleteBtn.parentNode.parentNode.id) {
+//                 itemsDoc.doc(userdoc.id).delete();
+//               }
+//             });
+//           });
+//         });
+//       }
+//     });
+//   });
+// });
 
 
-//additem btn to DB
-function addItem() {
-    const emergencyKit = db.collection("emergencyKit").doc(user.uid);
-    const firstAid = emergencyKit.collection("firstAid");
-
-    const itemName = document.getElementById("itemName").value;
-    const itemData = {
-        name: itemName,
-        ischecked: false
-    };
+//additem btn to DB for each
+let addItemOfFoodAndWater = document.getElementById("addItemOfFoodAndWater");
+addItemOfFoodAndWater.addEventListener('click',()=> {
+    let itemName = document.getElementById(`firstAid-itemName`);
+    let quantity = document.getElementById(`firstAid-quantity`);
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
+            var emergencyKit = db.collection("emergencyKit").doc(user.uid);
+            var firstAid = emergencyKit.collection("firstAid");
+
             firstAid.add({
-                    [itemName]: itemData
-                }, { merge: true })
-                .then(() => {
-                    console.log(`${itemName} added to emergKit`);
+                name: itemName.value,
+                quantity: quantity.value,
+                ischecked: false
                 })
         } else {
             console.log("error");
         }
     })
-}
+})
+
+
+
+
+
+
+
+//simpifly add btn
+function addItem() {
+    const categories = ["foodAndWater", "firstAid", "tools", "shelter"];
+    categories.forEach(category => {
+
+    const emergencyKit = db.collection("emergencyKit").doc(user.uid);
+    const categoryCollection = emergencyKit.collection(category);
+
+    const itemName = document.getElementById(`${category}-itemName`).value;
+    const quantity = document.getElementById(`${category}-quantity`).value;
+    const itemData = {
+        itemName: itemName,
+        quantity: quantity,
+        ischecked: false
+    };
+
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+            categoryCollection.add(itemData)
+                .then(() => {
+                    console.log(`${itemName} added to ${category}`);
+                })
+        } else {
+            console.log("error");
+        }
+    })
+})}
+
+
+
+
 
 //create collection "emergencyKit"
 function createEmergencyKit() {
@@ -402,17 +449,86 @@ populatefoodAndWater();
 
 
 
-//update the ischecked status
+// function populateEmergencyKit() {
+//     firebase.auth().onAuthStateChanged(user => {
+//         if (user) {
+//             var emergencyKit = db.collection("emergencyKit").doc(user.uid);
+//             const categories = ["foodAndWater", "firstAid", "tools", "shelter"];
+//             categories.forEach(category => {
+//                 const itemList = document.getElementById(`${category}-goes-here`);
+//                 const itemsDoc = emergencyKit.collection(category);
+//                 itemsDoc.get().then(doc => {
+//                     doc.forEach(userdoc => {
+//                         var ischecked = userdoc.data().ischecked
+//                         if (ischecked == true) {
+//                             ischecked = "checked"
+//                         } else {
+//                             ischecked = ""
+//                         }
+
+//                         var itemName = userdoc.data().itemName;
+//                         const itemHtml = `
+//                             <li id="${itemName}" class="list-group-item border-0 d-flex align-items-center ps-0">
+//                                 <div class="d-flex align-items-center w-100 justify-content-between">
+//                                     <div>
+//                                     <input id="${itemName}" name="${itemName}" value="${itemName}" 
+//                                         class="form-check-input me-3" type="checkbox" aria-label="..." ${ischecked}"/>
+//                                     <label for="${itemName}">${itemName}</label>
+//                                     </div>
+//                                     <div class="input-group" style="width: 130px;">
+//                                     <input class="form-control" value="3 servings">
+//                                     </div>
+//                                     <button class="delete-btn" onclick="deleteBtn()">X</button>
+//                                 </div>
+//                             </li>
+//                         `;
+//                         itemList.innerHTML += itemHtml;
+//                     });
+//                 });
+//             });
+//         } else {
+//             console.log("No user is signed in");
+//         }
+//     });
+// }
+// populateEmergencyKit();
+
+
+// update the ischecked status
 // const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 // checkboxes.forEach((checkbox) => {
-//   checkbox.addEventListener("click", () => {
-//     const itemID = checkbox.closest(".list-group-item").id;
-//     const category = checkbox.closest(".category").id;
-//     const emergencyKit = db.collection("emergencyKit").doc(user.uid);
-//     const itemRef = emergencyKit.collection(category).doc(itemID);
-//     itemRef.update({ ischecked: checkbox.checked });
-//   });
+//     checkbox.addEventListener("change", () => {
+//         firebase.auth().onAuthStateChanged(user => {
+//             if (user) {
+//                 const emergencyKit = db.collection("emergencyKit").doc(user.uid);
+//                 const categories = ["foodAndWater", "firstAid", "tools", "shelter"];
+//                 categories.forEach(category => {
+//                     const itemsDoc = emergencyKit.collection(category);
+//                     itemsDoc.get().then(doc => {
+//                         doc.forEach(userdoc => {
+//                             if (userdoc.data().itemName === checkbox.id) {
+//                                 itemsDoc.doc(userdoc.id).update({ ischecked: checkbox.checked });
+//                             }
+//                         });
+//                     });
+//                 });
+//             }
+//         });
+//     });
 // });
+
+    
+
+
+
+    
+
+
+
+    
+
+
+
 
 
 
@@ -474,6 +590,16 @@ populatefoodAndWater();
 
 
 
+
+
+
+
+
+
+
+// 1. update checkbox status
+// 2. add new item
+// 3. delete the item
 
 
 
