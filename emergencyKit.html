@@ -75,7 +75,7 @@
           <div class="card rounded-3">
             <div class="card-body p-4">
 
-              <h3 class="mention">Class kit for <span id="selectPeoNum-goes-here"></span> people</h3>
+              <h3 class="mention">Class Kit for <span id="peoNum-goes-here">2</span> people</h3>
 
               <div class="divider d-flex align-items-center my-4"></div>
 
@@ -85,54 +85,28 @@
               <form class="expandable-form">
                 <p class="text-muted pb-2">At least 14 servings (3600 Calorie)</p>
                 <ul class="list-group rounded-0">
-                  <span id="items-goes-here">testitems</span>
-                  <li class="list-group-item border-0 d-flex align-items-center ps-0">
-                    <input id="checkbox1" name="checkbox1" value="Water" class="form-check-input me-3" type="checkbox" aria-label="..." checked />
-                    <s>Four gallon of water</s>
-                  </li>
-                  <li class="list-group-item border-0 d-flex align-items-center ps-0">
-                    <input id="checkbox2" name="checkbox2" value="Water Purification Tablets"class="form-check-input me-3" type="checkbox" aria-label="..." checked />
-                    <s>Water Purification Tablets</s>
-                  </li>
-                  <li class="list-group-item border-0 d-flex align-items-center ps-0">
-                    <input id="checkbox3" name="checkbox3" value="Cereals" class="form-check-input me-3" type="checkbox" aria-label="..." />
-                    Cereals
-                  </li>
-                  <li class="list-group-item border-0 d-flex align-items-center ps-0">
-                    <input id="checkbox4" name="checkbox4" value="Canned foods" class="form-check-input me-3" type="checkbox" aria-label="..." />
-                    Canned foods, specifically canned fruits and vegetables
-                  </li>
-                  <li class="list-group-item border-0 d-flex align-items-center ps-0">
-                    <input id="checkbox5" name="checkbox5" value="Protein bars" class="form-check-input me-3" type="checkbox" aria-label="..." />
-                    Protein bars
-                  </li>
-                  <li class="list-group-item border-0 d-flex align-items-center ps-0">
-                    <input id="checkbox6" name="checkbox6" value="Juice" class="form-check-input me-3" type="checkbox" aria-label="..." />
-                    Juice
-                  </li>
-                  <li class="list-group-item border-0 d-flex align-items-center ps-0">
-                    <input id="checkbox7" name="checkbox7" value="Freeze dried food" class="form-check-input me-3" type="checkbox" aria-label="..." />
-                    Freeze-dried food
-                  </li>
-                  <li class="list-group-item border-0 d-flex align-items-center ps-0">
-                    <input id="checkbox8" name="checkbox8" value="Non perishable food" class="form-check-input me-3" type="checkbox" aria-label="..." />
-                    Non-perishable food
-                  </li>
+
+                  <span id="foodAndWater-goes-here"></span>
+
                 </ul>
-                
+
                 <div class="divider d-flex align-items-center my-4"></div>
 
-                <div class="form-group">
-                  <label for="formGroupExampleInput">Item</label>
-                  <input type="text "class="form-control" id="householdMemberName" placeholder="input..">
-                </div>
-                <div class="form-group">
+                <form class="expandable-form" id="householdMembersForm" style="display: none;">
+                  <div class="form-group">
+                    <label for="formGroupExampleInput">Item Name</label>
+                    <input type="text " class="form-control" id="foodAndWater-itemName" placeholder="enter">
+                  </div>
+                  <div class="form-group">
                     <label for="formGroupExampleInput">Quantity</label>
-                    <input type="text "class="form-control" id="householdMemberName" placeholder="input..">
-                </div>
-                <br/>
-                <a href="#" class="btn btn-danger" role="button" data-bs-toggle="button">Add item</a>
-                <div class="divider d-flex align-items-center my-4"></div>
+                    <input type="text " class="form-control" id="foodAndWater-quantity" placeholder="enter">
+                  </div>
+                  <br>
+                  <a id="addItemOfFoodAndWater" class="btn btn-warning" role="button" data-bs-toggle="button"
+                    onclick="addItemFW()">Add item</a>
+                </form>
+
+
               </form>
               <br>
 
@@ -140,45 +114,30 @@
                   class="badge bg-danger form-expander">+</button></p>
               <form class="expandable-form">
                 <p class="text-muted pb-2"> First Aid Guide </p>
-                <ul class="list-group rounded-0">
-                  <li class="list-group-item border-0 d-flex align-items-center ps-0">
-                    <input id="checkbox9" class="form-check-input me-3" type="checkbox" aria-label="..." />
-                    Vinyl Glove
-                  </li>
-                  <li class="list-group-item border-0 d-flex align-items-center ps-0">
-                    <input id="checkbox10" class="form-check-input me-3" type="checkbox" aria-label="..." />
-                    Band-Aids (3/4"X3") * 36
-                  </li>
-                  <li class="list-group-item border-0 d-flex align-items-center ps-0">
-                    <input id="checkbox11" class="form-check-input me-3" type="checkbox" aria-label="..." />
-                    Gauze Pads (3/8" x 1 1/2") * 30, (4"x4") * 2, (3"x3") * 2
-                  </li>
-                  <li class="list-group-item border-0 d-flex align-items-center ps-0">
-                    <input id="checkbox12" class="form-check-input me-3" type="checkbox" aria-label="..." />
-                    2" Rolled Gauze
-                  </li>
-                  <li class="list-group-item border-0 d-flex align-items-center ps-0">
-                    <input id="checkbox13" class="form-check-input me-3" type="checkbox" aria-label="..." />
-                    Alcohol Pads * 15
-                  </li>
-                  <li class="list-group-item border-0 d-flex align-items-center ps-0">
-                    <input id="checkbox14" class="form-check-input me-3" type="checkbox" aria-label="..." />
-                    Adhesive Tape Roll
-                  </li>
-                  <li class="list-group-item border-0 d-flex align-items-center ps-0">
-                    <input id="checkbox15" class="form-check-input me-3" type="checkbox" aria-label="..." />
-                    Tweezer
-                  </li>
-                  <li class="list-group-item border-0 d-flex align-items-center ps-0">
-                    <input id="checkbox16" class="form-check-input me-3" type="checkbox" aria-label="..." />
-                    Cold Pack(5"x6") * 15
-                  </li>
-                  <li class="list-group-item border-0 d-flex align-items-center ps-0">
-                    <input id="checkbox17" class="form-check-input me-3" type="checkbox" aria-label="..." />
-                    Plastic Carry Case (7" x 5 1/2" x 2 1/2")
-                  </li>
+                <ul class="list-group rounded-0" id="itemList">
+
+                  <span id="firstAid-goes-here"></span>
+
                 </ul>
+                <div class="divider d-flex align-items-center my-4"></div>
+
+                <form class="expandable-form" id="householdMembersForm" style="display: none;">
+                  <div class="form-group">
+                    <label for="formGroupExampleInput">Item Name</label>
+                    <input type="text " class="form-control" id="firstAid-itemName" placeholder="enter">
+                  </div>
+                  <div class="form-group">
+                    <label for="formGroupExampleInput">Quantity</label>
+                    <input type="text " class="form-control" id="firstAid-quantity" placeholder="enter">
+                  </div>
+                  <br>
+                  <a id="addItemOfFirstAid" class="btn btn-warning" role="button" data-bs-toggle="button"
+                    onclick="addItemFA()">Add item</a>
+                </form>
+
+
               </form>
+
               <br>
 
               <p class="mb-2"><span class="h3 me-2">Tools</span><button class="badge bg-danger form-expander">+</button>
@@ -186,47 +145,28 @@
               <form class="expandable-form">
                 <p class="text-muted pb-2">For lightinh, comunication, search, rescue and sanitation.</p>
                 <ul class="list-group rounded-0">
-                  <li class="list-group-item border-0 d-flex align-items-center ps-0">
-                    <input id="checkbox18" class="form-check-input me-3" type="checkbox" aria-label="..." />
-                    Clear Reclosable Bags (10" x 13") * 2
-                  </li>
-                  <li class="list-group-item border-0 d-flex align-items-center ps-0">
-                    <input id="checkbox19" class="form-check-input me-3" type="checkbox" aria-label="..." />
-                    Tissue Pack
-                  </li>
-                  <li class="list-group-item border-0 d-flex align-items-center ps-0">
-                    <input id="checkbox20" class="form-check-input me-3" type="checkbox" aria-label="..." />
-                    Waterproof Matches
-                  </li>
-                  <li class="list-group-item border-0 d-flex align-items-center ps-0">
-                    <input id="checkbox21" class="form-check-input me-3" type="checkbox" aria-label="..." />
-                    Emergency Candles * 3
-                  </li>
-                  <li class="list-group-item border-0 d-flex align-items-center ps-0">
-                    <input id="checkbox22" class="form-check-input me-3" type="checkbox" aria-label="..." />
-                    Hand-Crank Powered Light, AM/FM Radio and USB Device Charger</s>
-                  </li>
-                  <li class="list-group-item border-0 d-flex align-items-center ps-0">
-                    <input id="checkbox23" class="form-check-input me-3" type="checkbox" aria-label="..." />
-                    50ft Nylon Utility Cord
-                  </li>
-                  <li class="list-group-item border-0 d-flex align-items-center ps-0">
-                    <input id="checkbox24" class="form-check-input me-3" type="checkbox" aria-label="..." />
-                    Multi-Function Army Knife
-                  </li>
-                  <li class="list-group-item border-0 d-flex align-items-center ps-0">
-                    <input id="checkbox25" class="form-check-input me-3" type="checkbox" aria-label="..." />
-                    Leather Palm Work Gloves
-                  </li>
-                  <li class="list-group-item border-0 d-flex align-items-center ps-0">
-                    <input id="checkbox26" class="form-check-input me-3" type="checkbox" aria-label="..." />
-                    Dust Masks
-                  </li>
-                  <li class="list-group-item border-0 d-flex align-items-center ps-0">
-                    <input id="checkbox27" class="form-check-input me-3" type="checkbox" aria-label="..." />
-                    Aluminum Alloy Emergency Whistle
-                  </li>
+
+                  <span id="tools-goes-here"></span>
+
                 </ul>
+
+                <div class="divider d-flex align-items-center my-4"></div>
+
+                <form class="expandable-form" id="householdMembersForm" style="display: none;">
+                  <div class="form-group">
+                    <label for="formGroupExampleInput">Item Name</label>
+                    <input type="text " class="form-control" id="tools-itemName" placeholder="enter">
+                  </div>
+                  <div class="form-group">
+                    <label for="formGroupExampleInput">Quantity</label>
+                    <input type="text " class="form-control" id="tools-quantity" placeholder="enter">
+                  </div>
+                  <br>
+                  <a id="addItemOfTools" class="btn btn-warning" role="button" data-bs-toggle="button"
+                    onclick="addItemTools()">Add item</a>
+                </form>
+
+
               </form>
               <br>
 
@@ -235,28 +175,33 @@
               <form class="expandable-form">
                 <p class="text-muted pb-2">Lightweight and warm</p>
                 <ul class="list-group rounded-0">
-                  <li class="list-group-item border-0 d-flex align-items-center ps-0">
-                    <input id="checkbox28" class="form-check-input me-3" type="checkbox" aria-label="..." />
-                    Aluminized Sleeping Bag
-                  </li>
-                  <li class="list-group-item border-0 d-flex align-items-center ps-0">
-                    <input id="checkbox29" class="form-check-input me-3" type="checkbox" aria-label="..." />
-                    Hooded Rain Poncho
-                  </li>
-                  <li class="list-group-item border-0 d-flex align-items-center ps-0">
-                    <input id="checkbox30" class="form-check-input me-3" type="checkbox" aria-label="..." />
-                    Tube Tent
-                  </li>
-                  <li class="list-group-item border-0 d-flex align-items-center ps-0">
-                    <input id="checkbox31" class="form-check-input me-3" type="checkbox" aria-label="..." />
-                    Roll Duct Tape
-                  </li>
+
+                  <span id="shelter-goes-here"></span>
+
                 </ul>
+
+                <div class="divider d-flex align-items-center my-4"></div>
+
+                <form class="expandable-form" id="householdMembersForm" style="display: none;">
+                  <div class="form-group">
+                    <label for="formGroupExampleInput">Item Name</label>
+                    <input type="text " class="form-control" id="shelter-itemName" placeholder="enter">
+                  </div>
+                  <div class="form-group">
+                    <label for="formGroupExampleInput">Quantity</label>
+                    <input type="text " class="form-control" id="shelter-quantity" placeholder="enter">
+                  </div>
+                  <br>
+                  <a id="addItemOfShelter" class="btn btn-warning" role="button" data-bs-toggle="button"
+                    onclick="addItemShelter()">Add item</a>
+                </form>
+
+
               </form>
 
               <div class="divider d-flex align-items-center my-4"></div>
 
-              <button type="button" class="btn btn-outline-danger" onclick="clearCustomize()">
+              <button type="button" class="btn btn-outline-danger" onclick="clearAllCheckboxes()">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                   class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
                   <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />
