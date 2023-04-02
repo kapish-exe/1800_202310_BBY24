@@ -40,7 +40,7 @@ function saveCheckboxes() {
     alert("Changes saved");
 }
 
-//add btn version1: additem to DB for each
+//additem to DB for each
 function addItemFW() {
     let itemName = document.getElementById(`foodAndWater-itemName`);
     let quantity = document.getElementById(`foodAndWater-quantity`);
@@ -143,6 +143,7 @@ function addItemShelter() {
 }
 
 //create collection "emergencyKit"
+//error; if user refresh will create mutiple times. And If put hard-code in authentication, there are only stored first 8 items on database.
 function createEmergencyKit() {
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
@@ -353,7 +354,7 @@ function populateList() {
               `;
                         itemList.innerHTML += itemHtml;
 
-//update checkbox version 1
+//update checkbox version 1: error - only change first item of each categories
                         // const checkbox = document.getElementById(`checkbox-${itemName}`);
                         // checkbox.addEventListener('change', (event) => {
                         //     const isChecked = event.target.checked;
@@ -361,7 +362,7 @@ function populateList() {
                         //     emergencyKit.collection(subcollection).doc(doc.id).update({ ischecked: isChecked });
                         // });
 
-//update checkbox version 2
+//update checkbox version 2: error - change all the items
                         // const checkboxes = document.querySelectorAll('input[type="checkbox"]');
                         // checkboxes.forEach(checkbox => {
                         //     checkbox.addEventListener('change', (event) => {
@@ -385,7 +386,7 @@ populateList();
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
-//delete button
+//delete button: error - not working properly
 // const deleteBtn = document.querySelectorAll('.delete-btn');
 // deleteBtn.forEach(deleteItem => {
 //     deleteItem.addEventListener('click', () => {
@@ -413,7 +414,7 @@ populateList();
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// update the ischecked status -- old version
+// update the ischecked status -- super ooooold version
 
 // //build default list in HTML --> collection "emergeKit"
 // const checkbox = [];
