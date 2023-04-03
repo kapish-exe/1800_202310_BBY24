@@ -15,198 +15,203 @@ var uiConfig = {
 
         }).then(function () {
           console.log("New user added to firestore");
-          window.location.assign("setup.html");       //re-direct to setup.html after signup
+          
         }).catch(function (error) {
           console.log("Error adding new user: " + error);
+        });
+
+
+
+
+
+        
+        //Create Household initally with one member
+        var household = db.collection("household").doc(user.uid);
+        var member = household.collection("member");
+        member.add({
+          name: user.displayName
+        });
+
+        var emergencyKit = db.collection("emergencyKit").doc(user.uid);
+        var foodAndWater = emergencyKit.collection("foodAndWater");
+        var firstAid = emergencyKit.collection("firstAid");
+        var tools = emergencyKit.collection("tools");
+        var shelter = emergencyKit.collection("shelter")
+        //Food & Water
+        foodAndWater.add({
+            itemName: "Water",
+            quantity: "4 gallon",
+            ischecked: true
+        });
+        foodAndWater.add({
+            itemName: "Water Purification Tablets",
+            quantity: "10 tablets",
+            ischecked: true
+        });
+        foodAndWater.add({
+            itemName: "Cereals",
+            quantity: "3 servings",
+            ischecked: false
+        });
+        foodAndWater.add({
+            itemName: "Canned foods, specifically canned fruits and vegetables",
+            quantity: "10 servings",
+            ischecked: false
+        });
+        foodAndWater.add({
+            itemName: "Protein bars",
+            quantity: "3 bars",
+            ischecked: false
+        });
+        foodAndWater.add({
+            itemName: "Juice",
+            quantity: "3 servings",
+            ischecked: false
+        });
+        foodAndWater.add({
+            itemName: "Freeze-dried food",
+            quantity: "3 servings",
+            ischecked: false
+        });
+        foodAndWater.add({
+            itemName: "Non-perishable food",
+            quantity: "3 servings",
+            ischecked: false
+        });
+
+        //First Aid
+        firstAid.add({
+            itemName: "Vinyl Glove",
+            quantity: "2 pairs",
+            ischecked: true
+        });
+        firstAid.add({
+            itemName: "Band-Aids",
+            quantity: "36",
+            ischecked: true
+        });
+        firstAid.add({
+            itemName: "Gauze Pads",
+            quantity: "2",
+            ischecked: false
+        });
+        firstAid.add({
+            itemName: "Rolled Gauze",
+            quantity: "2",
+            ischecked: false
+        });
+        firstAid.add({
+            itemName: "Alcohol Pads",
+            quantity: "15",
+            ischecked: false
+        });
+        firstAid.add({
+            itemName: "Adhesive Tape Roll",
+            quantity: "1",
+            ischecked: false
+        });
+        firstAid.add({
+            itemName: "Tweezer",
+            quantity: "1",
+            ischecked: false
+        });
+        firstAid.add({
+            itemName: "Cold Pack",
+            quantity: "15",
+            ischecked: false
+        });
+        firstAid.add({
+            itemName: "Plastic Carry Case",
+            quantity: "1",
+            ischecked: false
+        });
+
+        //Tools
+        tools.add({
+            itemName: "Aluminum Alloy Emergency Whistle",
+            quantity: "2 pairs",
+            ischecked: false
+        });
+        tools.add({
+            itemName: "Dust Masks",
+            quantity: "36",
+            ischecked: false
+        });
+        tools.add({
+            itemName: "Leather Palm Work Gloves",
+            quantity: "2",
+            ischecked: false
+        });
+        tools.add({
+            itemName: "Multi-Function Army Knife",
+            quantity: "2",
+            ischecked: false
+        });
+        tools.add({
+            itemName: "50ft Nylon Utility Cord",
+            quantity: "15",
+            ischecked: false
+        });
+        tools.add({
+            itemName: "Hand-Crank Powered Light, AM/FM Radio and USB Device Charger",
+            quantity: "1",
+            ischecked: false
+        });
+        tools.add({
+            itemName: "Emergency Candles",
+            quantity: "1",
+            ischecked: false
+        });
+        tools.add({
+            itemName: "Waterproof Matches",
+            quantity: "15",
+            ischecked: false
+        });
+        tools.add({
+            itemName: "Tissue Pack",
+            quantity: "1",
+            ischecked: false
+        });
+        tools.add({
+            itemName: "Clear Reclosable Bags",
+            quantity: "1",
+            ischecked: false
+        });
+
+        //Shelter
+        shelter.add({
+            itemName: "Aluminized Sleeping Bag",
+            quantity: "15",
+            ischecked: false
+        });
+        shelter.add({
+            itemName: "Hooded Rain Poncho",
+            quantity: "1",
+            ischecked: false
+        });
+        shelter.add({
+            itemName: "Tube Tent",
+            quantity: "1",
+            ischecked: false
+        });
+        shelter.add({
+            itemName: "Roll Duct Tape",
+            quantity: "1",
+            ischecked: false
         });
 
         db.collection("userDocs").doc(user.uid).set({
 
         }).then(function () {
           console.log(" user docs table to firestore");
+          window.location.assign("setup.html");   
 
         }).catch(function (error) {
           console.log("Error adding user docs: " + error);
         });
 
-        //Create Household initally with one member
-        var household = db.collection("household").doc(user.uid);
-        var member = household.collection("member");
-        member.add({
-          name: user.displayName
-        })
 
-
-        // // Create collection "emergencyKit(authontication)
-        // const emergencyKit = db.collection("emergencyKit").doc(user.uid);
-        // const foodAndWater = emergencyKit.collection("foodAndWater");
-        // const firstAid = emergencyKit.collection("firstAid");
-        // const tools = emergencyKit.collection("tools");
-        // const shelter = emergencyKit.collection("shelter")
-        // //Food & Water
-        // foodAndWater.add({
-        //   itemName: "Water",
-        //   quantity: "4 gallon",
-        //   ischecked: true
-        // });
-        // foodAndWater.add({
-        //   itemName: "Water Purification Tablets",
-        //   quantity: "10 tablets",
-        //   ischecked: true
-        // });
-        // foodAndWater.add({
-        //   itemName: "Cereals",
-        //   quantity: "3 servings",
-        //   ischecked: true
-        // });
-        // foodAndWater.add({
-        //   itemName: "Canned foods, specifically canned fruits and vegetables",
-        //   quantity: "10 servings",
-        //   ischecked: false
-        // });
-        // foodAndWater.add({
-        //   itemName: "Protein bars",
-        //   quantity: "3 bars",
-        //   ischecked: false
-        // });
-        // foodAndWater.add({
-        //   itemName: "Juice",
-        //   quantity: "3 servings",
-        //   ischecked: false
-        // });
-        // foodAndWater.add({
-        //   itemName: "Freeze-dried food",
-        //   quantity: "3 servings",
-        //   ischecked: false
-        // });
-        // foodAndWater.add({
-        //   itemName: "Non-perishable food",
-        //   quantity: "3 servings",
-        //   ischecked: false
-        // });
-
-        // //First Aid
-        // firstAid.add({
-        //   itemName: "Vinyl Glove",
-        //   quantity: "2 pairs",
-        //   ischecked: true
-        // });
-        // firstAid.add({
-        //   itemName: "Band-Aids",
-        //   quantity: "36",
-        //   ischecked: true
-        // });
-        // firstAid.add({
-        //   itemName: "Gauze Pads",
-        //   quantity: "2",
-        //   ischecked: false
-        // });
-        // firstAid.add({
-        //   itemName: "Rolled Gauze",
-        //   quantity: "2",
-        //   ischecked: false
-        // });
-        // firstAid.add({
-        //   itemName: "Alcohol Pads",
-        //   quantity: "15",
-        //   ischecked: false
-        // });
-        // firstAid.add({
-        //   itemName: "Adhesive Tape Roll",
-        //   quantity: "1",
-        //   ischecked: false
-        // });
-        // firstAid.add({
-        //   itemName: "Tweezer",
-        //   quantity: "1",
-        //   ischecked: false
-        // });
-        // firstAid.add({
-        //   itemName: "Cold Pack",
-        //   quantity: "15",
-        //   ischecked: false
-        // });
-        // firstAid.add({
-        //   itemName: "Plastic Carry Case",
-        //   quantity: "1",
-        //   ischecked: false
-        // });
-
-        // //Tools
-        // tools.add({
-        //   itemName: "Aluminum Alloy Emergency Whistle",
-        //   quantity: "2 pairs",
-        //   ischecked: false
-        // });
-        // tools.add({
-        //   itemName: "Dust Masks",
-        //   quantity: "36",
-        //   ischecked: false
-        // });
-        // tools.add({
-        //   itemName: "Leather Palm Work Gloves",
-        //   quantity: "2",
-        //   ischecked: false
-        // });
-        // tools.add({
-        //   itemName: "Multi-Function Army Knife",
-        //   quantity: "2",
-        //   ischecked: false
-        // });
-        // tools.add({
-        //   itemName: "50ft Nylon Utility Cord",
-        //   quantity: "15",
-        //   ischecked: false
-        // });
-        // tools.add({
-        //   itemName: "Hand-Crank Powered Light, AM/FM Radio and USB Device Charger",
-        //   quantity: "1",
-        //   ischecked: false
-        // });
-        // tools.add({
-        //   itemName: "Emergency Candles",
-        //   quantity: "1",
-        //   ischecked: false
-        // });
-        // tools.add({
-        //   itemName: "Waterproof Matches",
-        //   quantity: "15",
-        //   ischecked: false
-        // });
-        // tools.add({
-        //   itemName: "Tissue Pack",
-        //   quantity: "1",
-        //   ischecked: false
-        // });
-        // tools.add({
-        //   itemName: "Clear Reclosable Bags",
-        //   quantity: "1",
-        //   ischecked: false
-        // });
-
-        // //Shelter
-        // shelter.add({
-        //   itemName: "Aluminized Sleeping Bag",
-        //   quantity: "15",
-        //   ischecked: false
-        // });
-        // shelter.add({
-        //   itemName: "Hooded Rain Poncho",
-        //   quantity: "1",
-        //   ischecked: false
-        // });
-        // shelter.add({
-        //   itemName: "Tube Tent",
-        //   quantity: "1",
-        //   ischecked: false
-        // });
-        // shelter.add({
-        //   itemName: "Roll Duct Tape",
-        //   quantity: "1",
-        //   ischecked: false
-        // });
-
-
+        
       } else {
         return true;
       }
