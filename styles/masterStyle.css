@@ -1,3 +1,5 @@
+
+
 #signup-login{
     width:100%;
     background-color:  	#F7D65A;
@@ -23,11 +25,10 @@ h1{
     clip-path: polygon(5% 0, 95% 0, 100% 10%, 100% 90%, 95% 100%, 5% 100%, 0 90%, 0 10%);
     padding: 4vw;
 
-    
 }
 
-.container  * {
-    margin-bottom: 20px;
+.material-symbols-outlined {
+    font-size: 30pt;
 }
 
 #bee-anim{
@@ -50,6 +51,11 @@ h1{
     padding-bottom: 2vh;
 }
 
+#pages-logo{
+    height:68h;
+    width: auto;
+}
+
 #firebaseui-auth-container > div{
     border-radius: 14px;
     max-height:60vh;
@@ -58,14 +64,18 @@ h1{
 
 
 
-
+/* 
 /* TO-DO elements must be given id/class names */
 a{
     margin: auto;
     color: black;
     text-decoration: none;
     display: flex;
+    font-size: 18px;
+    text-align: center;
 }
+
+
 
 a > h5 {
     padding-left: 2vw;
@@ -87,6 +97,8 @@ a > img {
     
 }
 
+/** to herre... ^^
+*/
 
 .member-card {
     background-color: #d2e7e7;
@@ -94,8 +106,134 @@ a > img {
     min-height: 40px;
     padding:10px;
 
+} 
+
+
+/* form control styling, default hidden */
+
+.expandable-form {
+    display:none;
 }
 
 
 
 
+
+/* Docs*/
+
+.item-setting {
+    display: block;
+    background-color: lightgrey;
+    height: 50px;
+    font-size: 20px;
+    text-transform: capitalize;
+
+}
+
+
+#document-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    flex-direction: row;
+    max-height: 100vh;
+    justify-content: center;
+    overflow: scroll;
+    height: 440px;
+    background-color: #f8f8f8;
+  padding: 20px;
+}
+
+
+#document-grid img {
+    width: 200px;
+    height: 200px;
+    box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.3);
+    max-width: 23vw;
+    margin: 10px;
+    object-fit: cover;
+}
+
+#document-headline {
+    font-weight: bolder;
+    font-size: 15pt;
+    display: inline-block;
+    padding-top: 1em;
+}
+
+#upload-button {
+    padding: 4em;
+    z-index: 50;
+    position: relative;
+}
+
+.button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #EB4949;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 23px;
+    padding: 10px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button:hover span {
+    padding-right: 25px;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#center-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 87vh;
+}
+
+#activateonsavepost{
+    display: none;
+    z-index: 50;
+    position: relative; 
+    justify-content: center;
+    margin-top: 3em;
+}
+
+#yourdocuments{
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #333;
+}
