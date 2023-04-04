@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-  <title>My BCIT Project</title>
-  <meta name="comp1800 template" content="My 1800 App" />
+  <title>Ready Bee - Let's get Started!</title>
+  <meta name="Ready Bee Signup" content="BBY-24's Emergency Preparedness App" />
 
   <!-- Required meta tags -->
   <meta charset="utf-8" />
@@ -16,10 +16,9 @@
 
   <!-- Other libraries go here -->
 
-
-
   <!-- Link to styles of your own -->
-  <link rel="stylesheet" href="./styles/styleE.css" />
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Slackey">
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -28,16 +27,19 @@
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+    <link rel="stylesheet" href="./styles/masterStyle.css" />
 </head>
 
-<body id="page3">
+
+
+<body>
   <!------------------------------>
   <!-- Your HTML Layout go here -->
   <!------------------------------>
 
   <!-- nav bar -->
   <nav class="navbar navbar-expand">
-    <a class="navbar-brand" href="#">App name!</a>
+    <a class="navbar-brand" href="#"><img id="pages-logo" src="images/beeonwhite.png" /></a>
     <a id="settings-link"  href="setting.html"><span class="material-symbols-outlined">settings</span></a>
    <div id="logout-div" style="margin-left: 60px;"> <button id="logout-button" class="btn btn-warning" >Logout</button></div>
 
@@ -49,9 +51,8 @@
     <div class="d-flex justify-content-start">
 
     </div>
-    <div class="d-flex justify-content-center " >
-      <h1 class="mainname">Hello,&nbsp;<span id="name-goes-here"></span></h1><br/>
-      <!-- <div class="mainpara">We are here to prepare you for emergency and make best use of our app.</div> -->
+    <div class="d-flex justify-content-center ">
+      <h1 class="mainname">Good Morning!<span id="name-goes-here"></span></h1>
     </div>
     <div class="d-flex justify-content-end">
       <a href="#" class="text-success m-3">
@@ -80,34 +81,20 @@
 
             </div>
 
-            
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+
+</div>
 
 
-  
-
-
-
-
-
-
-
-
-  <!--Footers-->
-
-
-
-  <footer class="navbar justify-content-evenly bg-danger fixed-bottom">
+<footer class="navbar justify-content-evenly bg-warning fixed-bottom">
     <div class="container py-3">
       <a href="documents.html"><span class="material-symbols-outlined">perm_media</span><br/>Docs</a>
-      <a href="plan.html"><span class="material-symbols-outlined">task_alt</span> <br/>Emergency Plan</a>
-      <a href="emergencyKit.html"><span class="material-symbols-outlined">medical_services</span> <br/>E-kit</a>
+      <a href="plan.html"><span class="material-symbols-outlined">task_alt</span> <br/>Plan</a>
+      <a href="emergencyKit.html"><span class="material-symbols-outlined">medical_services</span> <br/>Kit</a>
     </div>
-  </footer>
+</footer>
+
+
+
 
   <!---------------------------------------------->
   <!-- Your own JavaScript functions go here    -->
@@ -115,8 +102,7 @@
 
   <!-- Link to scripts of your own -->
   <script src="./scripts/firebaseAPI.js"></script>
-  <!-- <script src="./scripts/authentication.js"></script> -->
- <script src="./scripts/main.js"></script>
+  <script src="./scripts/main.js"></script>
 
 </body>
 
