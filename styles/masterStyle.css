@@ -136,12 +136,13 @@ a > img {
     flex-wrap: wrap;
     align-items: flex-start;
     flex-direction: row;
-    max-height: 100vh;
+    max-height: 44vh;
     justify-content: center;
     overflow: scroll;
     height: 440px;
     background-color: #f8f8f8;
-  padding: 20px;
+    padding: 20px;
+    width: 94vw;
 }
 
 
@@ -165,6 +166,7 @@ a > img {
     padding: 4em;
     z-index: 50;
     position: relative;
+    padding-left: 5em;
 }
 
 .button {
