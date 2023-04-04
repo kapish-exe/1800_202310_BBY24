@@ -38,7 +38,7 @@
 
 
   <!-- nav bar -->
-  <nav class="navbar navbar-expand">
+  <nav class="navbar navbar-expand bg-warning">
     <a class="navbar-brand" href="#">App name!</a>
     <a id="settings-link" href="setting.html"><span class="material-symbols-outlined">settings</span></a>
   </nav>
@@ -75,24 +75,25 @@
           <div class="card rounded-3">
             <div class="card-body p-4">
 
-              <h3 class="mention">Class Kit for <span id="peoNum-goes-here">2</span> people</h3>
+              <h3 class="mention">Standard Emergency Kit for <span id="peoNum-goes-here"></span> people</h3>
 
               <div class="divider d-flex align-items-center my-4"></div>
 
 
               <p class="mb-2"><span class="h3 me-2">Food & WATER</span><button
-                  class="badge bg-danger form-expander">+</button></p>
+                  class="badge bg-danger form-expander">+</button></p>  
               <form class="expandable-form">
-                <p class="text-muted pb-2">At least 14 servings (3600 Calorie)</p>
+                <!-- <p class="text-muted pb-2">At least 14 servings (3600 Calorie)</p> -->
                 <ul class="list-group rounded-0">
-
-                  <span id="foodAndWater-goes-here"></span>
+                  <!---->
+                <span id="foodAndWater-goes-here"></span>
 
                 </ul>
 
                 <div class="divider d-flex align-items-center my-4"></div>
 
                 <form class="expandable-form" id="householdMembersForm" style="display: none;">
+
                   <div class="form-group">
                     <label for="formGroupExampleInput">Item Name</label>
                     <input type="text " class="form-control" id="foodAndWater-itemName" placeholder="enter">
@@ -199,7 +200,7 @@
 
               </form>
 
-              <div class="divider d-flex align-items-center my-4"></div>
+              <!-- <div class="divider d-flex align-items-center my-4"></div>
 
               <button type="button" class="btn btn-outline-danger" onclick="clearAllCheckboxes()">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -212,7 +213,9 @@
               </button>
               <a href="#" type="button" class="btn btn-outline-danger" onclick="saveCheckboxes()">Save</a>
               <a href="#" class="btn btn-warning" role="button" data-bs-toggle="button">Go buy</a>
-              <br><br><br><br><br><br><br>
+               -->
+
+               <br><br><br><br><br>
 
             </div>
           </div>
@@ -223,7 +226,7 @@
 
 
   <!--Footers-->
-  <footer class="navbar justify-content-evenly bg-danger fixed-bottom">
+  <footer class="navbar justify-content-evenly bg-warning fixed-bottom">
     <div class="container py-3">
       <a href="documents.html"><span class="material-symbols-outlined">perm_media</span><br />Docs</a>
       <a href="plan.html"><span class="material-symbols-outlined">task_alt</span> <br />Emergency Plan</a>

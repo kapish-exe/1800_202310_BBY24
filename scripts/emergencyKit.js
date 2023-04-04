@@ -27,18 +27,18 @@ formExpanders.forEach(expander => {
 });
 
 
-//clearbtn to clear everything
-function clearAllCheckboxes() {
-    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    checkboxes.forEach(checkbox => checkbox.ischecked = false);
-    console.log("All checkboxes cleared.");
-}
+// //clearbtn to clear everything
+// function clearAllCheckboxes() {
+//     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+//     checkboxes.forEach(checkbox => checkbox.ischecked = false);
+//     console.log("All checkboxes cleared.");
+// }
 
 
-// savebtn to save checkboxes to database
-function saveCheckboxes() {
-    alert("Changes saved");
-}
+// // savebtn to save checkboxes to database
+// function saveCheckboxes() {
+//     alert("Changes saved");
+// }
 
 //additem to DB for each
 function addItemFW() {
@@ -54,7 +54,7 @@ function addItemFW() {
                 ischecked: false
             }).then(function (docRef) {
                 console.log("Item added successfully.");
-                alert("Item added successfully.");
+                //alert("Item added successfully.");
                 itemName.value = '';
                 quantity.value = '';
                 populateList();
@@ -147,173 +147,7 @@ function addItemShelter() {
 function createEmergencyKit() {
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
-            const emergencyKit = db.collection("emergencyKit").doc(user.uid);
-            const foodAndWater = emergencyKit.collection("foodAndWater");
-            const firstAid = emergencyKit.collection("firstAid");
-            const tools = emergencyKit.collection("tools");
-            const shelter = emergencyKit.collection("shelter")
-            //Food & Water
-            foodAndWater.add({
-                itemName: "Water",
-                quantity: "4 gallon",
-                ischecked: true
-            });
-            foodAndWater.add({
-                itemName: "Water Purification Tablets",
-                quantity: "10 tablets",
-                ischecked: true
-            });
-            foodAndWater.add({
-                itemName: "Cereals",
-                quantity: "3 servings",
-                ischecked: false
-            });
-            foodAndWater.add({
-                itemName: "Canned foods, specifically canned fruits and vegetables",
-                quantity: "10 servings",
-                ischecked: false
-            });
-            foodAndWater.add({
-                itemName: "Protein bars",
-                quantity: "3 bars",
-                ischecked: false
-            });
-            foodAndWater.add({
-                itemName: "Juice",
-                quantity: "3 servings",
-                ischecked: false
-            });
-            foodAndWater.add({
-                itemName: "Freeze-dried food",
-                quantity: "3 servings",
-                ischecked: false
-            });
-            foodAndWater.add({
-                itemName: "Non-perishable food",
-                quantity: "3 servings",
-                ischecked: false
-            });
 
-            //First Aid
-            firstAid.add({
-                itemName: "Vinyl Glove",
-                quantity: "2 pairs",
-                ischecked: true
-            });
-            firstAid.add({
-                itemName: "Band-Aids",
-                quantity: "36",
-                ischecked: true
-            });
-            firstAid.add({
-                itemName: "Gauze Pads",
-                quantity: "2",
-                ischecked: false
-            });
-            firstAid.add({
-                itemName: "Rolled Gauze",
-                quantity: "2",
-                ischecked: false
-            });
-            firstAid.add({
-                itemName: "Alcohol Pads",
-                quantity: "15",
-                ischecked: false
-            });
-            firstAid.add({
-                itemName: "Adhesive Tape Roll",
-                quantity: "1",
-                ischecked: false
-            });
-            firstAid.add({
-                itemName: "Tweezer",
-                quantity: "1",
-                ischecked: false
-            });
-            firstAid.add({
-                itemName: "Cold Pack",
-                quantity: "15",
-                ischecked: false
-            });
-            firstAid.add({
-                itemName: "Plastic Carry Case",
-                quantity: "1",
-                ischecked: false
-            });
-
-            //Tools
-            tools.add({
-                itemName: "Aluminum Alloy Emergency Whistle",
-                quantity: "2 pairs",
-                ischecked: false
-            });
-            tools.add({
-                itemName: "Dust Masks",
-                quantity: "36",
-                ischecked: false
-            });
-            tools.add({
-                itemName: "Leather Palm Work Gloves",
-                quantity: "2",
-                ischecked: false
-            });
-            tools.add({
-                itemName: "Multi-Function Army Knife",
-                quantity: "2",
-                ischecked: false
-            });
-            tools.add({
-                itemName: "50ft Nylon Utility Cord",
-                quantity: "15",
-                ischecked: false
-            });
-            tools.add({
-                itemName: "Hand-Crank Powered Light, AM/FM Radio and USB Device Charger",
-                quantity: "1",
-                ischecked: false
-            });
-            tools.add({
-                itemName: "Emergency Candles",
-                quantity: "1",
-                ischecked: false
-            });
-            tools.add({
-                itemName: "Waterproof Matches",
-                quantity: "15",
-                ischecked: false
-            });
-            tools.add({
-                itemName: "Tissue Pack",
-                quantity: "1",
-                ischecked: false
-            });
-            tools.add({
-                itemName: "Clear Reclosable Bags",
-                quantity: "1",
-                ischecked: false
-            });
-
-            //Shelter
-            shelter.add({
-                itemName: "Aluminized Sleeping Bag",
-                quantity: "15",
-                ischecked: false
-            });
-            shelter.add({
-                itemName: "Hooded Rain Poncho",
-                quantity: "1",
-                ischecked: false
-            });
-            shelter.add({
-                itemName: "Tube Tent",
-                quantity: "1",
-                ischecked: false
-            });
-            shelter.add({
-                itemName: "Roll Duct Tape",
-                quantity: "1",
-                ischecked: false
-            });
         } else {
             // No user is signed in.
             console.log("Error, no user signed in");
@@ -325,20 +159,28 @@ createEmergencyKit()
 
 //read from each subcollection
 function populateList() {
+
+    var subcollections = ["foodAndWater", "firstAid", "tools", "shelter"];
+            subcollections.forEach(subcollection => {
+                document.getElementById(`${subcollection}-goes-here`).innerHTML ="";
+
+
+            });
+
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
-            const emergencyKit = db.collection("emergencyKit").doc(user.uid);
-
+            var emergencyKit = db.collection("emergencyKit").doc(user.uid);
+  
             // Loop through subcollections and populate their items
-            const subcollections = ["foodAndWater", "firstAid", "tools", "shelter"];
+            var subcollections = ["foodAndWater", "firstAid", "tools", "shelter"];
             subcollections.forEach(subcollection => {
                 const itemsDoc = emergencyKit.collection(subcollection);
                 itemsDoc.get().then(snapshot => {
                     snapshot.forEach(doc => {
-                        const ischecked = doc.data().ischecked ? "checked" : "";
-                        const itemName = doc.data().itemName;
-                        const itemList = document.getElementById(`${subcollection}-goes-here`);
-                        const itemHtml = `
+                        var ischecked = doc.data().ischecked ? "checked" : "";
+                        var itemName = doc.data().itemName;
+                        var itemList = document.getElementById(`${subcollection}-goes-here`);
+                        var itemHtml = `
                 <li id="${itemName}" class="list-group-item border-0 d-flex align-items-center ps-0">
                   <div class="d-flex align-items-center w-100 justify-content-between">
                     <div>

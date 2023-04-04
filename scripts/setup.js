@@ -51,17 +51,17 @@ submitMember.addEventListener('click',()=> {
             // Check if user is signed in:
             if (user) {
 
-            var household = db.collection("household").doc(user.uid);
-            var member = household.collection("member");
-            member.add({
-            name: newMember.value
-            })
+                var household = db.collection("household").doc(user.uid);
+                var member = household.collection("member");
+                member.add({
+                name: newMember.value
+                })
 
-            var namecard = document.createElement("div");
-            namecard.classList.add("member-card");
-            namecard.innerText = newMember.value;
-            document.getElementById("member-cards-container").appendChild(namecard);
-            newMember.value = "";
+                var namecard = document.createElement("div");
+                namecard.classList.add("member-card");
+                namecard.innerText = newMember.value;
+                document.getElementById("member-cards-container").appendChild(namecard);
+                newMember.value = "";
 
             } else {
                 // No user is signed in.
