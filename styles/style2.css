@@ -14,7 +14,8 @@
     font-weight: bold;
     font-size: 20px;
     padding-left: 20px;
-    color: white;
+    color: black;
+    font-family: "Slackey", sans-serif;
     
 }
 
@@ -33,15 +34,13 @@ nav {
     color: white;
 }
 .footertags{
-    color: white;
+   color: black;
+   font-family: "Slackey", sans-serif;
 }
 
 
 
 
-/* #settingbody{
-    margin-left: 20px;
-} */
 
 .setting-option{
     padding: 20px;
@@ -50,7 +49,7 @@ nav {
     
 }
 .setting-option:hover{
-    border: 6px groove lightblue;
+    border: 6px groove rgb(221, 188, 23);
 
 }
 
@@ -103,7 +102,7 @@ label.btn {
 /* css for notification.html goes here */
 
 #notification-body{
-    margin: 20px;
+    margin: 30px;
 }
 /* css for problem.html goes here */
 

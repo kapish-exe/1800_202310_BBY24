@@ -71,10 +71,10 @@ firebase.auth().onAuthStateChanged(user => {
     }
 });
 
-const saveBtn = document.getElementById("save-btn");
-saveBtn.addEventListener("click", () => {
-  alert("Changes saved.");
-});
+// const saveBtn = document.getElementById("save-btn");
+// saveBtn.addEventListener("click", () => {
+//   alert("Changes saved.");
+// });
 
 
 

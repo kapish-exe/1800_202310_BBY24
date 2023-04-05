@@ -10,7 +10,7 @@
 }
 
 body{
-    background-color:  	#F7D65A;
+    background-color:  	#f7d65A;
     padding:3vw;
     font-family: "Slackey", sans-serif;
 }
@@ -54,6 +54,7 @@ h1{
 #pages-logo{
     height:68h;
     width: auto;
+    
 }
 
 #firebaseui-auth-container > div{
@@ -237,3 +238,14 @@ a > img {
     letter-spacing: 1px;
     color: #333;
 }
+.navbar-brand {
+   float: left;
+   width: 88%;
+  }
+  
+  #main-setting{
+    margin-top: 8px;
+  }
+  
+
+
