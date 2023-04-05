@@ -59,6 +59,9 @@ nav {
     
 }
 
+#settingbody{
+    font-family: "Slackey", sans-serif;
+}
 
 /* css for the profile.html */
 .ui-w-80 {
@@ -93,6 +96,10 @@ label.btn {
     opacity: 0;
 }
 
+#profilebody{
+    font-family: "Slackey", sans-serif;
+}
+
 
 /* css for security.html goes here */
  #security-body{
@@ -103,12 +110,14 @@ label.btn {
 
 #notification-body{
     margin: 30px;
+    font-family: "Slackey", sans-serif;
 }
 /* css for problem.html goes here */
 
 #problem-body{
     margin: 20px;
     text-align: center;
+    font-family: "Slackey", sans-serif;
 }
 
 #appname{
