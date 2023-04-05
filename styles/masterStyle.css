@@ -2,7 +2,6 @@
 
 #signup-login{
     width:100%;
-    background-color:  	#F7D65A;
     height:100vh;
     padding-top:4vh;
     padding-left: 4vw;
@@ -10,7 +9,7 @@
 }
 
 body{
-    background-color:  	#f7d65A;
+    background-color:  	#fde798;
     padding:3vw;
     font-family: "Slackey", sans-serif;
 }
@@ -250,4 +249,14 @@ a > img {
   }
   
 
+.form-expander{
+    padding: 10px;
+    margin:0px;
+    width: 100%;;
 
+}
+
+p{
+    margin: 5px;
+     padding: 0px;
+}

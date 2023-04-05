@@ -20,9 +20,9 @@ populateHouseholdPeo();
 const formExpanders = document.querySelectorAll('.form-expander');
 formExpanders.forEach(expander => {
     expander.addEventListener('click', () => {
-        const nextFormElement = expander.parentNode.nextElementSibling;
+        const nextFormElement = expander.nextElementSibling;
         nextFormElement.style.display = nextFormElement.style.display === 'block' ? 'none' : 'block';
-        expander.textContent = expander.textContent === '-' ? '+' : '-';
+        
     });
 });
 
@@ -142,19 +142,7 @@ function addItemShelter() {
     })
 }
 
-//create collection "emergencyKit"
-//error; if user refresh will create mutiple times. And If put hard-code in authentication, there are only stored first 8 items on database.
-function createEmergencyKit() {
-    firebase.auth().onAuthStateChanged((user) => {
-        if (user) {
 
-        } else {
-            // No user is signed in.
-            console.log("Error, no user signed in");
-        }
-    })
-}
-createEmergencyKit()
 
 
 //read from each subcollection
@@ -184,11 +172,11 @@ function populateList() {
                 <li id="${itemName}" class="list-group-item border-0 d-flex align-items-center ps-0">
                   <div class="d-flex align-items-center w-100 justify-content-between">
                     <div>
-                      <input id="checkbox-${itemName}" name="${itemName}" value="${itemName}" class="form-check-input me-3" type="checkbox" aria-label="..." ${ischecked}/>
+                      <input id="checkbox-${itemName}" name="${itemName}" value="${itemName}" class="form-check-input" type="checkbox" aria-label="..." ${ischecked}/>
                       <label for="checkbox-${itemName}">${itemName}</label>
                     </div>
                     <div class="input-group" style="width: 130px;">
-                      <input class="form-control" value="3 servings">
+                  
                     </div>
                     <button class="delete-btn">X</button>
                   </div>
@@ -224,6 +212,42 @@ function populateList() {
     });
 }
 populateList();
+
+
+const formCheckInputs = document.querySelectorAll('.form-check-input');
+
+formCheckInputs.addEventListener("change", updateCheckboxes)
+
+
+//update checkboxes
+function updateCheckboxes() {
+    const checkboxName = this.name;
+    const checkboxValue = this.value;
+    const isChecked = this.checked;
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+            db.collection("emergencyKit").doc(user.uid)
+                .set({
+                    [checkboxName]: {
+                        value: checkboxValue,
+                        checked: isChecked,
+                    },
+                }, { merge: true })
+
+                .then(() => {
+                   console.log("notification setting done");
+                    // var docid = doc.id;
+                })
+        } else {
+            // No user is signed in.
+            console.log("Error, no user signed in");
+        }
+    });
+};
+
+
+
+
 
 
 
