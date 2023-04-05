@@ -12,6 +12,7 @@ body{
     background-color:  	#fde798;
     padding:3vw;
     font-family: "Slackey", sans-serif;
+
 }
 
 h1{
@@ -23,6 +24,7 @@ h1{
     -webkit-clip-path: polygon(10% 0, 90% 0, 100% 5%, 100% 95%, 90% 100%, 10% 100%, 0 95%, 0 5%);
     clip-path: polygon(5% 0, 95% 0, 100% 10%, 100% 90%, 95% 100%, 5% 100%, 0 90%, 0 10%);
     padding: 4vw;
+    padding-bottom: 140px;
 
 }
 
@@ -106,7 +108,9 @@ a > img {
     min-height: 40px;
     padding:10px;
 
+
 } 
+
 
 
 /* form control styling, default hidden */
@@ -181,7 +185,7 @@ a > img {
     width: 200px;
     transition: all 0.5s;
     cursor: pointer;
-    margin: 5px;
+  
 }
 
 .button span {
@@ -259,4 +263,8 @@ a > img {
 p{
     margin: 5px;
      padding: 0px;
+}
+
+.plantext{
+    color:red
 }

@@ -62,12 +62,10 @@
     </div>
   </div>
 
-  <section class="vh-100">
-    <div class="container py-5 h-100">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div>
-          <div class="card rounded-3">
-            <div class="card-body p-4">
+  <section>
+    <div class="container card">
+      
+  
 
               <p>In the event of an extreme weather emergency, you and your
                 household might need to be look after yourselves for the first 72 hours.</p>
@@ -78,32 +76,35 @@
               
 
 
-              <p class="mb-2"><span class="h3 me-2">Household members</span><button class="badge bg-danger form-expander">+</button>
+              <p class="mb-2"><span class="h3 me-2">Household members</span>
               </p>
 
 
-              <form class="expandable-form" id ="householdMembersForm">
+              <div id="member-cards-container">
+    
+
+              </div>
+              
+              <p>
+              <a id="plus-button" class="form-shower" >
+                  <!-- <h5>Add </h5> -->
+                  <img src= "images/plus-button.png">
+              </a></p>
+              
+              <form class="expandable-form" id ="householdMembersForm" style="display: none;">
                 <div class="form-group">
                   <label for="formGroupExampleInput">Name</label>
                   <input type="text "class="form-control" id="householdMemberName" placeholder="name..">
                 </div>
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Phone Number</label>
-                    <input type="text "class="form-control" id="householdMemberName" placeholder="phone..">
-                </div>
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Medical Needs</label>
-                    <textarea class="form-control" id="householdMemberMedical" placeholder="medications"></textarea>
-                </div><br/>
-                <a href="#" class="btn btn-danger" role="button" data-bs-toggle="button">Add person</a>
-                <div class="divider d-flex align-items-center my-4"></div>
-                
+                <a  id="submitNewMember" class="btn btn-warning" role="button" data-bs-toggle="button">Add person</a>
+                <p></p>
                </form> 
+               <hr/>
 
 
 
 
-              <p class="mb-2"><span class="h3 me-2">Safe Meeting Points</span><button class="badge bg-danger form-expander">+</button>
+              <p class="mb-2"><button class="bg-warning form-expander">Safe Meeting Points</button>
               </p>
 
               <form class="expandable-form" id="safeMeetingPointsForm">
@@ -121,7 +122,7 @@
                 
 
 
-              <p class="mb-2"><span class="h3 me-2">Evacuation Route</span><button class="badge bg-danger form-expander">+</button>
+              <p class="mb-2"><button class="bg-warning form-expander">Evacuation Route</button>
               </p>
 
 
@@ -139,7 +140,7 @@
                 
               
 
-              <p class="mb-2"><span class="h3 me-2">Emergency Kit</span><button class="badge bg-danger form-expander">+</button></p>
+              <p class="mb-2"><button class="bg-warning form-expander">Emergency Kit</button></p>
 
               <form class="expandable-form" id="eKitForm">
                   <div class="form-group">
@@ -154,7 +155,7 @@
               <br>
 
 
-              
+              <hr/>
 
               <button type="button" class="btn btn-outline-danger">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -164,8 +165,8 @@
                     d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z" />
                 </svg>
                 Reset
-              </button>
-              <a class="btn btn-danger" role="button" data-bs-toggle="button" id="planSubmit">Submit</a>
+              </button><p></p>
+              <button class="btn btn-danger" role="button" data-bs-toggle="button" id="planSubmit">Submit</button>
               <br><br><br><br><br><br>
 
             </div>

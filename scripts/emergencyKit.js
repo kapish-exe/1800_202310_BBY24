@@ -1,3 +1,26 @@
+
+const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+        mutation.addedNodes.forEach((node) => {
+          if (node.nodeType === 1 && node.classList.contains('form-check-input')) {
+            const input = node;
+            input.addEventListener('change', updateCheckboxes);
+          }
+        });
+      }
+    });
+  });
+  
+  observer.observe(document, { childList: true, subtree: true });
+  
+  // Apply event listener to existing form check inputs
+  const formCheckInputs = document.querySelectorAll('.form-check-input');
+  formCheckInputs.forEach((input) => {
+    input.addEventListener('change', updateCheckboxes);
+  });
+
+
 // count household member
 function populateHouseholdPeo() {
     firebase.auth().onAuthStateChanged(user => {
@@ -46,12 +69,13 @@ function addItemFW() {
     let quantity = document.getElementById(`foodAndWater-quantity`);
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
-            var emergencyKit = db.collection("emergencyKit").doc(user.uid);
-            var foodAndWater = emergencyKit.collection("foodAndWater");
-            foodAndWater.add({
+            var emergencyKit = db.collection("emergencyKit").doc(user.uid).collection("items");
+            
+            emergencyKit.add({
                 itemName: itemName.value,
                 quantity: quantity.value,
-                ischecked: false
+                ischecked: false,
+                category:"foodAndWater"
             }).then(function (docRef) {
                 console.log("Item added successfully.");
                 //alert("Item added successfully.");
@@ -71,12 +95,13 @@ function addItemFA() {
     let quantity = document.getElementById(`firstAid-quantity`);
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
-            var emergencyKit = db.collection("emergencyKit").doc(user.uid);
-            var firstAid = emergencyKit.collection("firstAid");
-            firstAid.add({
+            var emergencyKit = db.collection("emergencyKit").doc(user.uid).collection("items");
+
+            emergencyKit.add({
                 itemName: itemName.value,
                 quantity: quantity.value,
-                ischecked: false
+                ischecked: false,
+                category: "firstAid"
             }).then(function (docRef) {
                 console.log("Item added successfully.");
                 alert("Item added successfully.");
@@ -96,12 +121,13 @@ function addItemTools() {
     let quantity = document.getElementById(`tools-quantity`);
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
-            var emergencyKit = db.collection("emergencyKit").doc(user.uid);
-            var tools = emergencyKit.collection("tools");
-            tools.add({
+            var emergencyKit = db.collection("emergencyKit").doc(user.uid).collection("items");
+            
+            emergencyKit.add({
                 itemName: itemName.value,
                 quantity: quantity.value,
-                ischecked: false
+                ischecked: false,
+                category: "tools"
             }).then(function (docRef) {
                 console.log("Item added successfully.");
                 alert("Item added successfully.");
@@ -121,12 +147,13 @@ function addItemShelter() {
     let quantity = document.getElementById(`shelter-quantity`);
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
-            var emergencyKit = db.collection("emergencyKit").doc(user.uid);
-            var shelter = emergencyKit.collection("shelter");
-            shelter.add({
+            var emergencyKit = db.collection("emergencyKit").doc(user.uid).collection("items");
+            
+            emergencyKit.add({
                 itemName: itemName.value,
                 quantity: quantity.value,
-                ischecked: false
+                ischecked: false,
+                category: "shelter"
             }).then(function (docRef) {
                 console.log("Item added successfully.");
                 alert("Item added successfully.");
@@ -157,12 +184,12 @@ function populateList() {
 
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
-            var emergencyKit = db.collection("emergencyKit").doc(user.uid);
+            var emergencyKit = db.collection("emergencyKit").doc(user.uid).collection("items");
   
             // Loop through subcollections and populate their items
             var subcollections = ["foodAndWater", "firstAid", "tools", "shelter"];
             subcollections.forEach(subcollection => {
-                const itemsDoc = emergencyKit.collection(subcollection);
+                const itemsDoc = emergencyKit.where("category", "==", subcollection);;
                 itemsDoc.get().then(snapshot => {
                     snapshot.forEach(doc => {
                         var ischecked = doc.data().ischecked ? "checked" : "";
@@ -178,11 +205,12 @@ function populateList() {
                     <div class="input-group" style="width: 130px;">
                   
                     </div>
-                    <button class="delete-btn">X</button>
+                    <button name="${itemName}" class="delete-btn" onclick="deleteItem(this)">X</button>
                   </div>
                 </li>
               `;
                         itemList.innerHTML += itemHtml;
+                        
 
 //update checkbox version 1: error - only change first item of each categories
                         // const checkbox = document.getElementById(`checkbox-${itemName}`);
@@ -214,39 +242,86 @@ function populateList() {
 populateList();
 
 
-const formCheckInputs = document.querySelectorAll('.form-check-input');
-
-formCheckInputs.addEventListener("change", updateCheckboxes)
 
 
-//update checkboxes
-function updateCheckboxes() {
-    const checkboxName = this.name;
-    const checkboxValue = this.value;
-    const isChecked = this.checked;
-    firebase.auth().onAuthStateChanged(function (user) {
+// //update checkboxes
+// function updateCheckboxes() {
+//     console.log("CLICK");
+//     alert("CLICK");
+//     const checkboxName = this.name;
+//     const checkboxValue = this.value;
+//     const checked = this.checked;
+//     firebase.auth().onAuthStateChanged(function (user) {
+//         if (user) {
+//             const itemsRef = db.collection("emergencyKit").doc(user.uid).collection("items");
+//             itemsRef.where("itemName", "==", checkboxName)
+//             get().then(querySnapshot => {
+//                 querySnapshot.forEach(doc => {
+//                   itemsRef.doc(doc.id).update({
+//                     ischecked: checked
+//                   });
+//                 });
+//               });
+//         } else {
+//             // No user is signed in.
+//             console.log("Error, no user signed in");
+//         }
+//     });
+// };
+
+
+  
+
+function deleteItem(button) {
+    const itemName = button.name;
+    console.log("called delete funtion");
+    console.log(itemName);
+
+    firebase.auth().onAuthStateChanged(user => {
         if (user) {
-            db.collection("emergencyKit").doc(user.uid)
-                .set({
-                    [checkboxName]: {
-                        value: checkboxValue,
-                        checked: isChecked,
-                    },
-                }, { merge: true })
-
-                .then(() => {
-                   console.log("notification setting done");
-                    // var docid = doc.id;
-                })
+             db.collection("emergencyKit").doc(user.uid).collection("items")
+             .where("itemName", "==", itemName)
+             .get()
+             .then( snapshot => {
+                        snapshot.forEach(doc => {
+                         console.log("attempt");
+                         querySnapshot.forEach((doc) => {
+                                         doc.ref.delete();
+                                 });
+                        })
+                    })
+      .catch((error) => {
+        console.error("Error deleting item:", error);
+      });
         } else {
-            // No user is signed in.
-            console.log("Error, no user signed in");
+            console.log("No user is signed in");
         }
     });
-};
+  }
+
+
+  
 
 
 
+
+// const itemsRef = db.collection("emergencyKit").doc(user.uid).collection("items");
+
+// const checkboxes = document.querySelectorAll('form input[type="checkbox"]');
+// checkboxes.forEach(checkbox => {
+//   checkbox.addEventListener('change', (event) => {
+//     console.log("clicck");
+//     const checkboxName = checkbox.name;
+//     const ischecked = checkbox.checked;
+//     itemsRef.where("checkboxName", "==", checkboxName).get().then(querySnapshot => {
+//       querySnapshot.forEach(doc => {
+//         itemsRef.doc(doc.id).update({
+//           ischecked: ischecked
+//         });
+//       });
+//     });
+//   });
+// });
 
 
 

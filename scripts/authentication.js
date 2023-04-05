@@ -32,172 +32,202 @@ var uiConfig = {
           name: user.displayName
         });
 
-        var emergencyKit = db.collection("emergencyKit").doc(user.uid);
-        var foodAndWater = emergencyKit.collection("foodAndWater");
-        var firstAid = emergencyKit.collection("firstAid");
-        var tools = emergencyKit.collection("tools");
-        var shelter = emergencyKit.collection("shelter")
+        var emergencyKit = db.collection("emergencyKit").doc(user.uid).collection("items");
+
         //Food & Water
-        foodAndWater.add({
-            itemName: "Water",
-            quantity: "4 gallon",
-            ischecked: true
+        emergencyKit.add({
+            itemName: "Water (gallons)",
+            quantity: 4,
+            ischecked: false,
+            category: "foodAndWater"
         });
-        foodAndWater.add({
+        emergencyKit.add({
             itemName: "Water Purification Tablets",
-            quantity: "10 tablets",
-            ischecked: true
+            quantity: 10,
+            ischecked: false,
+            category: "foodAndWater"
         });
-        foodAndWater.add({
+        emergencyKit.add({
             itemName: "Cereals",
             quantity: "3 servings",
-            ischecked: false
+            ischecked: false,
+            category: "foodAndWater"
         });
-        foodAndWater.add({
-            itemName: "Canned foods, specifically canned fruits and vegetables",
-            quantity: "10 servings",
-            ischecked: false
+        emergencyKit.add({
+            itemName: "Canned foods",
+            quantity: 10,
+            ischecked: false,
+            category: "foodAndWater"
         });
-        foodAndWater.add({
+        emergencyKit.add({
             itemName: "Protein bars",
-            quantity: "3 bars",
-            ischecked: false
+            quantity: 3,
+            ischecked: false,
+            category: "foodAndWater"
         });
-        foodAndWater.add({
-            itemName: "Juice",
-            quantity: "3 servings",
-            ischecked: false
+        emergencyKit.add({
+            itemName: "Juice boxes",
+            quantity: 3,
+            ischecked: false,
+            category: "foodAndWater"
         });
-        foodAndWater.add({
+        emergencyKit.add({
             itemName: "Freeze-dried food",
-            quantity: "3 servings",
-            ischecked: false
+            quantity: 3,
+            ischecked: false,
+            category: "foodAndWater"
         });
-        foodAndWater.add({
-            itemName: "Non-perishable food",
-            quantity: "3 servings",
-            ischecked: false
+        emergencyKit.add({
+            itemName: "Non-perishable food (servings)",
+            quantity: 3,
+            ischecked: false,
+            category: "foodAndWater"
         });
 
         //First Aid
-        firstAid.add({
-            itemName: "Vinyl Glove",
-            quantity: "2 pairs",
-            ischecked: true
+        emergencyKit.add({
+            itemName: "Vinyl Gloves",
+            quantity: 2,
+            ischecked: false,
+            category: "firstAid"
         });
-        firstAid.add({
+        emergencyKit.add({
             itemName: "Band-Aids",
-            quantity: "36",
-            ischecked: true
+            quantity: 36,
+            ischecked: false,
+            category: "firstAid"
         });
-        firstAid.add({
+        emergencyKit.add({
             itemName: "Gauze Pads",
-            quantity: "2",
-            ischecked: false
+            quantity: 2,
+            ischecked: false,
+            category: "firstAid"
         });
-        firstAid.add({
+        emergencyKit.add({
             itemName: "Rolled Gauze",
-            quantity: "2",
-            ischecked: false
+            quantity: 2,
+            ischecked: false,
+            category: "firstAid"
         });
-        firstAid.add({
+        emergencyKit.add({
             itemName: "Alcohol Pads",
-            quantity: "15",
-            ischecked: false
+            quantity: 15,
+            ischecked: false,
+            category: "firstAid"
         });
-        firstAid.add({
+        emergencyKit.add({
             itemName: "Adhesive Tape Roll",
-            quantity: "1",
-            ischecked: false
+            quantity: 1,
+            ischecked: false,
+            category: "firstAid"
         });
-        firstAid.add({
+        emergencyKit.add({
             itemName: "Tweezer",
-            quantity: "1",
-            ischecked: false
+            quantity: 1,
+            ischecked: false,
+            category: "firstAid"
         });
-        firstAid.add({
+        emergencyKit.add({
             itemName: "Cold Pack",
-            quantity: "15",
-            ischecked: false
-        });
-        firstAid.add({
-            itemName: "Plastic Carry Case",
-            quantity: "1",
-            ischecked: false
+            quantity: 1,
+            ischecked: false,
+            category: "firstAid"
         });
 
-        //Tools
-        tools.add({
-            itemName: "Aluminum Alloy Emergency Whistle",
-            quantity: "2 pairs",
-            ischecked: false
+
+        //"tools"
+        emergencyKit.add({
+            itemName: "Emergency Whistle",
+            quantity: 2,
+            ischecked: false,
+            category: "tools"
         });
-        tools.add({
+        emergencyKit.add({
             itemName: "Dust Masks",
-            quantity: "36",
-            ischecked: false
+            quantity: 4,
+            ischecked: false,
+            category: "tools"
         });
-        tools.add({
-            itemName: "Leather Palm Work Gloves",
-            quantity: "2",
-            ischecked: false
-        });
-        tools.add({
+ 
+        emergencyKit.add({
             itemName: "Multi-Function Army Knife",
-            quantity: "2",
-            ischecked: false
+            quantity: 1,
+            ischecked: false,
+            category: "tools"
         });
-        tools.add({
+        emergencyKit.add({
             itemName: "50ft Nylon Utility Cord",
-            quantity: "15",
-            ischecked: false
+            quantity: 1,
+            ischecked: false,
+            category: "tools"
         });
-        tools.add({
+        emergencyKit.add({
             itemName: "Hand-Crank Powered Light, AM/FM Radio and USB Device Charger",
-            quantity: "1",
-            ischecked: false
+            quantity: 1,
+            ischecked: false,
+            category: "tools"
         });
-        tools.add({
+        emergencyKit.add({
+            itemName: "AM/FM Radio",
+            quantity: 1,
+            ischecked: false,
+            category: "tools"
+        });
+        emergencyKit.add({
+            itemName: "USB Device Charger",
+            quantity: 1,
+            ischecked: false,
+            category: "tools"
+        });
+        emergencyKit.add({
             itemName: "Emergency Candles",
-            quantity: "1",
-            ischecked: false
+            quantity: 5,
+            ischecked: false,
+            category: "tools"
         });
-        tools.add({
+        emergencyKit.add({
             itemName: "Waterproof Matches",
-            quantity: "15",
-            ischecked: false
+            quantity: 15,
+            ischecked: false,
+            category: "tools"
         });
-        tools.add({
+        emergencyKit.add({
             itemName: "Tissue Pack",
-            quantity: "1",
-            ischecked: false
+            quantity: 2,
+            ischecked: false,
+            category: "tools"
         });
-        tools.add({
+        emergencyKit.add({
             itemName: "Clear Reclosable Bags",
-            quantity: "1",
-            ischecked: false
+            quantity: 4,
+            ischecked: false,
+            category: "tools"
         });
 
         //Shelter
-        shelter.add({
+        emergencyKit.add({
             itemName: "Aluminized Sleeping Bag",
-            quantity: "15",
-            ischecked: false
+            quantity: 1,
+            ischecked: false,
+            category: "tools"
         });
-        shelter.add({
+        emergencyKit.add({
             itemName: "Hooded Rain Poncho",
-            quantity: "1",
-            ischecked: false
+            quantity: 1,
+            ischecked: false,
+            category: "tools"
         });
-        shelter.add({
+        emergencyKit.add({
             itemName: "Tube Tent",
-            quantity: "1",
-            ischecked: false
+            quantity: 1,
+            ischecked: false,
+            category: "tools"
         });
-        shelter.add({
+        emergencyKit.add({
             itemName: "Roll Duct Tape",
-            quantity: "1",
-            ischecked: false
+            quantity: 1,
+            ischecked: false,
+            category: "tools"
         });
 
         db.collection("userDocs").doc(user.uid).set({
