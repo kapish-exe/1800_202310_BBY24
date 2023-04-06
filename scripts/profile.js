@@ -136,24 +136,6 @@ function saveUserImage() {
 
 
 
-//   // Get a reference to the delete button element
-//   const deleteButton = document.getElementById('delete-button');
-
-//   // Add a click event listener to the delete button
-//   deleteButton.addEventListener('click', () => {
-//     // Display a confirmation message using the built-in "confirm" function
-//     const confirmed = confirm('Are you sure you want to delete this?');
-
-//     // Check if the user clicked "OK" in the confirmation message
-//     if (confirmed) {
-//       // User confirmed, delete the item here
-//       console.log('Item deleted!');
-//     } else {
-//       // User cancelled, do nothing
-//       console.log('Delete cancelled!');
-//     }
-//   });
-
 
 
 

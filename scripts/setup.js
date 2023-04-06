@@ -12,13 +12,9 @@ function populateMemberCards() {
                     var namecard = document.createElement("div");
                     namecard.classList.add("member-card");
                     namecard.innerText = name;
-                    // const img = document.createElement("img");
-                    // img.src = "./images/bee-anim.gif";
-                    // img.alt = "Image description";
-                    // img.id = "bee-anim"
+            
 
 
-                    // namecard.prepend(img);
                     document.getElementById("member-cards-container").appendChild(namecard);
                 });
             });
