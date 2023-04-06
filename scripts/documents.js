@@ -1,21 +1,7 @@
-//function to start camera when pressed on "take a photo in the upload-docs.html page"
-function openCamera() {
-    const video = document.createElement('video');
-    // video.style.display = 'none';
-
-    navigator.mediaDevices.getUserMedia({ video: true })
-        .then(stream => {
-            video.srcObject = stream;
-            video.play();
-
-            video.style.display = 'block';
-        })
-        .catch(error => {
-            console.error('Error accessing camera:', error);
-        });
-}
-
-
+/*the functions below are necessary for the documents page to function. 
+  the functions does the uploading of the documents to storage and getting the url and uploading that tto the database for a particular user.
+  It also writees the doc ID to the DocumentsAll database.
+*/
 var ImageFile;
 var newdiv = document.getElementById("activateonsavepost");
 function listenDocumentSelect() {
