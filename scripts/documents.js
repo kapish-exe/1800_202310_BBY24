@@ -132,6 +132,7 @@ button.addEventListener("click", () => {
     imageheadlline.style.display = "none";
 
     newdiv.style.display = "flex"
+    newdiv.style.flexDirection = "column"
     console.log("Sum")
 })
 
@@ -176,8 +177,6 @@ function showdocs() {
 
                             imagecontainer.className = "image-container";
                             imagecontainer.style.position = "relative";
-                            // imagediv.style.border = "none";`
-                            // imagediv.style.boxShadow = "rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px";
                             image.style.width = "100%";
                             deleteButton.style.position = "absolute";
                             deleteButton.style.top = "0";
@@ -192,16 +191,11 @@ function showdocs() {
                             imagecontainer.appendChild(deleteButton);
 
                             imagediv.insertBefore(imagecontainer, imagediv.firstChild);
-
-                            // imagediv.insertBefore(imagecontainer, imagediv.firstChild)
-
-                            // displayMyPostCard(doc);
-                        })
+})
                 })
             })
     })
 }
-// showdocs();
 
 
 
@@ -228,3 +222,29 @@ function deleteImage(itemId) {
         }
     })
 } showdocs();
+
+function populateMemberCards() {
+    firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+            console.log("user exists");
+            var household = db.collection("household").doc(user.uid);
+            var members = household.collection("member");
+            console.log(members);
+            // document.getElementById("familymembergoeshere").innerHTML="";
+            members.get().then(doc => {
+                doc.forEach(userdoc => {
+                    var name = userdoc.data().name;
+                    var namecard = document.createElement("a");
+                    // namecard.href = ;
+                    namecard.innerText = name;
+
+
+                    document.getElementById("familymembergoeshere").appendChild(namecard);
+                });
+            });
+        } else {
+            console.log("No user is signed in");
+        }
+    });
+}
+populateMemberCards();

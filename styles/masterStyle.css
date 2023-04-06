@@ -1,26 +1,24 @@
-
-
-#signup-login{
-    width:100%;
-    background-color:  	#F7D65A;
-    height:100vh;
-    padding-top:4vh;
+#signup-login {
+    width: 100%;
+    background-color: #F7D65A;
+    height: 100vh;
+    padding-top: 4vh;
     padding-left: 4vw;
     padding-right: 4vw;
 }
 
-body{
-    background-color:  	#F7D65A;
-    padding:3vw;
+body {
+    background-color: #F7D65A;
+    padding: 3vw;
     font-family: "Slackey", sans-serif;
 }
 
-h1{
+h1 {
     font-family: "Slackey", sans-serif;
     color: black;
 }
 
-.container{
+.container {
     -webkit-clip-path: polygon(10% 0, 90% 0, 100% 5%, 100% 95%, 90% 100%, 10% 100%, 0 95%, 0 5%);
     clip-path: polygon(5% 0, 95% 0, 100% 10%, 100% 90%, 95% 100%, 5% 100%, 0 90%, 0 10%);
     padding: 4vw;
@@ -31,34 +29,34 @@ h1{
     font-size: 30pt;
 }
 
-#bee-anim{
-    height:8vw;
+#bee-anim {
+    height: 8vw;
     width: 8vw;
 }
 
 #splash-logo {
-    height:34vh;
+    height: 34vh;
     margin: auto;
     display: block;
     padding-bottom: 4vh;
 }
 
 #setup-logo {
-    padding-top:2vh;
-    height:20vh;
+    padding-top: 2vh;
+    height: 20vh;
     margin: auto;
     display: block;
     padding-bottom: 2vh;
 }
 
-#pages-logo{
-    height:68h;
+#pages-logo {
+    height: 68h;
     width: auto;
 }
 
-#firebaseui-auth-container > div{
+#firebaseui-auth-container>div {
     border-radius: 14px;
-    max-height:60vh;
+    max-height: 60vh;
 
 }
 
@@ -66,7 +64,7 @@ h1{
 
 /* 
 /* TO-DO elements must be given id/class names */
-a{
+a {
     margin: auto;
     color: black;
     text-decoration: none;
@@ -77,24 +75,24 @@ a{
 
 
 
-a > h5 {
+a>h5 {
     padding-left: 2vw;
     padding-right: 2vw;
-    margin:auto;
-} 
+    margin: auto;
+}
 
 
-a > img {
+a>img {
 
     margin: auto;
-    padding:0px;
+    padding: 0px;
     -webkit-filter: drop-shadow(2px 2px 4px #444);
-    filter: drop-shadow(1px 1px  2px #999);
+    filter: drop-shadow(1px 1px 2px #999);
     height: 60px;
     width: 60px;
     background-color: inherit;
-    cursor:pointer;
-    
+    cursor: pointer;
+
 }
 
 /** to herre... ^^
@@ -104,15 +102,15 @@ a > img {
     background-color: #d2e7e7;
     border-radius: 10px;
     min-height: 40px;
-    padding:10px;
+    padding: 10px;
 
-} 
+}
 
 
 /* form control styling, default hidden */
 
 .expandable-form {
-    display:none;
+    display: none;
 }
 
 
@@ -224,18 +222,66 @@ a > img {
     height: 87vh;
 }
 
-#activateonsavepost{
+#activateonsavepost {
     display: none;
     z-index: 50;
-    position: relative; 
+    position: relative;
     justify-content: center;
     margin-top: 3em;
 }
 
-#yourdocuments{
+#yourdocuments {
     font-size: 24px;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: #333;
 }
+
+#doc-goes-here{
+    height: 100%;
+    width: 100%;
+}
+
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {background-color: #3e8e41;}
