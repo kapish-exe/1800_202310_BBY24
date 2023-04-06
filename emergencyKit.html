@@ -40,7 +40,6 @@
   <nav class="navbar navbar-expand">
     <a class="navbar-brand" href="main.html"><img id="pages-logo" src="images/beeonwhite.png" /></a>
     <a id="settings-link"  href="setting.html"><span class="material-symbols-outlined">settings</span></a>
-   <div id="logout-div" style="margin-left: 60px;"> <button id="logout-button" class="btn btn-warning" >Logout</button></div>
 
   </nav>
 
@@ -55,8 +54,8 @@
       </a>
     </div>
     <div class="d-flex justify-content-center ">
-      <h3 class="mainname">Emergency Kit</h3>
-      <small class="text-muted">72 hr</small>
+      <h3 class="mention">Emergency Kit for <span id="peoNum-goes-here"></span></h3>
+      
     </div>
     <!-- <div class="d-flex justify-content-end">
       <a href="#" class="text-success m-3">
@@ -69,22 +68,16 @@
     </div> -->
   </div>
 
-  <section class="vh-100">
-    <div class="container py-5 h-100">
+  <section class="vh">
+    <div class="container card py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
-        <div>
-          <div class="card rounded-3">
             <div class="card-body p-4">
 
-              <h3 class="mention">Standard Emergency Kit for <span id="peoNum-goes-here"></span> people</h3>
 
-              <div class="divider d-flex align-items-center my-4"></div>
-
-
-              <p class="mb-2"><span class="h3 me-2">Food & WATER</span><button
-                  class="badge bg-danger form-expander">+</button></p>  
+              <button
+                  class="bg-warning form-expander">Food & Water</button> 
               <form class="expandable-form">
-                <!-- <p class="text-muted pb-2">At least 14 servings (3600 Calorie)</p> -->
+              
                 <ul class="list-group rounded-0">
                   <!---->
                 <span id="foodAndWater-goes-here"></span>
@@ -112,10 +105,10 @@
               </form>
               <br>
 
-              <p class="mb-2"><span class="h3 me-2">FIRST AID</span><button
-                  class="badge bg-danger form-expander">+</button></p>
+              <button
+                  class="bg-warning form-expander">First Aid</button>
               <form class="expandable-form">
-                <p class="text-muted pb-2"> First Aid Guide </p>
+                
                 <ul class="list-group rounded-0" id="itemList">
 
                   <span id="firstAid-goes-here"></span>
@@ -142,10 +135,10 @@
 
               <br>
 
-              <p class="mb-2"><span class="h3 me-2">Tools</span><button class="badge bg-danger form-expander">+</button>
-              </p>
+              <button class="bg-warning form-expander">Tools</button>
+              
               <form class="expandable-form">
-                <p class="text-muted pb-2">For lightinh, comunication, search, rescue and sanitation.</p>
+                
                 <ul class="list-group rounded-0">
 
                   <span id="tools-goes-here"></span>
@@ -172,10 +165,10 @@
               </form>
               <br>
 
-              <p class="mb-2"><span class="h3 me-2">SHELTER</span><button
-                  class="badge bg-danger form-expander">+</button></p>
+              <button
+                  class="bg-warning form-expander">Shelter</button>
               <form class="expandable-form">
-                <p class="text-muted pb-2">Lightweight and warm</p>
+               
                 <ul class="list-group rounded-0">
 
                   <span id="shelter-goes-here"></span>
@@ -200,9 +193,6 @@
 
 
               </form>
-
-
-               <br><br><br><br><br>
 
             </div>
           </div>

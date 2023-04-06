@@ -27,7 +27,7 @@
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
-    <link rel="stylesheet" href="./styles/masterStyle.css" />
+  <link rel="stylesheet" href="./styles/masterStyle.css" />
 </head>
 
 
@@ -38,31 +38,101 @@
   <!------------------------------>
 
   <!-- nav bar -->
-  <nav class="navbar navbar-expand">
+  <nav>
     <a class="navbar-brand" href="#"><img id="pages-logo" src="images/beeonwhite.png" /></a>
-    <a id="settings-link"  href="setting.html"><span class="material-symbols-outlined">settings</span></a>
-   <div id="logout-div" style="margin-left: 60px;"> <button id="logout-button" class="btn btn-warning" >Logout</button></div>
+    <div id="main-setting"><a id="settings-link" href="setting.html"><span
+          class="material-symbols-outlined">settings</span></a></div>
+    <!-- <div id="logout-div" style="margin-left: 60px;"> <button id="logout-button" class="btn btn-warning" >Logout</button></div> -->
 
   </nav>
 
-<!--PAGE CONTENT-->
 
-<h1>Hello <span id="name-goes-here"></span>!</h1>
-<div class = "container card card-body">
+  <!--PAGE CONTENT-->
 
+  <h1>Hello <span id="name-goes-here"></span>!</h1>
+  <div class="container card card-body">
+   
+
+    <div class="row mb-2">
+      <div class="col-md-6">
+        <div class="card flex-md-row mb-4 box-shadow h-md-250 border-primary border-warning">
+          <div class="card-body d-flex flex-column align-items-start">
+            <strong class="d-inline-block mb-2 text-primary">About </strong>
+            
+           
+            <p class="card-text mb-auto">Ready Bee empowers users to be better prepared for unexpected events and
+              respond quickly and effectively when they occur by providing features like,storing documents,make plan and
+              emergency Kit </a>
+          </div>
+          
+        </div>
+      </div>
+      <a href="documents.html">
+      <div class="col-md-6">
+        <div class="card flex-md-row mb-4 box-shadow h-md-250 border-primary border-warning" >
+          <div class="card-body d-flex flex-column align-items-start">
+            <strong class="d-inline-block mb-2 text-success">Store documents</strong>
+            
+            <p class="card-text mb-auto">Let's store and access  documents  anywhere  at your fingertips </p>
+           
+          </div>
+          <img src="/images/add.png" style="height: 40px; width: 40px; align-self:center;">
+        </div>
+      </div>
+   
+  
+</a>
+
+
+<a href="plan.html">
+  <div class="col-md-6">
+    <div class="card flex-md-row mb-4 box-shadow h-md-250 border-primary border-warning" >
+      <div class="card-body d-flex flex-column align-items-start">
+        <strong class="d-inline-block mb-2 text-success">Create plan</strong>
+        
+        <p class="card-text mb-auto">It's always important to be prepare before an emergency , so prepare a plan right now!</p>
+       
+      </div>
+      <img src="/images/add.png" style="height: 40px; width: 40px; align-self:center;">
+    </div>
+  </div>
+
+  <a href="emergencyKit.html">
+    <div class="col-md-6">
+      <div class="card flex-md-row mb-4 box-shadow h-md-250 border-primary border-warning" >
+        <div class="card-body d-flex flex-column align-items-start">
+          <strong class="d-inline-block mb-2 text-success">Customize Emergency_KIT</strong>
+          
+          <p class="card-text mb-auto">Become your own life saver by customizing own kit.</p>
+         
+        </div>
+        <img src="/images/add.png" style="height: 40px; width: 40px; align-self:center;">
+      </div>
+    </div>
+  
 
 </div>
 
+</a>
 
 
 
-<footer class="navbar justify-content-evenly bg-warning fixed-bottom">
+
+  <!-- content extra -->
+  </div>
+
+  <br><br><br><br><br>
+
+
+
+
+  <footer class="navbar justify-content-evenly bg-warning fixed-bottom">
     <div class="container py-3">
-      <a href="documents.html"><span class="material-symbols-outlined">perm_media</span><br/>Docs</a>
-      <a href="plan.html"><span class="material-symbols-outlined">task_alt</span> <br/>Plan</a>
-      <a href="emergencyKit.html"><span class="material-symbols-outlined">medical_services</span> <br/>Kit</a>
+      <a href="documents.html"><span class="material-symbols-outlined">perm_media</span><br />Docs</a>
+      <a href="plan.html"><span class="material-symbols-outlined">task_alt</span> <br />Plan</a>
+      <a href="emergencyKit.html"><span class="material-symbols-outlined">medical_services</span> <br />Kit</a>
     </div>
-</footer>
+  </footer>
 
 
 

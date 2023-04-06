@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-  <title>My BCIT Project</title>
-  <meta name="comp1800 template" content="My 1800 App" />
+  <title>Ready Bee - Let's get Started!</title>
+  <meta name="Ready Bee Signup" content="BBY-24's Emergency Preparedness App" />
 
   <!-- Required meta tags -->
   <meta charset="utf-8" />
@@ -16,10 +16,9 @@
 
   <!-- Other libraries go here -->
 
-
-
   <!-- Link to styles of your own -->
-  <link rel="stylesheet" href="./styles/styleE.css" />
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Slackey">
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -28,6 +27,7 @@
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+  <link rel="stylesheet" href="./styles/masterStyle.css" />
 </head>
 
 <body id="page3">
@@ -37,8 +37,10 @@
 
   <!-- nav bar -->
   <nav class="navbar navbar-expand">
-    <a class="navbar-brand" href="main.html">App name!</a>
+    <a class="navbar-brand" href="main.html"><img id="pages-logo" src="images/beeonwhite.png" /></a>
     <a id="settings-link"  href="setting.html"><span class="material-symbols-outlined">settings</span></a>
+
+
   </nav>
 
 
@@ -61,12 +63,9 @@
     </div>
   </div>
 
-  <section class="vh-100">
-    <div class="container py-5 h-100">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div>
-          <div class="card rounded-3">
-            <div class="card-body p-4">
+  <section >
+    <div class="container card">
+
 
               <h1>Your emergency plan..</h1>
 
@@ -83,11 +82,11 @@
 
                 <div>
                   <label>Near your home:</label>
-                  <div  id="nearMeetingPoint" ></div>
+                  <div  id="nearMeetingPoint" class="plantext"></div>
                 </div>
                 <div>
                   <label>Outside your neighbourhood:</label>
-                  <div id="farMeetingPoint" ></div>
+                  <div id="farMeetingPoint" class="plantext"></div>
                 </div>
 
                 <div class="divider d-flex align-items-center my-4"></div>
@@ -100,11 +99,11 @@
 
                 <div class="form-group">
                   <label>Favoured Route:</label>
-                  <div id="evacRoute"></div>
+                  <div id="evacRoute" class="plantext"></div>
                 </div>
                 <div class="form-group">
                   <label for="formGroupExampleInput2">Alternative Route:</label>
-                  <div id="altEvacRoute" ></div>
+                  <div id="altEvacRoute" class="plantext"></div>
                 </div>
 
 
@@ -116,7 +115,7 @@
 
                   <div>
                     <label> Location: </label>
-                    <div id="eKitLocation"></div>
+                    <div id="eKitLocation" class="plantext"></div>
                   </div>
  
 
@@ -127,7 +126,7 @@
               <div class="divider d-flex align-items-center my-4"></div>
 
 
-              <a href="#" class="btn btn-danger" role="button" data-bs-toggle="button" id="planEdit">Edit</a>
+              <a href="plan.html" class="btn btn-warning" role="button" data-bs-toggle="button" id="planEdit">Edit</a>
 
               <div id="user-plan"></div>
 
@@ -150,7 +149,7 @@
 
 
 
-  <footer class="navbar justify-content-evenly bg-danger fixed-bottom">
+  <footer class="navbar justify-content-evenly bg-warning fixed-bottom">
     <div class="container py-3">
       <a href="documents.html"><span class="material-symbols-outlined">perm_media</span><br/>Docs</a>
       <a href="plan.html"><span class="material-symbols-outlined">task_alt</span> <br/>Emergency Plan</a>
