@@ -2,8 +2,7 @@ function reportProblem() {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
           // User is signed in.
-          // Do something for the user here. 
-          // var desc =  userDoc.data().username;
+
     
           var problemReported = document.getElementById("textarea").value;
           db.collection("problems_reported").doc(user.uid).set({

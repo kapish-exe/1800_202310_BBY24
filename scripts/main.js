@@ -12,25 +12,10 @@ function insertNameFromFireStore() {
         document.getElementById("name-goes-here").innerText = userUserName;
       })
 
-      //method #1:  insert with html only
-      // document.getElementById("name-goes-here").innerText = user_Name;    //using javascript
-      //method #2:  insert using jquery
-      // $("#name-goes-here").text(user_Name); //using jquery
+
 
     }
   });
 }
 insertNameFromFireStore(); //run the function
 
-
-// const logoutButton = document.getElementById("logout-button");
-
-// logoutButton.addEventListener("click", () => {
-//   firebase.auth().signOut().then(() => {
-//     // Sign-out successful.
-//     window.location.href = "index.html"; // Redirect the user to the sign-in page
-//   }).catch((error) => {
-//     // An error happened.
-//     console.log(error);
-//   });
-// });

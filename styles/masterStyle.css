@@ -15,12 +15,12 @@ body{
 
 }
 
-h1{
+h1 {
     font-family: "Slackey", sans-serif;
     color: black;
 }
 
-.container{
+.container {
     -webkit-clip-path: polygon(10% 0, 90% 0, 100% 5%, 100% 95%, 90% 100%, 10% 100%, 0 95%, 0 5%);
     clip-path: polygon(5% 0, 95% 0, 100% 10%, 100% 90%, 95% 100%, 5% 100%, 0 90%, 0 10%);
     padding: 4vw;
@@ -32,35 +32,35 @@ h1{
     font-size: 30pt;
 }
 
-#bee-anim{
-    height:8vw;
+#bee-anim {
+    height: 8vw;
     width: 8vw;
 }
 
 #splash-logo {
-    height:34vh;
+    height: 34vh;
     margin: auto;
     display: block;
     padding-bottom: 4vh;
 }
 
 #setup-logo {
-    padding-top:2vh;
-    height:20vh;
+    padding-top: 2vh;
+    height: 20vh;
     margin: auto;
     display: block;
     padding-bottom: 2vh;
 }
 
-#pages-logo{
-    height:68h;
+#pages-logo {
+    height: 68h;
     width: auto;
     
 }
 
-#firebaseui-auth-container > div{
+#firebaseui-auth-container>div {
     border-radius: 14px;
-    max-height:60vh;
+    max-height: 60vh;
 
 }
 
@@ -68,7 +68,7 @@ h1{
 
 /* 
 /* TO-DO elements must be given id/class names */
-a{
+a {
     margin: auto;
     color: black;
     text-decoration: none;
@@ -79,24 +79,24 @@ a{
 
 
 
-a > h5 {
+a>h5 {
     padding-left: 2vw;
     padding-right: 2vw;
-    margin:auto;
-} 
+    margin: auto;
+}
 
 
-a > img {
+a>img {
 
     margin: auto;
-    padding:0px;
+    padding: 0px;
     -webkit-filter: drop-shadow(2px 2px 4px #444);
-    filter: drop-shadow(1px 1px  2px #999);
+    filter: drop-shadow(1px 1px 2px #999);
     height: 60px;
     width: 60px;
     background-color: inherit;
-    cursor:pointer;
-    
+    cursor: pointer;
+
 }
 
 /** to herre... ^^
@@ -106,7 +106,7 @@ a > img {
     background-color: #d2e7e7;
     border-radius: 10px;
     min-height: 40px;
-    padding:10px;
+    padding: 10px;
 
 
 } 
@@ -116,7 +116,7 @@ a > img {
 /* form control styling, default hidden */
 
 .expandable-form {
-    display:none;
+    display: none;
 }
 
 
@@ -228,15 +228,15 @@ a > img {
     height: 87vh;
 }
 
-#activateonsavepost{
+#activateonsavepost {
     display: none;
     z-index: 50;
-    position: relative; 
+    position: relative;
     justify-content: center;
     margin-top: 3em;
 }
 
-#yourdocuments{
+#yourdocuments {
     font-size: 24px;
     font-weight: bold;
     text-transform: uppercase;
