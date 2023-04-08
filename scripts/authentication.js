@@ -36,26 +36,26 @@ var uiConfig = {
 
         //Food & Water
         emergencyKit.add({
-            itemName: "Water",
-            quantity: "4 gallons",
+            itemName: "Water (gallons)",
+            quantity: 4,
             ischecked: false,
             category: "foodAndWater"
         });
         emergencyKit.add({
             itemName: "Water Purification Tablets",
-            quantity: "10 tablets",
+            quantity: 10,
             ischecked: false,
             category: "foodAndWater"
         });
         emergencyKit.add({
-            itemName: "Cereals",
-            quantity: "3 servings",
+            itemName: "Cereals (servings)",
+            quantity: 3,
             ischecked: false,
             category: "foodAndWater"
         });
         emergencyKit.add({
-            itemName: "Canned foods",
-            quantity: "10 servings",
+            itemName: "Canned foods (servings)",
+            quantity: 10,
             ischecked: false,
             category: "foodAndWater"
         });
@@ -72,14 +72,14 @@ var uiConfig = {
             category: "foodAndWater"
         });
         emergencyKit.add({
-            itemName: "Freeze-dried food",
-            quantity: "3 servings",
+            itemName: "Freeze-dried food (servings)",
+            quantity: 3,
             ischecked: false,
             category: "foodAndWater"
         });
         emergencyKit.add({
-            itemName: "Non-perishable food",
-            quantity: "3 servings",
+            itemName: "Non-perishable food (servings)",
+            quantity: 3,
             ischecked: false,
             category: "foodAndWater"
         });
@@ -87,7 +87,7 @@ var uiConfig = {
         //First Aid
         emergencyKit.add({
             itemName: "Vinyl Gloves",
-            quantity: "2 pairs",
+            quantity: 2,
             ischecked: false,
             category: "firstAid"
         });
@@ -162,7 +162,13 @@ var uiConfig = {
             category: "tools"
         });
         emergencyKit.add({
-            itemName: "Hand-Crank Powered Light, AM/FM Radio and USB Device Charger",
+            itemName: "Hand-Crank Powered Light",
+            quantity: 1,
+            ischecked: false,
+            category: "tools"
+        });
+        emergencyKit.add({
+            itemName: "AM/FM Radio and USB Device Charger",
             quantity: 1,
             ischecked: false,
             category: "tools"

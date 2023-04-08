@@ -181,10 +181,9 @@ function populateList() {
                             <div class="d-flex align-items-center w-100 justify-content-between">
                                 <div>
                                     <input class="form-check-input ${itemName}" type="checkbox" aria-label="..." ${ischecked}/>
-                                    <label class="card-title">${itemName} - </label>
+                                    <label class="card-title">${itemName} X </label>
                                     <label class="card-description">${itemQ}</label>
                                 </div>
-                                <i class="material-icons" id="delete-icon">delete</i>
                             </div>
                         </li>
               `;
