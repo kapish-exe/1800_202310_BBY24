@@ -58,15 +58,6 @@
       <h3 class="mention">Emergency Kit for <span id="peoNum-goes-here"></span></h3>
 
     </div>
-    <!-- <div class="d-flex justify-content-end">
-      <a href="#" class="text-success m-3">
-        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="currentColor" class="bi bi-share"
-          viewBox="0 0 16 16">
-          <path
-            d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z" />
-        </svg>
-      </a>
-    </div> -->
   </div>
 
   <section class="vh">
@@ -93,15 +84,12 @@
             </li>
             </template>
 
-
-
-
             <ul class="list-group rounded-0">
 
               <span id="foodAndWater-goes-here"></span>
 
             </ul>
-
+            <button class="btn btn-warning" onclick="clearCheckboxes()">Clear</button> 
 
 
             <div class="divider d-flex align-items-center my-4"></div>
@@ -118,6 +106,7 @@
               <br>
               <a id="addItemOfFoodAndWater" class="btn btn-warning" role="button" data-bs-toggle="button"
                 onclick="addItemFW()">Add item</a>
+
             </form>
           </form>
           <br>
@@ -130,6 +119,8 @@
               <span id="firstAid-goes-here"></span>
 
             </ul>
+            <button class="btn btn-warning" onclick="clearCheckboxes()">Clear</button> 
+
             <div class="divider d-flex align-items-center my-4"></div>
 
             <form class="expandable-form" id="householdMembersForm" style="display: none;">
@@ -160,6 +151,7 @@
               <span id="tools-goes-here"></span>
 
             </ul>
+            <button class="btn btn-warning" onclick="clearCheckboxes()">Clear</button> 
 
             <div class="divider d-flex align-items-center my-4"></div>
 
@@ -189,6 +181,7 @@
               <span id="shelter-goes-here"></span>
 
             </ul>
+            <button class="btn btn-warning" onclick="clearCheckboxes()">Clear</button> 
 
             <div class="divider d-flex align-items-center my-4"></div>
 

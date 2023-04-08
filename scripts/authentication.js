@@ -36,14 +36,14 @@ var uiConfig = {
 
         //Food & Water
         emergencyKit.add({
-            itemName: "Water (gallons)",
-            quantity: 4,
+            itemName: "Water",
+            quantity: "4 gallons",
             ischecked: false,
             category: "foodAndWater"
         });
         emergencyKit.add({
             itemName: "Water Purification Tablets",
-            quantity: 10,
+            quantity: "10 tablets",
             ischecked: false,
             category: "foodAndWater"
         });
@@ -55,7 +55,7 @@ var uiConfig = {
         });
         emergencyKit.add({
             itemName: "Canned foods",
-            quantity: 10,
+            quantity: "10 servings",
             ischecked: false,
             category: "foodAndWater"
         });
@@ -73,13 +73,13 @@ var uiConfig = {
         });
         emergencyKit.add({
             itemName: "Freeze-dried food",
-            quantity: 3,
+            quantity: "3 servings",
             ischecked: false,
             category: "foodAndWater"
         });
         emergencyKit.add({
-            itemName: "Non-perishable food (servings)",
-            quantity: 3,
+            itemName: "Non-perishable food",
+            quantity: "3 servings",
             ischecked: false,
             category: "foodAndWater"
         });
@@ -87,7 +87,7 @@ var uiConfig = {
         //First Aid
         emergencyKit.add({
             itemName: "Vinyl Gloves",
-            quantity: 2,
+            quantity: "2 pairs",
             ischecked: false,
             category: "firstAid"
         });
@@ -138,7 +138,7 @@ var uiConfig = {
         //"tools"
         emergencyKit.add({
             itemName: "Emergency Whistle",
-            quantity: 2,
+            quantity: 1,
             ischecked: false,
             category: "tools"
         });
