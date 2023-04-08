@@ -209,25 +209,25 @@ var uiConfig = {
             itemName: "Aluminized Sleeping Bag",
             quantity: 1,
             ischecked: false,
-            category: "tools"
+            category: "shelter"
         });
         emergencyKit.add({
             itemName: "Hooded Rain Poncho",
             quantity: 1,
             ischecked: false,
-            category: "tools"
+            category: "shelter"
         });
         emergencyKit.add({
             itemName: "Tube Tent",
             quantity: 1,
             ischecked: false,
-            category: "tools"
+            category: "shelter"
         });
         emergencyKit.add({
             itemName: "Roll Duct Tape",
             quantity: 1,
             ischecked: false,
-            category: "tools"
+            category: "shelter"
         });
 
         db.collection("userDocs").doc(user.uid).set({
