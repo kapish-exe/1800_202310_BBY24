@@ -1,7 +1,7 @@
-# Project Title
+# READY BEE
 
 ## 1. Project Description
-Our add is about helping people save their important identified information when people ar durning the disarster of extreme weather. 
+Ready Bee is an emeergency preparedness app that helps users protect their household by helping them create an emergency plan, keep track of items they need for an emergency kit and upload and store important documents.
 
 ## 2. Names of Contributors
 * Emily Lin.
